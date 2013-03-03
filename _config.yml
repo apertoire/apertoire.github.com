@@ -4,4 +4,8 @@ permalink: /:title
 rdiscount:
   extensions: [smart]
 title: Apertoire
+description: "Random thoughts about current technologies and lifestyle" 
+analytics: UA-15527576-2
+author:
+  name: Apertoire (Juan B. Rodriguez)
 
