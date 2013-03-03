@@ -42,7 +42,7 @@ on my dns registrar ([Namecheap](namecheap.com)), it went down like this
 
 ![change a and cname records](/img/dns.png)
 
-my mail hosting is done via google, so i used their option to "Automatically set MX records necessary for **Google Apps Email**"
+my mail hosting is done via google, so i used namecheap's option to "Automatically set MX records necessary for **Google Apps Email**"
 
 dns propagation already happened for me (i did this about an hour ago), so it should be a smooth transtion all things considered.
 
