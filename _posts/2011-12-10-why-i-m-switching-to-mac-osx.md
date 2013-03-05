@@ -1,6 +1,7 @@
 ---
 title: why i'm switching to mac osx
 layout: post
+author: Juan B. Rodriguez
 tags:
   - html5
   - mac

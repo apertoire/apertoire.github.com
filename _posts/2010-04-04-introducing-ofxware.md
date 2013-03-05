@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Introducing ofxware
+author: Juan B. Rodriguez
 
 ---
 

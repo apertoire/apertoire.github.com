@@ -1,6 +1,7 @@
 ---
 title: blackbeard
 layout: post
+author: Juan B. Rodriguez
 tags:
   - mac
   - osx

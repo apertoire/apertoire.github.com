@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Adventures into osxland
+author: Juan B. Rodriguez
 
 ---
 

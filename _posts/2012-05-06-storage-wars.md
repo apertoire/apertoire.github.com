@@ -1,6 +1,7 @@
 ---
 title: storage wars
 layout: post
+author: Juan B. Rodriguez
 tags:
   - osx
   - unraid

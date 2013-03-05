@@ -1,6 +1,7 @@
 ---
 title: baby steps
 layout: post
+author: Juan B. Rodriguez
 tags:
   - mac
   - osx

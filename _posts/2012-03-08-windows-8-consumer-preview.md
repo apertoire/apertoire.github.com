@@ -1,6 +1,7 @@
 ---
 title: windows 8 consumer preview
 layout: post
+author: Juan B. Rodriguez
 tags:
   - windows 8
 

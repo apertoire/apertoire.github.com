@@ -1,6 +1,7 @@
 ---
 title: moving to github pages
 layout: post
+author: Juan B. Rodriguez
 tags:
   - hosting
   - github

@@ -1,6 +1,7 @@
 ---
 title: if it ain't broken, don't fix it ?
 layout: post
+author: Juan B. Rodriguez
 
 type: regular
 ---

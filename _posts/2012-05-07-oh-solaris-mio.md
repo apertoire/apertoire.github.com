@@ -1,6 +1,7 @@
 ---
 title: oh solaris mio !
 layout: post
+author: Juan B. Rodriguez
 tags:
   - solaris 11
   - osx

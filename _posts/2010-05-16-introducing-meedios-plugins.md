@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Introducing MeediOS Plugins
+author: Juan B. Rodriguez
 
 ---
 
