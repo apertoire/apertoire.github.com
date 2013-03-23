@@ -3,7 +3,18 @@ layout: layout
 ---
 
 <section class="content">
-	<h3>{{ page.title | upcase }} <br> <small>{{ page.date | date: "%B %d, %Y" }} by <b>{{ page.author }}</b></small></h3>
+	<div class="row">
+		<div class="span4"><span>{{ page.date | date: "%B %d, %Y" | upcase }} <small class="muted">by</small> <em><strong>{{ page.author }}</strong></em></span></div>
+		<div class="span8">
+			<span class="pull-right">
+			    {% for tag in page.tags %}
+			    <span class="badge badge-info">{{ tag | downcase }}</span>
+			    {% endfor %}
+			</span>
+		</div>
+	</div>
+
+	<h3>{{ page.title | upcase }}</h3>
 
 	{{ content }}
 </section>
