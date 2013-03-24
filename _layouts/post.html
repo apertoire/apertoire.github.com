@@ -4,7 +4,7 @@ layout: layout
 
 <section class="content">
 	<div class="row">
-		<div class="span4"><span>{{ page.date | date: "%B %d, %Y" | upcase }} <small class="muted">by</small> <em><strong>{{ page.author }}</strong></em></span></div>
+		<div class="span4"><span>{{ page.date | date: "%B %d, %Y" | upcase }} <small class="muted">by</small> <strong>{{ page.author }}</strong></span></div>
 		<div class="span8">
 			<span class="pull-right">
 			    {% for tag in page.tags %}
@@ -14,7 +14,7 @@ layout: layout
 		</div>
 	</div>
 
-	<h3>{{ page.title | upcase }}</h3>
+	<h2>{{ page.title | upcase }}</h2>
 
 	{{ content }}
 </section>
