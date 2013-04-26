@@ -101,7 +101,7 @@ export DATABASE_URL=postgres://dbuser:dbpass@dbhost:dbport/dbname
 	
 This file is added to .gitignore. Then in server.js I did
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 load('vertx.js');
 
 var webConf = {
@@ -122,7 +122,8 @@ var webConf = {
 		{ address: 'save:asset' },
 		{ address: 'scrape:item' }
 	],
-		// This defines which messages from the server we will let through to the client 	outbound_permitted: [
+		// This defines which messages from the server we will let through to the client
+	outbound_permitted: [
 		{}
 	]    
 };
@@ -134,7 +135,7 @@ Heroku provides an environment variable PORT and vert.x enables access to it via
 As for database vars, a bit uglier
 
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 var re = /^(postgres):\/\/(\S+):(\S+)@(\S+):(\S+)\/(\S+)$/;
 var db = re.exec(vertx.env['DATABASE_URL']);
 
