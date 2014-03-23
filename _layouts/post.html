@@ -1,23 +1,19 @@
 ---
-layout: layout
+layout: base
 ---
 
-<section class="content">
-	<div class="row">
-		<div class="span4"><span>{{ page.date | date: "%B %d, %Y" | upcase }} <small class="muted">by</small> <strong>{{ page.author }}</strong></span></div>
-		<div class="span8">
-			<span class="pull-right">
-			    {% for tag in page.tags %}
-			    <span class="badge badge-info">{{ tag | downcase }}</span>
-			    {% endfor %}
-			</span>
-		</div>
-	</div>
+<section class="container content">
+  <h1>
+    <a href="{{ page.url }}">{{ page.title }}</a>
+  </h1>
 
-	<h2>{{ page.title | upcase }}</h2>
+  <section class="byline">
+    {{ page.date | date: "%B %e, %Y" }}
+  </section>
 
-	{{ content }}
-</section>
+  {{ content }}
+  <hr/>
+  <div class="pull"></div>
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">
@@ -32,5 +28,6 @@ layout: layout
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>  
+
+</section>

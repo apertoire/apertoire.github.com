@@ -1,59 +1,14 @@
 ---
-layout: layout
-title: Apertoire
+layout: base
 ---
 
-<div class="content">
-    <div class="row">
-        <div class="span12">
-            <div id="myCarousel" class="carousel slide">
-                <!-- Carousel items -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <a href="/dockerization/">
-                            <img src="/img/skynet.png" alt="" />
-                            <div class="carousel-caption">
-                                <p>Dockerization</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="/2013-04-24-running-a-java-vertx-app-on-heroku/">
-                            <img src="/img/heroku.jpg" alt="" />
-                            <div class="carousel-caption">
-                                <p>Heroku - Running a Vert.x Java app</p>
-                            </div>
-                        </a>                        
-                    </div> 
-                    <div class="item"><!-- class of active since it's the first item -->
-                        <a href="/vaultee/">
-                            <img src="/img/vaultee.jpg" alt="" />
-                            <div class="carousel-caption">
-                                <p>vaultee - Keep an inventory of your possessions</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- Carousel nav -->
-                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-            </div>    
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="span12">
-            <table class="table table-hover">
-                <tbody>
-				    {% for post in site.posts %}
-				    <tr>
-                        <td class="span10"><a href="{{ post.url }}">{{ post.title }}</a></td>
-                        <td class="span2 text-right">{{ post.date | date: "%B %e, %Y" | upcase }}</td>
-				    </tr>
-				    {% endfor %}                	
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+<section class="container content">
+  <h1 class="thin">POSTS</h1>
+  <ul class="listing">
+    {% for post in site.posts %}
+    <li>
+      <span>{{ post.date | date: "%B %e, %Y" }}</span> <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

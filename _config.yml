@@ -1,11 +1,14 @@
 auto: true
 markdown: rdiscount
+pygments: true
 permalink: /:title
 rdiscount:
   extensions: [smart]
-title: Apertoire
+title: "Apertoire"
+production_url: http://apertoire.net/
 description: "Random thoughts about current technologies and lifestyle" 
 analytics: UA-15527576-2
 author:
   name: Apertoire (Juan B. Rodriguez)
+  github : apertoire
 
