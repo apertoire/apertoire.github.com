@@ -5,7 +5,7 @@ permalink: /:title
 rdiscount:
   extensions: [smart]
 title: "Apertoire"
-production_url: http://apertoire.net/
+production_url: http://www.apertoire.net/
 description: "Random thoughts about current technologies and lifestyle" 
 analytics: UA-15527576-2
 author:
