@@ -7,7 +7,7 @@ author: Juan B. Rodriguez
 
 ![ofxware](/img/ofxware-logo1-780x234.png "ofxware")
 
-### Rationale
+## Rationale
 
 At the beginning of the year, I opened an account with a different bank than the one I was using exclusively for the past few years.
 
@@ -25,7 +25,7 @@ This is not a finished product yet, but it works for me.
 
 Additionally, it’s open source on purpose … you can be the one to enhance the functionality, make it easier and more available to the general public.
 
-### Product
+## Product
 
 ofxware is a very simple application thats converts text data files downloaded from online banking sites into ofx format files.
 
