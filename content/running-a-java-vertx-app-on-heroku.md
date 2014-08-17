@@ -34,35 +34,35 @@ The first resource introduced me to buildpacks and the second showed me maven fo
 
 This is what I did
 
-{% highlight sh %}
+<blockquote>
 $ mkdir myapp
 $ cd myapp
-{% endhighlight %}
+</blockquote>
 
 
 Copied source code from [github](https://github.com/apertoire/vaultee) into this folder and then initialize git
 
-{% highlight sh %}
-$ git init
-$ git add .
+<blockquote>
+$ git init<br>
+$ git add .<br>
 $ git commit -m 'initial commit'
-{% endhighlight %}
+</blockquote>
 
 	
 Create a heroku app via cli (you need to [install heroku toolbelt](https://toolbelt.heroku.com/) first)
 
-{% highlight sh %}
+<blockquote>
 $ heroku create myapp --stack cedar --buildpack https://github.com/apertoire/heroku-buildpack-vertx.git
-{% endhighlight %}
+</blockquote>
 
 	
 I modified the buildpack to support a java maven code structure, borrowing concepts from where [it was forked](https://github.com/enr/heroku-buildpack-vertx), and from the [official heroku java buildpack](https://github.com/heroku/heroku-buildpack-java).
 	
 You can now push your code to heroku, to deploy it
 
-{% highlight sh %}
+<blockquote>
 $ git push heroku master
-{% endhighlight %}
+</blockquote>
 
 	
 Next, I needed to initialize the postgresql backend.
@@ -71,15 +71,15 @@ I ended up using [pg-transfer's heroku plugin](https://github.com/ddollar/heroku
 
 First, I found out the name of the postgresql database by running
 
-{% highlight sh %}
+<blockquote>
 $ heroku config | grep postgres
-{% endhighlight %}
+</blockquote>
 	
 Then, the actual command to initialize the database was 
 
-{% highlight sh %}
+<blockquote>
 $ heroku pg:transfer --from postgres://dbuser:dbpassd@dbhost:dbport/dbname --to white --confirm myapp
-{% endhighlight %}
+</blockquote>
 
 The --from host is my local postgresql server.	
 The --to host is the heroku postgresql instance and is referenced using heroku's database color naming convention, since it was the only syntax that worked for me.
@@ -93,15 +93,16 @@ So I had to refactor my code to support environment variables, which is arguably
 
 I defined and environment file, which holds this
 
-{% highlight sh %}
-export PORT=9000
+<blockquote>
+export PORT=9000<br>
 export DATABASE_URL=postgres://dbuser:dbpass@dbhost:dbport/dbname
-{% endhighlight %}
+</blockquote>
 
 	
 This file is added to .gitignore. Then in server.js I did
 
-{% highlight javascript linenos %}
+<pre>
+<code>
 load('vertx.js');
 
 var webConf = {
@@ -128,14 +129,16 @@ var webConf = {
 	]    
 };
 	
-{% endhighlight %}
+</code>
+</pre>
 
 Heroku provides an environment variable PORT and vert.x enables access to it via vertx.env() function.
 
 As for database vars, a bit uglier
 
 
-{% highlight javascript linenos %}
+<pre>
+<code>
 var re = /^(postgres):\/\/(\S+):(\S+)@(\S+):(\S+)\/(\S+)$/;
 var db = re.exec(vertx.env['DATABASE_URL']);
 
@@ -153,24 +156,25 @@ var dalConf = {
 	port: parseInt(db[5]),
 	dbname: db[6]
 }
-{% endhighlight %}
+</code>
+</pre>
 
 First we parse the DATABASE_URL variable and then use each separate component.
 
 To run the app locally, I create a shell script, play.sh
 
-{% highlight sh %}
-source environment
+<blockquote>
+source environment<br>
 vertx run src/main/javascript/server.js -cp "target/classes:target/dependency/postgresql-9.2-1002.jdbc4.jar:target/dependency/jbcrypt-0.3m.jar:target/dependency/joda-time-2.2.jar:target/dependency/jackson-databind-2.1.4.jar:target/dependency/jackson-core-2.1.4.jar:target/dependency/jackson-annotations-2.1.4.jar:target/dependency/jsoup-1.7.2.jar"
-{% endhighlight %}
+</blockquote>
 
 So I read in the environment variable and then run vert.x with server.js as the bootstrap code.
 
 On the Heroku side, I created a Procfile similar to my shell script, except for the "source environment" line, since the variables are provided by Heroku
 
-{% highlight sh %}
+<blockquote>
 web: vertx run src/main/javascript/server.js -cp "target/classes:target/dependency/postgresql-9.2-1002.jdbc4.jar:target/dependency/jbcrypt-0.3m.jar:target/dependency/joda-time-2.2.jar:target/dependency/jackson-databind-2.1.4.jar:target/dependency/jackson-core-2.1.4.jar:target/dependency/jackson-annotations-2.1.4.jar:target/dependency/jsoup-1.7.2.jar"
-{% endhighlight %}
+</blockquote>
 
 In both cases, I added all jar dependencies to the classpath, since vert.x uses URLoader to load classes at runtime and it doesn't support wildcards.
 
