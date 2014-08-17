@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+<head>
+{{ template "partials/meta.html" . }}
+
+  <title>{{ .Site.Title}}</title>
+
+{{ template "partials/includes.html" . }}
+</head>
+
+<body>
+{{ template "partials/header.html" . }}
+
+  
+<!--   <div class="hero" style="background-image: url(/images/posts/issues.jpg);"></div>
+ -->  
+<section class="container content">
+<!--   <div class="hero">
+    <img src="{{ .Params.image }}">
+  </div>
+ -->
+  <img class="frontpost" src="{{ .Params.image }}">
+
+
+  <div class="title">
+    <h1>{{ .Title }}</h1>
+    <div class="when">
+    {{ .Date.Format "Jan 2, 2006" }} / {{ .Params.author }}
+    </div>
+  </div>
+
+  <div>
+  {{ .Content }}
+  </div>
+
+{{ template "partials/disqus.html" . }}
+
+</section>
+
+{{ template "partials/footer.html" . }}
+
+</body>
+</html>
