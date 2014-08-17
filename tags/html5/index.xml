@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Html5 on Apertoire </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://localhost/tags/html5/index.xml</link>
+    <language>en-us</language>
+    
+    
+    <updated>Sat, 10 Dec 2011 23:23:23 UTC</updated>
+    
+    <item>
+      <title>why i&#39;m switching to mac osx</title>
+      <link>http://localhost/why-i-m-switching-to-mac-osx</link>
+      <pubDate>Sat, 10 Dec 2011 23:23:23 UTC</pubDate>
+      
+      <guid>http://localhost/why-i-m-switching-to-mac-osx</guid>
+      <description>&lt;p&gt;i&amp;rsquo;ve always used a microsoft windows operating system. up until now.&lt;/p&gt;
+
+&lt;p&gt;today i&amp;rsquo;m embarking on the most fundamental switch in my adult life, with regards to something i&amp;rsquo;m passionate about: computers that is.&lt;/p&gt;
+
+&lt;p&gt;i&amp;rsquo;m mac osx (lion flavor) bound.&lt;/p&gt;
+
+&lt;p&gt;i&amp;rsquo;ve seen what the future brings for microsoft&amp;rsquo;s desktop os and i didn&amp;rsquo;t quite like it. &lt;a href=&#34;http://msdn.microsoft.com/en-us/windows/br229518/&#34;&gt;windows 8&lt;/a&gt; is already a stable build and showcases quite nicely what it&amp;rsquo;s capable of doing. i&amp;rsquo;m pretty sure that by the first beta and/or the rtm version, a lot of polish will have taken place.&lt;/p&gt;
+
+&lt;p&gt;but the thing is, i don&amp;rsquo;t like the metro ui for my desktop, i don&amp;rsquo;t think we&amp;rsquo;re there yet with a full blown immersive touch interface for the desktop.&lt;/p&gt;
+
+&lt;p&gt;it will work on the tablet, but i&amp;rsquo;m guessing it won&amp;rsquo;t work for&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;developers&lt;/li&gt;
+    &lt;li&gt;graphic designers&lt;/li&gt;
+    &lt;li&gt;business it managers &lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+
+&lt;p&gt;the core architecture is quite nice, pushing html5/javascript as the premier development environment. but please note that you will need to use proprietary libraries (which will only run in windows 8) in order to achieve the metro look, not quite portable you see.&lt;/p&gt;
+
+&lt;p&gt;in a future post i will share my vision of application architecture, an open architecture, that is. one that doesn&amp;rsquo;t tie down you to an operating system and makes concurrency much more elegant and simpler.&lt;/p&gt;
+
+&lt;p&gt;my future reads osx. and in the coming days, i will attempt to chronicle my journey into the lion&amp;rsquo;s den.&lt;/p&gt;
+
+&lt;p&gt;(photo courtesy of  &lt;a href=&#34;http://www.flickr.com/photos/nhimproduction/6091117488/&#34;&gt;Nhím&lt;/a&gt;)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>why i&#39;m switching to mac osx</title>
+      <link>http://localhost/why-i-m-switching-to-mac-osx</link>
+      <pubDate>Sat, 10 Dec 2011 23:23:23 UTC</pubDate>
+      
+      <guid>http://localhost/why-i-m-switching-to-mac-osx</guid>
+      <description>&lt;p&gt;i&amp;rsquo;ve always used a microsoft windows operating system. up until now.&lt;/p&gt;
+
+&lt;p&gt;today i&amp;rsquo;m embarking on the most fundamental switch in my adult life, with regards to something i&amp;rsquo;m passionate about: computers that is.&lt;/p&gt;
+
+&lt;p&gt;i&amp;rsquo;m mac osx (lion flavor) bound.&lt;/p&gt;
+
+&lt;p&gt;i&amp;rsquo;ve seen what the future brings for microsoft&amp;rsquo;s desktop os and i didn&amp;rsquo;t quite like it. &lt;a href=&#34;http://msdn.microsoft.com/en-us/windows/br229518/&#34;&gt;windows 8&lt;/a&gt; is already a stable build and showcases quite nicely what it&amp;rsquo;s capable of doing. i&amp;rsquo;m pretty sure that by the first beta and/or the rtm version, a lot of polish will have taken place.&lt;/p&gt;
+
+&lt;p&gt;but the thing is, i don&amp;rsquo;t like the metro ui for my desktop, i don&amp;rsquo;t think we&amp;rsquo;re there yet with a full blown immersive touch interface for the desktop.&lt;/p&gt;
+
+&lt;p&gt;it will work on the tablet, but i&amp;rsquo;m guessing it won&amp;rsquo;t work for&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;developers&lt;/li&gt;
+    &lt;li&gt;graphic designers&lt;/li&gt;
+    &lt;li&gt;business it managers &lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+
+&lt;p&gt;the core architecture is quite nice, pushing html5/javascript as the premier development environment. but please note that you will need to use proprietary libraries (which will only run in windows 8) in order to achieve the metro look, not quite portable you see.&lt;/p&gt;
+
+&lt;p&gt;in a future post i will share my vision of application architecture, an open architecture, that is. one that doesn&amp;rsquo;t tie down you to an operating system and makes concurrency much more elegant and simpler.&lt;/p&gt;
+
+&lt;p&gt;my future reads osx. and in the coming days, i will attempt to chronicle my journey into the lion&amp;rsquo;s den.&lt;/p&gt;
+
+&lt;p&gt;(photo courtesy of  &lt;a href=&#34;http://www.flickr.com/photos/nhimproduction/6091117488/&#34;&gt;Nhím&lt;/a&gt;)&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

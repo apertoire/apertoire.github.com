@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Apertoire</title>
+
+  <link rel="alternate" type="application/rss+xml" href="" title="Apertoire">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>  
+
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection">
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <ul class="menu">
+        <li><a href="/about">About</a></li>
+      </ul>
+
+      <section class="name">
+        <a href="/">Apertoire</a>
+      </section>
+    </div>
+  </div>
+
+  
+  
+<section class="container content">
+
+  <img class="frontpost" src="">
+
+
+  <div class="title">
+    <h1>Running a Java Vert.x app on Heroku</h1>
+    <div class="when">
+    Apr 24, 2013 / Juan B. Rodriguez
+    </div>
+  </div>
+
+  <div>
+  
+
+<p>That&rsquo;s right. This is Yet Another Running Vert.x on Heroku Article !</p>
+
+<p>It does have some differences with regards to other articles though. Let&rsquo;s see.</p>
+
+<p>You can check the <a href="https://vaultee.herokuapp.com">live app</a> right now !</p>
+
+<h2 id="toc_0">Background</h2>
+
+<p>Since I <a href="http://www.apertoire.net/vaultee/">published the code</a> for a proof of concept vert.x/angularjs/bootstrap  app on <a href="https://github.com/apertoire/vaultee/">github</a>, I considered how easy/difficult it would be to make it run on one of the popular Paas.</p>
+
+<p>I first considered <a href="https://openshift.redhat.com/">OpenShift</a> due to affinity (Vert.x and RedHat have become closer lately), but finally settled on Heroku due to purely personal reasons.</p>
+
+<h2 id="toc_1">Research</h2>
+
+<p>I can reference back to two resources, which helped me move forward:</p>
+
+<ul>
+<li><a href="https://fbflex.wordpress.com/2012/05/02/running-vert-x-applications-on-heroku/">Running Vert.x Applications on Heroku</a></li>
+<li><a href="http://java.dzone.com/articles/setting-vertx-project-work">Setting up a Vert.x Project to Work with Maven and NetBeans IDE 7.1 on OS X and Java 7</a></li>
+</ul>
+
+<p>The first resource introduced me to buildpacks and the second showed me maven for app building. It was important because maven is <a href="https://devcenter.heroku.com/articles/java">the suggested way to run Java apps on heroku</a></p>
+
+<h2 id="toc_2">Step by Step</h2>
+
+<p>This is what I did</p>
+
+<blockquote>
+$ mkdir myapp
+$ cd myapp
+</blockquote>
+
+<p>Copied source code from <a href="https://github.com/apertoire/vaultee">github</a> into this folder and then initialize git</p>
+
+<blockquote>
+$ git init<br>
+$ git add .<br>
+$ git commit -m 'initial commit'
+</blockquote>
+
+<p>Create a heroku app via cli (you need to <a href="https://toolbelt.heroku.com/">install heroku toolbelt</a> first)</p>
+
+<blockquote>
+$ heroku create myapp --stack cedar --buildpack https://github.com/apertoire/heroku-buildpack-vertx.git
+</blockquote>
+
+<p>I modified the buildpack to support a java maven code structure, borrowing concepts from where <a href="https://github.com/enr/heroku-buildpack-vertx">it was forked</a>, and from the <a href="https://github.com/heroku/heroku-buildpack-java">official heroku java buildpack</a>.</p>
+
+<p>You can now push your code to heroku, to deploy it</p>
+
+<blockquote>
+$ git push heroku master
+</blockquote>
+
+<p>Next, I needed to initialize the postgresql backend.</p>
+
+<p>I ended up using <a href="https://github.com/ddollar/heroku-pg-transfer">pg-transfer&rsquo;s heroku plugin</a>, after reading about <a href="https://devcenter.heroku.com/articles/heroku-postgresql">postgresql support in heroku</a></p>
+
+<p>First, I found out the name of the postgresql database by running</p>
+
+<blockquote>
+$ heroku config | grep postgres
+</blockquote>
+    
+
+<p>Then, the actual command to initialize the database was</p>
+
+<blockquote>
+$ heroku pg:transfer --from postgres://dbuser:dbpassd@dbhost:dbport/dbname --to white --confirm myapp
+</blockquote>
+
+<p>The &ndash;from host is my local postgresql server.<br />
+The &ndash;to host is the heroku postgresql instance and is referenced using heroku&rsquo;s database color naming convention, since it was the only syntax that worked for me.</p>
+
+<h2 id="toc_3">A Couple of Notes</h2>
+
+<p>In order to run your app on Heroku, they export some environment variables that you need to reference in your code, for things such as port, db host, db port, etc.</p>
+
+<p>So I had to refactor my code to support environment variables, which is arguably a best practice with regards to this matter.</p>
+
+<p>I defined and environment file, which holds this</p>
+
+<blockquote>
+export PORT=9000<br>
+export DATABASE_URL=postgres://dbuser:dbpass@dbhost:dbport/dbname
+</blockquote>
+
+<p>This file is added to .gitignore. Then in server.js I did</p>
+
+<pre>
+<code>
+load('vertx.js');
+
+var webConf = {
+    port: parseInt(vertx.env['PORT']),
+
+    // Configuration for the event bus client side bridge
+    // This bridges messages from the client side to the server side event bus
+    bridge: true,
+
+    // This defines which messages from the client we will let through
+    // to the server side
+    inbound_permitted: [
+        { address: 'load:user' },
+        { address: 'load:assets' },
+        { address: 'load:revisions' },
+        { address: 'load:items' },
+        { address: 'load:itemTypes' },
+        { address: 'save:asset' },
+        { address: 'scrape:item' }
+    ],
+        // This defines which messages from the server we will let through to the client
+    outbound_permitted: [
+        {}
+    ]    
+};
+    
+</code>
+</pre>
+
+<p>Heroku provides an environment variable PORT and vert.x enables access to it via vertx.env() function.</p>
+
+<p>As for database vars, a bit uglier</p>
+
+<pre>
+<code>
+var re = /^(postgres):\/\/(\S+):(\S+)@(\S+):(\S+)\/(\S+)$/;
+var db = re.exec(vertx.env['DATABASE_URL']);
+
+// logger.info("protocol: " + result[1]);
+// logger.info("username: " + result[2]);
+// logger.info("password: " + result[3]);
+// logger.info("address: " + result[4]);
+// logger.info("port: " + result[5]);
+// logger.info("dbname: " + result[6]);
+
+var dalConf = {
+    host: db[4],
+    username: db[2],
+    password: db[3],
+    port: parseInt(db[5]),
+    dbname: db[6]
+}
+</code>
+</pre>
+
+<p>First we parse the DATABASE_URL variable and then use each separate component.</p>
+
+<p>To run the app locally, I create a shell script, play.sh</p>
+
+<blockquote>
+source environment<br>
+vertx run src/main/javascript/server.js -cp "target/classes:target/dependency/postgresql-9.2-1002.jdbc4.jar:target/dependency/jbcrypt-0.3m.jar:target/dependency/joda-time-2.2.jar:target/dependency/jackson-databind-2.1.4.jar:target/dependency/jackson-core-2.1.4.jar:target/dependency/jackson-annotations-2.1.4.jar:target/dependency/jsoup-1.7.2.jar"
+</blockquote>
+
+<p>So I read in the environment variable and then run vert.x with server.js as the bootstrap code.</p>
+
+<p>On the Heroku side, I created a Procfile similar to my shell script, except for the &ldquo;source environment&rdquo; line, since the variables are provided by Heroku</p>
+
+<blockquote>
+web: vertx run src/main/javascript/server.js -cp "target/classes:target/dependency/postgresql-9.2-1002.jdbc4.jar:target/dependency/jbcrypt-0.3m.jar:target/dependency/joda-time-2.2.jar:target/dependency/jackson-databind-2.1.4.jar:target/dependency/jackson-core-2.1.4.jar:target/dependency/jackson-annotations-2.1.4.jar:target/dependency/jsoup-1.7.2.jar"
+</blockquote>
+
+<p>In both cases, I added all jar dependencies to the classpath, since vert.x uses URLoader to load classes at runtime and it doesn&rsquo;t support wildcards.</p>
+
+<p>But the suggested way to package an app in vert.x is to convert it to a module, which is something I&rsquo;ll look into in the future.</p>
+
+<p>Finally, a note on the <a href="https://github.com/apertoire/heroku-buildpack-vertx">Heroku buildpack</a>.</p>
+
+<p>It looks for a pom.xml file in the main folder. If found, it interprets the code as a vert.x app and starts the build process</p>
+
+<p>During the build, openjdk7 and vert.x are downloaded and then maven is run to download all declared dependencies and to compile java source code.</p>
+
+<p>Then Procfile is executed and the app is live !</p>
+
+<h2 id="toc_4">Next Steps</h2>
+
+<ul>
+<li>Maybe we should use a <a href="http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript">different layout</a> for the angularjs code of the app</li>
+<li>A followup article will showcase some of the patterns used for this proof of concept app</li>
+</ul>
+
+  </div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost") 
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//apertoire.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+<div class="footer">
+  <div class="container">
+    <hr>
+
+    <span>&copy; 2010 - 2014 <a href="/">apertoire.net</a></span>
+
+    <p class="powered">powered by <a href="http://hugo.spf13.com/">hugo</a>. hosted by <a href="github.com">github</a></p>
+
+    <div style="clear: both"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15527576-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

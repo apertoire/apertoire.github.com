@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Mac on Apertoire </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://localhost/tags/mac/index.xml</link>
+    <language>en-us</language>
+    
+    
+    <updated>Sat, 31 Dec 2011 23:23:23 UTC</updated>
+    
+    <item>
+      <title>baby steps</title>
+      <link>http://localhost/baby-steps</link>
+      <pubDate>Sat, 31 Dec 2011 23:23:23 UTC</pubDate>
+      
+      <guid>http://localhost/baby-steps</guid>
+      <description>
+
+&lt;p&gt;above is a screenshot of my current setup :)&lt;/p&gt;
+
+&lt;p&gt;it&amp;rsquo;s an awesome experience so far.&lt;/p&gt;
+
+&lt;p&gt;i have pretty much moved my daily operation to this machine. added two drives, one for music, the other as a staging area between my downloading machine and my unraid server (since i do some manipulation on the files i get).&lt;/p&gt;
+
+&lt;p&gt;these are the apps i generally use&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_0&#34;&gt;BROWSER&lt;/h3&gt;
+
+&lt;p&gt;chrome is very lightweight here, and i haven&amp;rsquo;t seen it crash yet. opera is pretty good as well, firefox consumes a lot of memory and safari, i didn&amp;rsquo;t quite try&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_1&#34;&gt;MUSIC&lt;/h3&gt;
+
+&lt;p&gt;i&amp;rsquo;m evaluating different music players&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.instinctiv.com&#34;&gt;instinctiv (free)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.audirvana.com&#34;&gt;audirvana (free)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.voxapp.didgeroo.com/&#34;&gt;vox (free)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://sbooth.org/Decibel/&#34;&gt;decibel (paid)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;toc_2&#34;&gt;MOVIES&lt;/h3&gt;
+
+&lt;p&gt;i&amp;rsquo;ve pretty much settled on &lt;a href=&#34;http://www.mplayerosx.ch/&#34;&gt;MPlayer OSX Extended&lt;/a&gt; for movies&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_3&#34;&gt;IMAGES&lt;/h3&gt;
+
+&lt;p&gt;had to install &lt;a href=&#34;http://www.xnview.com&#34;&gt;xnview&lt;/a&gt;, didn&amp;rsquo;t quite find the same functionality in other apps.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_4&#34;&gt;the good&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;having unix underpinnings is just huge. i&amp;rsquo;m a developer so it&amp;rsquo;s so great to be able to do unix stuff at the terminal &lt;a href=&#34;http://www.iterm2.com&#34;&gt;iTerm 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;installing applications either from the mac app store or downloaded from the internet is so cool and simple&lt;/li&gt;
+&lt;li&gt;the general awesomeness of it all.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_5&#34;&gt;the bad&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;im using a pc keyboard, so i&amp;rsquo;m still getting used to the shortcuts&lt;/li&gt;
+&lt;li&gt;i haven&amp;rsquo;t found a replacement for 7zip. keka is just not there for me.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_6&#34;&gt;the ugly&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;FINDER&lt;/em&gt; &amp;hellip; i find it cumbersome to use &amp;hellip; to perform simple operations i need a ton of windows open and then use some keyboard shortcuts &amp;hellip; i&amp;rsquo;ve installed &lt;a href=&#34;http://www.mucommander.com&#34;&gt;muCommander&lt;/a&gt;, &lt;a href=&#34;http://www.magicansoft.com&#34;&gt;magican file&lt;/a&gt;, &lt;a href=&#34;http://www.cocoatech.com&#34;&gt;path finder&lt;/a&gt;, &lt;a href=&#34;http://totalfinder.binaryage.com/&#34;&gt;total finder&lt;/a&gt; &amp;hellip; but not decided yet what to use &amp;hellip; then there are like a ton of views in finder .. and none seems really useful to me 8)&lt;/p&gt;
+
+&lt;p&gt;but overall, i&amp;rsquo;m impressed and love my hackmac !&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>blackbeard</title>
+      <link>http://localhost/blackbeard</link>
+      <pubDate>Sat, 24 Dec 2011 23:23:23 UTC</pubDate>
+      
+      <guid>http://localhost/blackbeard</guid>
+      <description>&lt;p&gt;i&amp;rsquo;m writing this from blackbeard, my hackintosh mac.&lt;/p&gt;
+
+&lt;p&gt;i was able to build this machine and have it working flawlessy under OSX Lion, mainly due to &lt;a href=&#34;tonymacx86.blogspot.com&#34;&gt;tonymacx86&amp;rsquo;s excellent site&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;two articles showed me in detail how to build the machine&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://tonymacx86.blogspot.com/2011/11/building-sandy-bridge-customac-buyers.html&#34;&gt;Building a Sandy Bridge CustoMac: Buyer&amp;rsquo;s Guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tonymacx86.blogspot.com/2011/10/unibeast-install-mac-os-x-lion-using.html&#34;&gt;UniBeast: Install Mac OS X Lion Using an All-In-One Bootable USB Drive&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;i chose the following specs for my mac:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;case: &lt;a href=&#34;http://www.amazon.com/&#34;&gt;Corsair Obsidian 650D&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
+&lt;li&gt;mobo: &lt;a href=&#34;http://www.amazon.com/gp/product/B0054OWTQU/ref=as_li_ss_tl?ie=UTF8&amp;amp;amp;tag=tonymacx86com-20&#34;&gt;Gigabyte GA-Z68XP-UD3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;cpu: &lt;a href=&#34;http://www.amazon.com/gp/product/B004EBUXHQ?ie=UTF8&amp;amp;amp;tag=tonymacx86com-20&#34;&gt;Intel Core i5-2500K&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ram: &lt;a href=&#34;http://www.amazon.com/gp/product/B004RFBIUU/ref=as_li_ss_tl?ie=UTF8&amp;amp;amp;tag=tonymacx86com-20&#34;&gt;Corsair 1600MHZ DDR3 16GB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;gpu: &lt;a href=&#34;http://www.amazon.com/gp/product/B004F6GJAU/ref=as_li_ss_tl?ie=UTF8&amp;amp;amp;tag=tonymacx86com-20&#34;&gt;AMD Radeon HD 6850&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;power supply: &lt;a href=&#34;http://www.amazon.com/gp/product/B002LVUPZQ/ref=as_li_ss_tl?ie=UTF8&amp;amp;amp;tag=tonymacx86com-20&#34;&gt;Corsair 650 watts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ssd: &lt;a href=&#34;http://www.amazon.com/OCZ-Technology-Nocti-mSATA-NOC-MSATA-60G/dp/B005FYFV3W&#34;&gt;OCZ Nocti Series 60GB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;hard disk: &lt;a href=&#34;http://www.amazon.com/Western-Digital-Caviar-Desktop-WD10EARS/dp/B002U1N95K/ref=sr_1_5?s=electronics&amp;amp;amp;ie=UTF8&amp;amp;amp;qid=1324784170&amp;amp;amp;sr=1-5&#34;&gt;Western Digital 1TB EARS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;the keyboard, mouse and display come from my previous pc rig.&lt;/p&gt;
+
+&lt;p&gt;with this hardware and following the instructions on tonymacx86&amp;rsquo;s blog, i had no problem installing OSX Lion and everything is working properly.&lt;/p&gt;
+
+&lt;p&gt;to be honest, i have installed lion about 20 times, looking for the best setup possible.&lt;/p&gt;
+
+&lt;p&gt;i had two main drivers:&lt;/p&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;use the hard disk for bulk storage, that&#39;s where the data should reside&lt;/li&gt;
+    &lt;li&gt;encrypt my system so that no prying eyes can get a hold of my data&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;the first objective was kind of easy to achieve, but i really struggled with the second.&lt;/p&gt;
+
+&lt;p&gt;i&amp;rsquo;m using truecrypt in my pc, and since there&amp;rsquo;s a version published for the mac, i thought it would be a breeze to install and setup.&lt;/p&gt;
+
+&lt;p&gt;it turned out that mac support is very limited in truecrypt. there is no system encryption or full disk encryption for that matter. additionally, it&amp;rsquo;s really cumbersome the mounting of an encrypted volume under osx.&lt;/p&gt;
+
+&lt;p&gt;i went through several iterations of a setup with truecrypt. in the last one, i had an encrypted device partition on the hard disk, but every reboot was painful since (even with an automator script), i had to enter two passwords (the partition and my user&amp;rsquo;s).&lt;/p&gt;
+
+&lt;p&gt;in the meantime, i was toying around with filevault. at first it didnt work because it needs a recovery hd partition, which isnt created during install on a hackintosh.&lt;/p&gt;
+
+&lt;p&gt;i managed to manually create a recovery hd and got to turn on filevault, but then it wouldn&amp;rsquo;t boot (something to do with a real mac&amp;rsquo;s firmware not being present).&lt;/p&gt;
+
+&lt;p&gt;so i was almost contemplating a life of two-password-insert-on-reboot, until i came around &lt;a href=&#34;https://agilebits.com/knox&#34;&gt;AgileBits Knox&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;i installed it, toyed around with it a bit &amp;hellip; and then &amp;hellip; i figured i could run filevault manually from the command line
+two sites were invaluable on getting this to work:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.red-sweater.com/blog/1935/lions-whole-disk-encryption&#34;&gt;Lion&amp;rsquo;s Whole Disk Encryption&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jridgewell/Unlock&#34;&gt;Unlock&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;so i can&amp;rsquo;t encrypt my startup disk (ssd), but i can encrypt my hard disk.&lt;/p&gt;
+
+&lt;p&gt;and i moved my /Users folder to the hard disk, so i don&amp;rsquo;t occupy precious ssd space.&lt;/p&gt;
+
+&lt;p&gt;thinks look good so far !&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>why i&#39;m switching to mac osx</title>
+      <link>http://localhost/why-i-m-switching-to-mac-osx</link>
+      <pubDate>Sat, 10 Dec 2011 23:23:23 UTC</pubDate>
+      
+      <guid>http://localhost/why-i-m-switching-to-mac-osx</guid>
+      <description>&lt;p&gt;i&amp;rsquo;ve always used a microsoft windows operating system. up until now.&lt;/p&gt;
+
+&lt;p&gt;today i&amp;rsquo;m embarking on the most fundamental switch in my adult life, with regards to something i&amp;rsquo;m passionate about: computers that is.&lt;/p&gt;
+
+&lt;p&gt;i&amp;rsquo;m mac osx (lion flavor) bound.&lt;/p&gt;
+
+&lt;p&gt;i&amp;rsquo;ve seen what the future brings for microsoft&amp;rsquo;s desktop os and i didn&amp;rsquo;t quite like it. &lt;a href=&#34;http://msdn.microsoft.com/en-us/windows/br229518/&#34;&gt;windows 8&lt;/a&gt; is already a stable build and showcases quite nicely what it&amp;rsquo;s capable of doing. i&amp;rsquo;m pretty sure that by the first beta and/or the rtm version, a lot of polish will have taken place.&lt;/p&gt;
+
+&lt;p&gt;but the thing is, i don&amp;rsquo;t like the metro ui for my desktop, i don&amp;rsquo;t think we&amp;rsquo;re there yet with a full blown immersive touch interface for the desktop.&lt;/p&gt;
+
+&lt;p&gt;it will work on the tablet, but i&amp;rsquo;m guessing it won&amp;rsquo;t work for&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;developers&lt;/li&gt;
+    &lt;li&gt;graphic designers&lt;/li&gt;
+    &lt;li&gt;business it managers &lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+
+&lt;p&gt;the core architecture is quite nice, pushing html5/javascript as the premier development environment. but please note that you will need to use proprietary libraries (which will only run in windows 8) in order to achieve the metro look, not quite portable you see.&lt;/p&gt;
+
+&lt;p&gt;in a future post i will share my vision of application architecture, an open architecture, that is. one that doesn&amp;rsquo;t tie down you to an operating system and makes concurrency much more elegant and simpler.&lt;/p&gt;
+
+&lt;p&gt;my future reads osx. and in the coming days, i will attempt to chronicle my journey into the lion&amp;rsquo;s den.&lt;/p&gt;
+
+&lt;p&gt;(photo courtesy of  &lt;a href=&#34;http://www.flickr.com/photos/nhimproduction/6091117488/&#34;&gt;Nhím&lt;/a&gt;)&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

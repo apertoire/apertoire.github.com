@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Apertoire</title>
+
+  <link rel="alternate" type="application/rss+xml" href="" title="Apertoire">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>  
+
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection">
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <ul class="menu">
+        <li><a href="/about">About</a></li>
+      </ul>
+
+      <section class="name">
+        <a href="/">Apertoire</a>
+      </section>
+    </div>
+  </div>
+
+  
+  
+<section class="container content">
+
+  <img class="frontpost" src="">
+
+
+  <div class="title">
+    <h1>hotfix 1</h1>
+    <div class="when">
+    May 7, 2012 / Juan B. Rodriguez
+    </div>
+  </div>
+
+  <div>
+  <p>well, i need to add a couple of comments after my last post</p>
+
+<p>i deliberately chose to create the zfs dataset with a passphrase encryption method. as per solaris docs, this means it can&rsquo;t mount it at boot time. the best practice would be a boot time prompt (a la TrueCrypt in windows), but until that time comes, i will live with loading after booting, using the following:</p>
+
+<blockquote>
+sudo zfs mount -a
+sudo zfs set share tank/backup
+</blockquote>
+
+<p>here seems to be a better way by doing zfs set key -l, but docs are scarce</p>
+
+<p>you can check whether the folder is nfs exported by doing:</p>
+
+<blockquote>
+showmount -e
+</blockquote>
+
+<p>if you were to run crashplan on the zfs box, i would have to think that since the folder is empty upon boot, crashplan would detect it as deleted files. i need to investigate a bit further</p>
+
+<p>on the mac side, the disk utility method to mount the nfs export is not working correctly &hellip; i resorted to</p>
+
+<blockquote>
+mount_nfs zfsbox:/export/Backup /local_mountpoint
+</blockquote>
+
+<p>this shows the mountpoint from the finder correctly <a href="http://help.bombich.com/discussions/questions/3459-cloningcopying-to-or-from-an-nfs-share">check some discussion about it here</a></p>
+
+  </div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost") 
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//apertoire.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+<div class="footer">
+  <div class="container">
+    <hr>
+
+    <span>&copy; 2010 - 2014 <a href="/">apertoire.net</a></span>
+
+    <p class="powered">powered by <a href="http://hugo.spf13.com/">hugo</a>. hosted by <a href="github.com">github</a></p>
+
+    <div style="clear: both"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15527576-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

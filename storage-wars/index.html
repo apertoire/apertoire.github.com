@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Apertoire</title>
+
+  <link rel="alternate" type="application/rss+xml" href="" title="Apertoire">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>  
+
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection">
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <ul class="menu">
+        <li><a href="/about">About</a></li>
+      </ul>
+
+      <section class="name">
+        <a href="/">Apertoire</a>
+      </section>
+    </div>
+  </div>
+
+  
+  
+<section class="container content">
+
+  <img class="frontpost" src="">
+
+
+  <div class="title">
+    <h1>storage wars</h1>
+    <div class="when">
+    May 6, 2012 / Juan B. Rodriguez
+    </div>
+  </div>
+
+  <div>
+  <p>i&rsquo;m currently running an <a href="http://lime-technology.com">unRaid</a> server, which hosts my media collection  (movies, tv series, music, pictures and data backups)</p>
+
+<p>but, i&rsquo;m running out of space on the server (currently 31.69TB used out of 32.51TB available)</p>
+
+<p>so i started looking for options on how to expand my capacity and decided on adding a second unRaid server, virtualizing both unRaids in an ESXi 5 head server and putting the disks on two DAS boxes (discussions at <a href="http://lime-technology.com/forum/index.php?topic=14521.0">two unraid servers</a>, <a href="http://lime-technology.com/forum/index.php?topic=14695.0">atlas: a virtualized unraid</a>, <a href="http://www.servethehome.com/sas-expanders-diy-cheap-low-cost-jbod-enclosures-raid/">building a jbod das</a></p>
+
+<p>at some point during that span of time, zfs came up. i researched as much as i could and finally found this enlightening thread: <a href="http://forum.xbmc.org/showthread.php?tid=82811&amp;amp;page=17">Freenas vs unRaid</a>.</p>
+
+<p>my take on this whole storage wars is that each solution has its merits and my plan changed slightly</p>
+
+<ul>
+<li>continue with the virtualized + das boxes unraid setup</li>
+<li>add a virtualized zfs implementation to backup my osx data</li>
+</ul>
+
+<p>the idea is that unRaid is much better suited to hold an expanding media collection, where i can add drives when needed and keep having one parity disk to protect the array. under zfs, every drive (or more precisely every vdev) would hit me with a parity space penalty</p>
+
+<p>in my next posts, i will write down my zfs test scenario, while i wait for the parts of my all-encompassing ESXi build</p>
+
+  </div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost") 
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//apertoire.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+<div class="footer">
+  <div class="container">
+    <hr>
+
+    <span>&copy; 2010 - 2014 <a href="/">apertoire.net</a></span>
+
+    <p class="powered">powered by <a href="http://hugo.spf13.com/">hugo</a>. hosted by <a href="github.com">github</a></p>
+
+    <div style="clear: both"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15527576-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Truecrypt on Apertoire </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://localhost/tags/truecrypt/index.xml</link>
+    <language>en-us</language>
+    
+    
+    <updated>Mon, 07 May 2012 23:23:23 UTC</updated>
+    
+    <item>
+      <title>hotfix 1</title>
+      <link>http://localhost/hotfix-1</link>
+      <pubDate>Mon, 07 May 2012 23:23:23 UTC</pubDate>
+      
+      <guid>http://localhost/hotfix-1</guid>
+      <description>&lt;p&gt;well, i need to add a couple of comments after my last post&lt;/p&gt;
+
+&lt;p&gt;i deliberately chose to create the zfs dataset with a passphrase encryption method. as per solaris docs, this means it can&amp;rsquo;t mount it at boot time. the best practice would be a boot time prompt (a la TrueCrypt in windows), but until that time comes, i will live with loading after booting, using the following:&lt;/p&gt;
+
+&lt;blockquote&gt;
+sudo zfs mount -a
+sudo zfs set share tank/backup
+&lt;/blockquote&gt;
+
+&lt;p&gt;here seems to be a better way by doing zfs set key -l, but docs are scarce&lt;/p&gt;
+
+&lt;p&gt;you can check whether the folder is nfs exported by doing:&lt;/p&gt;
+
+&lt;blockquote&gt;
+showmount -e
+&lt;/blockquote&gt;
+
+&lt;p&gt;if you were to run crashplan on the zfs box, i would have to think that since the folder is empty upon boot, crashplan would detect it as deleted files. i need to investigate a bit further&lt;/p&gt;
+
+&lt;p&gt;on the mac side, the disk utility method to mount the nfs export is not working correctly &amp;hellip; i resorted to&lt;/p&gt;
+
+&lt;blockquote&gt;
+mount_nfs zfsbox:/export/Backup /local_mountpoint
+&lt;/blockquote&gt;
+
+&lt;p&gt;this shows the mountpoint from the finder correctly &lt;a href=&#34;http://help.bombich.com/discussions/questions/3459-cloningcopying-to-or-from-an-nfs-share&#34;&gt;check some discussion about it here&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

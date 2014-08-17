@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Solaris-11 on Apertoire </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://localhost/tags/solaris-11/index.xml</link>
+    <language>en-us</language>
+    
+    
+    <updated>Mon, 07 May 2012 11:11:11 UTC</updated>
+    
+    <item>
+      <title>oh solaris mio !</title>
+      <link>http://localhost/oh-solaris-mio</link>
+      <pubDate>Mon, 07 May 2012 11:11:11 UTC</pubDate>
+      
+      <guid>http://localhost/oh-solaris-mio</guid>
+      <description>&lt;p&gt;so the plan is as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;build a zfs box, with a two drive mirror pool&lt;/li&gt;
+&lt;li&gt;rsync data from blackeard (my hackintosh mac) to the zfs box&lt;/li&gt;
+&lt;li&gt;snaphot the zfs filesystem (full and incrementals)&lt;/li&gt;
+&lt;li&gt;crashplan the backup to the cloud&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;this basically gives me a two factor backup scenario: time machine-like fast access (without all the storage wasting that time machine does, on the zfs box) and offsite more secure storage (crashplan pro on the cloud)&lt;/p&gt;
+
+&lt;p&gt;so let&amp;rsquo;s start with my test setup&lt;/p&gt;
+
+&lt;p&gt;download &lt;a href=&#34;http://www.oracle.com/technetwork/server-storage/solaris11/downloads/index.html&#34;&gt;Solaris 11 11/11&lt;/a&gt; (you have to create an oracle account .. shrugs)&lt;/p&gt;
+
+&lt;p&gt;install Solaris on a VirtualBox VM (chose VMDK as format, since it will be easier to transfer to ESXi)&lt;/p&gt;
+
+&lt;p&gt;the first snag is related to NFSv4 &amp;hellip; although it&amp;rsquo;s supposed to do uid mapping, &lt;a href=&#34;http://dfusion.com.au/wiki/tiki-index.php?page=Why+NFSv4+UID+mapping+breaks+with+AUTH_UNIX&#34;&gt;it actually doesn&amp;rsquo;t&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;the first time i installed solaris i didn&amp;rsquo;t change the uid for my replica solaris user (same user as my mac box).&lt;/p&gt;
+
+&lt;p&gt;so i installed again, but &amp;hellip; solaris 11 won&amp;rsquo;t allow root logins, not even via console. so i did the easiest thing possible, which is to enable root logins back &lt;a href=&#34;http://candon123.blog.51cto.com/704299/712206&#34;&gt;more info here&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+root@zfsbox# rolemod -K type=normal root
+&lt;/blockquote&gt;
+
+&lt;p&gt;so now drop to the root shell (su - won&amp;rsquo;t work) and do
+&lt;blockquote&gt;
+usermod -u &amp;lt;new uid&amp;gt; username
+&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.unix.com/solaris/183739-changing-uid-value.html&#34;&gt;here&amp;rsquo;s a link that gave me the idea on how to do this&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;new uid&amp;gt; should be the same uid as the user in the mac box.&lt;/p&gt;
+
+&lt;p&gt;while on the root shell, do
+&lt;blockquote&gt;
+cd /home&lt;/p&gt;
+
+&lt;p&gt;chown -R &amp;lt;username&amp;gt;:&amp;lt;group&amp;gt; &amp;lt;username&amp;gt;
+&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;ok now solaris is installed. one of the first things i do with any new *nix box is setup public/private key ssh
+&lt;blockquote&gt;
+&lt;span&gt;$ ssh-keygen -t rsa&lt;/span&gt;
+&lt;span&gt;$ cat ~/.ssh/id_rsa.pub | ssh user@machine &amp;ldquo;mkdir ~/.ssh; cat &amp;gt;&amp;gt; ~/.ssh/authorized_keys&amp;rdquo;&lt;br /&gt;&lt;/span&gt;
+&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;could have use ssh-copy-id, but osx doesn&amp;rsquo;t have it by default and i&amp;rsquo;m too lazy to install it &lt;a href=&#34;http://www.commandlinefu.com/commands/view/188/copy-your-ssh-public-key-to-a-server-from-a-machine-that-doesnt-have-ssh-copy-id&#34;&gt;credits for the cat/ssh technique&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;now you have to edit /etc/ssh/sshd_config to disable password logins&lt;/p&gt;
+
+&lt;p&gt;ok so we can ssh into the solaris box &amp;hellip; let&amp;rsquo;s build the backup pool&lt;/p&gt;
+
+&lt;p&gt;i previously created two 51Gb virtual disks in VirtualBox, it&amp;rsquo;s time to use them
+&lt;blockquote&gt;
+user@zfsbox$ format
+&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;this shows the name of the disks. now let&amp;rsquo;s create the pool
+&lt;blockquote&gt;
+user@zfsbox$ sudo zpool create tank mirror c3t2d0 c3t3d0
+&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;now the filesystem, which crashplan will back up
+&lt;blockquote&gt;
+user@zfsbox$ sudo zfs create -o atime=off -o mountpoint=/export/backup -o sharenfs=on -o compression=on -o encryption=aes-256-ccm tank/backup
+&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;by default, zfs creates the /export/backup mount point with root:root ownership. make it writable for your user
+&lt;blockquote&gt;
+user@zfsbox$ sudo chown -R &amp;lt;username&amp;gt;:&amp;lt;groupname&amp;gt; /export/backup
+&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;now, you can rsync from mac to zfs
+&lt;blockquote&gt;
+user@macbox$ rsync -avn &amp;ndash;progress -e ssh ~/Storage user@zfsbox:/export/backup
+&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;you should be all set now, watching your /export/backup folder having grown with your backup data.&lt;/p&gt;
+
+&lt;p&gt;something else &amp;hellip; in order to watch that data through nfs&lt;/p&gt;
+
+&lt;p&gt;go to disk utility, in the menu choose nfs mounts &amp;hellip; and add the nfs mountpoint, pay special attention to the advanced mount options, should be something like this
+&lt;blockquote&gt;
+resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
+&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;next up, we&amp;rsquo;ll work with the zfs snapshots, try to come up a script that automates the rsyncing and the snapshot creation and send it all up to crashplan&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

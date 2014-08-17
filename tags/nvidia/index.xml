@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Nvidia on Apertoire </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://localhost/tags/nvidia/index.xml</link>
+    <language>en-us</language>
+    
+    
+    <updated>Fri, 15 Mar 2013 23:23:23 UTC</updated>
+    
+    <item>
+      <title>12D78</title>
+      <link>http://localhost/12D78</link>
+      <pubDate>Fri, 15 Mar 2013 23:23:23 UTC</pubDate>
+      
+      <guid>http://localhost/12D78</guid>
+      <description>&lt;p&gt;so, it&amp;rsquo;s been quite a while now since my last update with regards to my hackintosh, old trusted blackbeard.&lt;/p&gt;
+
+&lt;p&gt;i have to tell you &amp;hellip; it&amp;rsquo;s killing me the fact that sleep isnt working &amp;hellip; whenever i shutdown and come online again, i have to rearrange most of the windows in their corresponding workspace (i have 6 workspaces).&lt;/p&gt;
+
+&lt;p&gt;but that&amp;rsquo;s &lt;em&gt;literally&lt;/em&gt; NOTHING compared to the fact that the whole system freezes, due to some god forsaken nvidia drivers for my gtx 660ti &amp;hellip; no incantation i tried made any difference &amp;hellip; and there are plenty of reports about this even on the official apple support forums (with regards to macbook pros and such).&lt;/p&gt;
+
+&lt;p&gt;On March 14, 2013, Apple release 10.8.3 &amp;hellip; i&amp;rsquo;m expecting a lot from this update (since beta testers/developers were asked to specifically look for graphics upgrades).&lt;/p&gt;
+
+&lt;p&gt;i hope my freeze problems are a thing of the past.&lt;/p&gt;
+
+&lt;p&gt;i&amp;rsquo;m also trying to help a little with regards to the sleeping issue, by upgrading my system definition to macpro 5,1 &amp;hellip; supposedly 5,1 handle sleeping better than 3,1&lt;/p&gt;
+
+&lt;p&gt;on the other hand, i was reading in zite today that 10.8.3 fixed some sleeping issues in macbook pro retinas !!! wtff !!!! (what the flying f&amp;hellip; !!!)&lt;/p&gt;
+
+&lt;p&gt;so i have to assume the following scenarios will eventually take place&lt;/p&gt;
+
+&lt;p&gt;&lt;uL&gt;
+    &lt;li&gt;upgrading to 10.8.3 fixes the nvidia driver issues. all is good&lt;/li&gt;
+    &lt;li&gt;upgrading to 10.8.3 doesn&amp;rsquo;t fix sheet, so i&amp;rsquo;m back to square one&lt;/li&gt;
+    &lt;li&gt;driver fixed, i have to fix sleep issues &amp;hellip; there are several alternatives to look into for the sleeping issue: applehpa.kext &amp;hellip; kill it !&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+
+&lt;p&gt;all things considered, blackbeard is so awesome !&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

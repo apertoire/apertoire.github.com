@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Das on Apertoire </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://localhost/tags/das/index.xml</link>
+    <language>en-us</language>
+    
+    
+    <updated>Sun, 06 May 2012 23:23:23 UTC</updated>
+    
+    <item>
+      <title>storage wars</title>
+      <link>http://localhost/storage-wars</link>
+      <pubDate>Sun, 06 May 2012 23:23:23 UTC</pubDate>
+      
+      <guid>http://localhost/storage-wars</guid>
+      <description>&lt;p&gt;i&amp;rsquo;m currently running an &lt;a href=&#34;http://lime-technology.com&#34;&gt;unRaid&lt;/a&gt; server, which hosts my media collection  (movies, tv series, music, pictures and data backups)&lt;/p&gt;
+
+&lt;p&gt;but, i&amp;rsquo;m running out of space on the server (currently 31.69TB used out of 32.51TB available)&lt;/p&gt;
+
+&lt;p&gt;so i started looking for options on how to expand my capacity and decided on adding a second unRaid server, virtualizing both unRaids in an ESXi 5 head server and putting the disks on two DAS boxes (discussions at &lt;a href=&#34;http://lime-technology.com/forum/index.php?topic=14521.0&#34;&gt;two unraid servers&lt;/a&gt;, &lt;a href=&#34;http://lime-technology.com/forum/index.php?topic=14695.0&#34;&gt;atlas: a virtualized unraid&lt;/a&gt;, &lt;a href=&#34;http://www.servethehome.com/sas-expanders-diy-cheap-low-cost-jbod-enclosures-raid/&#34;&gt;building a jbod das&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;at some point during that span of time, zfs came up. i researched as much as i could and finally found this enlightening thread: &lt;a href=&#34;http://forum.xbmc.org/showthread.php?tid=82811&amp;amp;amp;page=17&#34;&gt;Freenas vs unRaid&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;my take on this whole storage wars is that each solution has its merits and my plan changed slightly&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;continue with the virtualized + das boxes unraid setup&lt;/li&gt;
+&lt;li&gt;add a virtualized zfs implementation to backup my osx data&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;the idea is that unRaid is much better suited to hold an expanding media collection, where i can add drives when needed and keep having one parity disk to protect the array. under zfs, every drive (or more precisely every vdev) would hit me with a parity space penalty&lt;/p&gt;
+
+&lt;p&gt;in my next posts, i will write down my zfs test scenario, while i wait for the parts of my all-encompassing ESXi build&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Apertoire</title>
+
+  <link rel="alternate" type="application/rss+xml" href="" title="Apertoire">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>  
+
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection">
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <ul class="menu">
+        <li><a href="/about">About</a></li>
+      </ul>
+
+      <section class="name">
+        <a href="/">Apertoire</a>
+      </section>
+    </div>
+  </div>
+
+  
+  
+<section class="container content">
+
+  <img class="frontpost" src="/img/skynet.png">
+
+
+  <div class="title">
+    <h1>Dockerization</h1>
+    <div class="when">
+    Jan 9, 2014 / Juan B. Rodriguez
+    </div>
+  </div>
+
+  <div>
+  
+
+<h2 id="toc_0">Background</h2>
+
+<p>so, <a href="http://www.apertoire.net/storage-wars/">back in 2012</a> i posted about virtualizing my media storage and general backup infrastructure.</p>
+
+<p>today i will post about going back to bare metal &hellip; well, sort of :)</p>
+
+<p>just a couple of days ago, <a href="http://lime-technology.com/forum/index.php?topic=21514.0">my setup</a> was running and working mostly fine</p>
+
+<p>the biggest nuisance was that since i didn&rsquo;t leave the unraid boxes running 24x7, each time i wanted to turn them on, i had to start the unraid vms, then turn the das boxes and finally start the array manually. kind of tedious.</p>
+
+<p>fast forward to 2013, esxi 5.5 is out and you start to hear that vsphere client will be crippled as far as new esxi versions are concerned.</p>
+
+<p>some discussions started showing up in the unraid forums, about virtualizing unraid under xen or kvm.</p>
+
+<p>the time was ripe for an overhaul of my infrastructure, get rid of esxi and move on to either xen or kvm. or so i thought.</p>
+
+<h2 id="toc_1">Research</h2>
+
+<p>although a lot of topics were being discussed in the unraid forums, something that got to me, was the fact that actually i should be running unraid as close to the hardware as possible, which meant de-virtualizing my esxi vms.</p>
+
+<p>at about the same time, a new player entered the scene, which i&rsquo;d heard about before, but never really understood</p>
+
+<p>enter <a href="http://www.docker.io/">Docker</a>.</p>
+
+<p>it made a huge difference to think in terms of containerized lightweight applications rather than full blown vms.</p>
+
+<p>i wouldn&rsquo;t even need xen nor kvm, if i could get the apps i ran on my vms to run as docker containers.</p>
+
+<p>that&rsquo;s what i set out to do, and that&rsquo;s what i achieved.</p>
+
+<p>this is the story of what i did</p>
+
+<h2 id="toc_2">Step by Step</h2>
+
+<h3 id="toc_3">Devirtualize unraids</h3>
+
+<p>i removed 2 m1015s from my head server and installed them in two Asrock motherboards in each Norco case. I purchased the following components</p>
+
+<ul>
+<li>Motherboad: 2x <a href="http://www.amazon.com/gp/product/B00FIWSIVS/ref=oh_details_o05_s00_i00?ie=UTF8&amp;psc=1">ASRock H87M PRO4</a></li>
+<li>CPU: 2x <a href="http://www.amazon.com/gp/product/B00EUVEFEC/ref=oh_details_o07_s00_i01?ie=UTF8&amp;psc=1">Intel I3-4130T</a></li>
+<li>RAM: 1X <a href="http://www.amazon.com/gp/product/B006WAGGUK/ref=oh_details_o07_s00_i00?ie=UTF8&amp;psc=1">Crucial Ballistix Sport 8GB Kit</a></li>
+</ul>
+
+<h3 id="toc_4">Set up the new virtualization host</h3>
+
+<p>installed Ubuntu 12.04.3 LTS, with zfs, docker and kvm support. hard disks were used as follows</p>
+
+<table>
+<thead>
+    <td>Qty. &nbsp;</td>
+    <td>Item</td>
+    <td>Filesystem/Layout</td>
+    <td>Usage</td>
+</thead>
+<tbody>
+<tr>
+    <td>1x</td>
+    <td>120Gb SSD &nbsp;</td>
+    <td>ext4</td>
+    <td>boot and general purpose (/home, etc.)</td>
+</tr>
+<tr>
+    <td>2x</td>
+    <td>2Tb HD</td>
+    <td>luks encrypted zfs mirror pool &nbsp;</td>
+    <td>encrypted backup storage</td>
+</tr>
+<tr>
+    <td>2x</td>
+    <td>1.5Tb HD</td>
+    <td>zfs mirror pool</td>
+    <td>staging area for nzb downloading</td>
+</tr>
+<tr>
+    <td>1x</td>
+    <td>0.5Tb HD</td>
+    <td>zfs pool</td>
+    <td>working area for nzb downloading</td>
+</tr>
+<tr>
+    <td>4x</td>
+    <td>1Tb HD</td>
+    <td>zfs striped mirror pool</td>
+    <td>general purpose storage (databases, etc.)</td>
+</tr>
+</tbody>
+</table>
+
+<p><br></p>
+
+<p>having enabled zfs, now i needed to run my apps.</p>
+
+<p>i managed to dockerize nzbget and filebot.</p>
+
+<p>sickbeard was customized based on an image from the docker index</p>
+
+<h3 id="toc_5">Profit</h3>
+
+<p>great success !!!</p>
+
+<p><img src="/img/docker.png" alt="docker" title="docker" />
+</p>
+
+<p><br></p>
+
+<p><img src="/img/dockerimages.png" alt="dockerimages" title="dockerimages" />
+</p>
+
+<p><br></p>
+
+<p><img src="/img/htop.png" alt="htop" title="htop" />
+</p>
+
+<p><br></p>
+
+<p><img src="/img/pool1.png" alt="pool1" title="pool1" />
+</p>
+
+<p><br></p>
+
+<p><img src="/img/pool2.png" alt="pool2" title="pool2" />
+</p>
+
+<p><br></p>
+
+<p><img src="/img/zfslist.png" alt="zfslist" title="zfslist" />
+</p>
+
+<h2 id="toc_6">Conclusion</h2>
+
+<p>i&rsquo;m currently working on a postgresql and gitlab container.</p>
+
+  </div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost") 
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//apertoire.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+<div class="footer">
+  <div class="container">
+    <hr>
+
+    <span>&copy; 2010 - 2014 <a href="/">apertoire.net</a></span>
+
+    <p class="powered">powered by <a href="http://hugo.spf13.com/">hugo</a>. hosted by <a href="github.com">github</a></p>
+
+    <div style="clear: both"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15527576-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

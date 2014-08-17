@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Vert.X on Apertoire </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://localhost/tags/vert.x/index.xml</link>
+    <language>en-us</language>
+    
+    
+    <updated>Wed, 24 Apr 2013 23:23:23 UTC</updated>
+    
+    <item>
+      <title>Running a Java Vert.x app on Heroku</title>
+      <link>http://localhost/running-a-java-vertx-app-on-heroku</link>
+      <pubDate>Wed, 24 Apr 2013 23:23:23 UTC</pubDate>
+      
+      <guid>http://localhost/running-a-java-vertx-app-on-heroku</guid>
+      <description>
+
+&lt;p&gt;That&amp;rsquo;s right. This is Yet Another Running Vert.x on Heroku Article !&lt;/p&gt;
+
+&lt;p&gt;It does have some differences with regards to other articles though. Let&amp;rsquo;s see.&lt;/p&gt;
+
+&lt;p&gt;You can check the &lt;a href=&#34;https://vaultee.herokuapp.com&#34;&gt;live app&lt;/a&gt; right now !&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Background&lt;/h2&gt;
+
+&lt;p&gt;Since I &lt;a href=&#34;http://www.apertoire.net/vaultee/&#34;&gt;published the code&lt;/a&gt; for a proof of concept vert.x/angularjs/bootstrap  app on &lt;a href=&#34;https://github.com/apertoire/vaultee/&#34;&gt;github&lt;/a&gt;, I considered how easy/difficult it would be to make it run on one of the popular Paas.&lt;/p&gt;
+
+&lt;p&gt;I first considered &lt;a href=&#34;https://openshift.redhat.com/&#34;&gt;OpenShift&lt;/a&gt; due to affinity (Vert.x and RedHat have become closer lately), but finally settled on Heroku due to purely personal reasons.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Research&lt;/h2&gt;
+
+&lt;p&gt;I can reference back to two resources, which helped me move forward:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://fbflex.wordpress.com/2012/05/02/running-vert-x-applications-on-heroku/&#34;&gt;Running Vert.x Applications on Heroku&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://java.dzone.com/articles/setting-vertx-project-work&#34;&gt;Setting up a Vert.x Project to Work with Maven and NetBeans IDE 7.1 on OS X and Java 7&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The first resource introduced me to buildpacks and the second showed me maven for app building. It was important because maven is &lt;a href=&#34;https://devcenter.heroku.com/articles/java&#34;&gt;the suggested way to run Java apps on heroku&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Step by Step&lt;/h2&gt;
+
+&lt;p&gt;This is what I did&lt;/p&gt;
+
+&lt;blockquote&gt;
+$ mkdir myapp
+$ cd myapp
+&lt;/blockquote&gt;
+
+&lt;p&gt;Copied source code from &lt;a href=&#34;https://github.com/apertoire/vaultee&#34;&gt;github&lt;/a&gt; into this folder and then initialize git&lt;/p&gt;
+
+&lt;blockquote&gt;
+$ git init&lt;br&gt;
+$ git add .&lt;br&gt;
+$ git commit -m &#39;initial commit&#39;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Create a heroku app via cli (you need to &lt;a href=&#34;https://toolbelt.heroku.com/&#34;&gt;install heroku toolbelt&lt;/a&gt; first)&lt;/p&gt;
+
+&lt;blockquote&gt;
+$ heroku create myapp --stack cedar --buildpack https://github.com/apertoire/heroku-buildpack-vertx.git
+&lt;/blockquote&gt;
+
+&lt;p&gt;I modified the buildpack to support a java maven code structure, borrowing concepts from where &lt;a href=&#34;https://github.com/enr/heroku-buildpack-vertx&#34;&gt;it was forked&lt;/a&gt;, and from the &lt;a href=&#34;https://github.com/heroku/heroku-buildpack-java&#34;&gt;official heroku java buildpack&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can now push your code to heroku, to deploy it&lt;/p&gt;
+
+&lt;blockquote&gt;
+$ git push heroku master
+&lt;/blockquote&gt;
+
+&lt;p&gt;Next, I needed to initialize the postgresql backend.&lt;/p&gt;
+
+&lt;p&gt;I ended up using &lt;a href=&#34;https://github.com/ddollar/heroku-pg-transfer&#34;&gt;pg-transfer&amp;rsquo;s heroku plugin&lt;/a&gt;, after reading about &lt;a href=&#34;https://devcenter.heroku.com/articles/heroku-postgresql&#34;&gt;postgresql support in heroku&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;First, I found out the name of the postgresql database by running&lt;/p&gt;
+
+&lt;blockquote&gt;
+$ heroku config | grep postgres
+&lt;/blockquote&gt;
+    
+
+&lt;p&gt;Then, the actual command to initialize the database was&lt;/p&gt;
+
+&lt;blockquote&gt;
+$ heroku pg:transfer --from postgres://dbuser:dbpassd@dbhost:dbport/dbname --to white --confirm myapp
+&lt;/blockquote&gt;
+
+&lt;p&gt;The &amp;ndash;from host is my local postgresql server.&lt;br /&gt;
+The &amp;ndash;to host is the heroku postgresql instance and is referenced using heroku&amp;rsquo;s database color naming convention, since it was the only syntax that worked for me.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;A Couple of Notes&lt;/h2&gt;
+
+&lt;p&gt;In order to run your app on Heroku, they export some environment variables that you need to reference in your code, for things such as port, db host, db port, etc.&lt;/p&gt;
+
+&lt;p&gt;So I had to refactor my code to support environment variables, which is arguably a best practice with regards to this matter.&lt;/p&gt;
+
+&lt;p&gt;I defined and environment file, which holds this&lt;/p&gt;
+
+&lt;blockquote&gt;
+export PORT=9000&lt;br&gt;
+export DATABASE_URL=postgres://dbuser:dbpass@dbhost:dbport/dbname
+&lt;/blockquote&gt;
+
+&lt;p&gt;This file is added to .gitignore. Then in server.js I did&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code&gt;
+load(&#39;vertx.js&#39;);
+
+var webConf = {
+    port: parseInt(vertx.env[&#39;PORT&#39;]),
+
+    // Configuration for the event bus client side bridge
+    // This bridges messages from the client side to the server side event bus
+    bridge: true,
+
+    // This defines which messages from the client we will let through
+    // to the server side
+    inbound_permitted: [
+        { address: &#39;load:user&#39; },
+        { address: &#39;load:assets&#39; },
+        { address: &#39;load:revisions&#39; },
+        { address: &#39;load:items&#39; },
+        { address: &#39;load:itemTypes&#39; },
+        { address: &#39;save:asset&#39; },
+        { address: &#39;scrape:item&#39; }
+    ],
+        // This defines which messages from the server we will let through to the client
+    outbound_permitted: [
+        {}
+    ]    
+};
+    
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Heroku provides an environment variable PORT and vert.x enables access to it via vertx.env() function.&lt;/p&gt;
+
+&lt;p&gt;As for database vars, a bit uglier&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code&gt;
+var re = /^(postgres):\/\/(\S+):(\S+)@(\S+):(\S+)\/(\S+)$/;
+var db = re.exec(vertx.env[&#39;DATABASE_URL&#39;]);
+
+// logger.info(&#34;protocol: &#34; + result[1]);
+// logger.info(&#34;username: &#34; + result[2]);
+// logger.info(&#34;password: &#34; + result[3]);
+// logger.info(&#34;address: &#34; + result[4]);
+// logger.info(&#34;port: &#34; + result[5]);
+// logger.info(&#34;dbname: &#34; + result[6]);
+
+var dalConf = {
+    host: db[4],
+    username: db[2],
+    password: db[3],
+    port: parseInt(db[5]),
+    dbname: db[6]
+}
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;First we parse the DATABASE_URL variable and then use each separate component.&lt;/p&gt;
+
+&lt;p&gt;To run the app locally, I create a shell script, play.sh&lt;/p&gt;
+
+&lt;blockquote&gt;
+source environment&lt;br&gt;
+vertx run src/main/javascript/server.js -cp &#34;target/classes:target/dependency/postgresql-9.2-1002.jdbc4.jar:target/dependency/jbcrypt-0.3m.jar:target/dependency/joda-time-2.2.jar:target/dependency/jackson-databind-2.1.4.jar:target/dependency/jackson-core-2.1.4.jar:target/dependency/jackson-annotations-2.1.4.jar:target/dependency/jsoup-1.7.2.jar&#34;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So I read in the environment variable and then run vert.x with server.js as the bootstrap code.&lt;/p&gt;
+
+&lt;p&gt;On the Heroku side, I created a Procfile similar to my shell script, except for the &amp;ldquo;source environment&amp;rdquo; line, since the variables are provided by Heroku&lt;/p&gt;
+
+&lt;blockquote&gt;
+web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/dependency/postgresql-9.2-1002.jdbc4.jar:target/dependency/jbcrypt-0.3m.jar:target/dependency/joda-time-2.2.jar:target/dependency/jackson-databind-2.1.4.jar:target/dependency/jackson-core-2.1.4.jar:target/dependency/jackson-annotations-2.1.4.jar:target/dependency/jsoup-1.7.2.jar&#34;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In both cases, I added all jar dependencies to the classpath, since vert.x uses URLoader to load classes at runtime and it doesn&amp;rsquo;t support wildcards.&lt;/p&gt;
+
+&lt;p&gt;But the suggested way to package an app in vert.x is to convert it to a module, which is something I&amp;rsquo;ll look into in the future.&lt;/p&gt;
+
+&lt;p&gt;Finally, a note on the &lt;a href=&#34;https://github.com/apertoire/heroku-buildpack-vertx&#34;&gt;Heroku buildpack&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It looks for a pom.xml file in the main folder. If found, it interprets the code as a vert.x app and starts the build process&lt;/p&gt;
+
+&lt;p&gt;During the build, openjdk7 and vert.x are downloaded and then maven is run to download all declared dependencies and to compile java source code.&lt;/p&gt;
+
+&lt;p&gt;Then Procfile is executed and the app is live !&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_4&#34;&gt;Next Steps&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Maybe we should use a &lt;a href=&#34;http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript&#34;&gt;different layout&lt;/a&gt; for the angularjs code of the app&lt;/li&gt;
+&lt;li&gt;A followup article will showcase some of the patterns used for this proof of concept app&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>vaultee</title>
+      <link>http://localhost/vaultee</link>
+      <pubDate>Sat, 30 Mar 2013 23:23:23 UTC</pubDate>
+      
+      <guid>http://localhost/vaultee</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;vaultee&lt;/code&gt; is a proof of concept web app, designed to showcase mostly vert-x and angular.js capabilities.&lt;/p&gt;
+
+&lt;p&gt;what it does, is keep track of different properties (assets) that you own, and automatically version each change performed (revisions), so you can go back in time to check.&lt;/p&gt;
+
+&lt;p&gt;it is mostly suited to keep track of computer builds, but it can easily be extended to other kind of assets (thinking home theater setups and such).&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Rationale&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://vertx.io&#34;&gt;&lt;code&gt;Vert.x&lt;/code&gt;&lt;/a&gt; is a great framework to build web applications.&lt;/p&gt;
+
+&lt;p&gt;Applications are built on top of verticles, which perform their duties and communicate via a message passing bus architecture, that extends all the way to the client layer.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s a powerful concept. Concurrency is managed via an actors paradigm and message passing makes it very simple to communicate among all pieces of the software.&lt;/p&gt;
+
+&lt;p&gt;There are similar frameworks or libraries that use the underlying concept of actors, at different levels:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.erlang.org/&#34;&gt;Erlang&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.playframework.com/&#34;&gt;Play Framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://code.google.com/p/retlang/&#34;&gt;Retlang&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.meteor.com/&#34;&gt;Meteor&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But I believe only vert.x allows mixing different languages to construct your application.&lt;/p&gt;
+
+&lt;p&gt;The other main component is &lt;a href=&#34;http://www.angularjs.org/&#34;&gt;&lt;code&gt;AngularJS&lt;/code&gt;&lt;/a&gt;. It provides a framework to structure apps on the client side, greatly simplifying your code.&lt;/p&gt;
+
+&lt;p&gt;Finally, &lt;a href=&#34;http://twitter.github.com/bootstrap/&#34;&gt;&lt;code&gt;Bootstrap&lt;/code&gt;&lt;/a&gt; and a free theme from &lt;a href=&#34;http://bootswatch.com/&#34;&gt;&lt;code&gt;bootswatch&lt;/code&gt;&lt;/a&gt;, provide the eye candy.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Source Code&lt;/h2&gt;
+
+&lt;p&gt;The code is alpha level, and I&amp;rsquo;m looking forward to get it reviewed by people more experienced than me.&lt;/p&gt;
+
+&lt;p&gt;Please do send comments and pull requests !&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://github.com/apertoire/vaultee&#34;&gt;It&amp;rsquo;s available at Github&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;Screenshots&lt;/h2&gt;
+
+&lt;p&gt;Home page, after login, showing all existing assets&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/all.png&#34; alt=&#34;homepage listing all assets&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Displaying one of the assets (currently on revision 2)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/assetview.png&#34; alt=&#34;display one asset&#34; /&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

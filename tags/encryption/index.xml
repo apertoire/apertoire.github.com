@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Encryption on Apertoire </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://localhost/tags/encryption/index.xml</link>
+    <language>en-us</language>
+    
+    
+    <updated>Mon, 06 Aug 2012 23:23:23 UTC</updated>
+    
+    <item>
+      <title>hotfix 2</title>
+      <link>http://localhost/hotfix-2</link>
+      <pubDate>Mon, 06 Aug 2012 23:23:23 UTC</pubDate>
+      
+      <guid>http://localhost/hotfix-2</guid>
+      <description>&lt;p&gt;i&amp;rsquo;ve built my esxi box (skynet) &amp;hellip; find some additional info at &lt;a href=&#34;http://lime-technology.com/forum/index.php?topic=21514.0&#34; title=&#34;skynet + hal &amp;amp; wopr (esxi head + 2 unraid das)&#34; target=&#34;_blank&#34;&gt;the unraid forums&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;something i wanted to document. the command sequence to share the encrypted zfs filesystem after boot is&lt;/p&gt;
+
+&lt;blockquote&gt;sudo zfs mount -a (asks for the passphrase) &lt;br/&gt;
+sudo zfs set share=name=export_backup,path=/export/backup,prot=nfs backup/data 
+&lt;/blockquote&gt;
+
+&lt;p&gt;the latter command is based on my setup
+also, oracle recently published an article on &lt;a href=&#34;http://www.oracle.com/technetwork/articles/servers-storage-admin/manage-zfs-encryption-1715034.html&#34;&gt;How to manage ZFS Data Encryption&lt;/a&gt;, with more details about zfs data encryption.&lt;/p&gt;
+
+&lt;p&gt;i haven&amp;rsquo;t processed it yet, but it&amp;rsquo;s worth a read&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

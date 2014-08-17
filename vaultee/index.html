@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Apertoire</title>
+
+  <link rel="alternate" type="application/rss+xml" href="" title="Apertoire">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>  
+
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection">
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <ul class="menu">
+        <li><a href="/about">About</a></li>
+      </ul>
+
+      <section class="name">
+        <a href="/">Apertoire</a>
+      </section>
+    </div>
+  </div>
+
+  
+  
+<section class="container content">
+
+  <img class="frontpost" src="/img/vaultee-cover.png">
+
+
+  <div class="title">
+    <h1>vaultee</h1>
+    <div class="when">
+    Mar 30, 2013 / Juan B. Rodriguez
+    </div>
+  </div>
+
+  <div>
+  
+
+<h2 id="toc_0">Introduction</h2>
+
+<p><code>vaultee</code> is a proof of concept web app, designed to showcase mostly vert-x and angular.js capabilities.</p>
+
+<p>what it does, is keep track of different properties (assets) that you own, and automatically version each change performed (revisions), so you can go back in time to check.</p>
+
+<p>it is mostly suited to keep track of computer builds, but it can easily be extended to other kind of assets (thinking home theater setups and such).</p>
+
+<h2 id="toc_1">Rationale</h2>
+
+<p><a href="http://vertx.io"><code>Vert.x</code></a> is a great framework to build web applications.</p>
+
+<p>Applications are built on top of verticles, which perform their duties and communicate via a message passing bus architecture, that extends all the way to the client layer.</p>
+
+<p>It&rsquo;s a powerful concept. Concurrency is managed via an actors paradigm and message passing makes it very simple to communicate among all pieces of the software.</p>
+
+<p>There are similar frameworks or libraries that use the underlying concept of actors, at different levels:</p>
+
+<ul>
+<li><a href="http://www.erlang.org/">Erlang</a></li>
+<li><a href="http://www.playframework.com/">Play Framework</a></li>
+<li><a href="http://code.google.com/p/retlang/">Retlang</a></li>
+<li><a href="http://www.meteor.com/">Meteor</a></li>
+</ul>
+
+<p>But I believe only vert.x allows mixing different languages to construct your application.</p>
+
+<p>The other main component is <a href="http://www.angularjs.org/"><code>AngularJS</code></a>. It provides a framework to structure apps on the client side, greatly simplifying your code.</p>
+
+<p>Finally, <a href="http://twitter.github.com/bootstrap/"><code>Bootstrap</code></a> and a free theme from <a href="http://bootswatch.com/"><code>bootswatch</code></a>, provide the eye candy.</p>
+
+<h2 id="toc_2">Source Code</h2>
+
+<p>The code is alpha level, and I&rsquo;m looking forward to get it reviewed by people more experienced than me.</p>
+
+<p>Please do send comments and pull requests !</p>
+
+<p><a href="http://github.com/apertoire/vaultee">It&rsquo;s available at Github</a></p>
+
+<h2 id="toc_3">Screenshots</h2>
+
+<p>Home page, after login, showing all existing assets</p>
+
+<p><img src="/img/all.png" alt="homepage listing all assets" />
+</p>
+
+<p>Displaying one of the assets (currently on revision 2)</p>
+
+<p><img src="/img/assetview.png" alt="display one asset" />
+</p>
+
+  </div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost") 
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//apertoire.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+<div class="footer">
+  <div class="container">
+    <hr>
+
+    <span>&copy; 2010 - 2014 <a href="/">apertoire.net</a></span>
+
+    <p class="powered">powered by <a href="http://hugo.spf13.com/">hugo</a>. hosted by <a href="github.com">github</a></p>
+
+    <div style="clear: both"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15527576-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

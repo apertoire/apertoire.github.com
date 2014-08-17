@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Apertoire</title>
+
+  <link rel="alternate" type="application/rss+xml" href="" title="Apertoire">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>  
+
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection">
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <ul class="menu">
+        <li><a href="/about">About</a></li>
+      </ul>
+
+      <section class="name">
+        <a href="/">Apertoire</a>
+      </section>
+    </div>
+  </div>
+
+  
+  
+<section class="container content">
+
+  <img class="frontpost" src="">
+
+
+  <div class="title">
+    <h1>oh solaris mio !</h1>
+    <div class="when">
+    May 7, 2012 / Juan B. Rodriguez
+    </div>
+  </div>
+
+  <div>
+  <p>so the plan is as follows:</p>
+
+<ul>
+<li>build a zfs box, with a two drive mirror pool</li>
+<li>rsync data from blackeard (my hackintosh mac) to the zfs box</li>
+<li>snaphot the zfs filesystem (full and incrementals)</li>
+<li>crashplan the backup to the cloud</li>
+</ul>
+
+<p>this basically gives me a two factor backup scenario: time machine-like fast access (without all the storage wasting that time machine does, on the zfs box) and offsite more secure storage (crashplan pro on the cloud)</p>
+
+<p>so let&rsquo;s start with my test setup</p>
+
+<p>download <a href="http://www.oracle.com/technetwork/server-storage/solaris11/downloads/index.html">Solaris 11 11/11</a> (you have to create an oracle account .. shrugs)</p>
+
+<p>install Solaris on a VirtualBox VM (chose VMDK as format, since it will be easier to transfer to ESXi)</p>
+
+<p>the first snag is related to NFSv4 &hellip; although it&rsquo;s supposed to do uid mapping, <a href="http://dfusion.com.au/wiki/tiki-index.php?page=Why+NFSv4+UID+mapping+breaks+with+AUTH_UNIX">it actually doesn&rsquo;t</a>.</p>
+
+<p>the first time i installed solaris i didn&rsquo;t change the uid for my replica solaris user (same user as my mac box).</p>
+
+<p>so i installed again, but &hellip; solaris 11 won&rsquo;t allow root logins, not even via console. so i did the easiest thing possible, which is to enable root logins back <a href="http://candon123.blog.51cto.com/704299/712206">more info here</a>:</p>
+
+<blockquote>
+root@zfsbox# rolemod -K type=normal root
+</blockquote>
+
+<p>so now drop to the root shell (su - won&rsquo;t work) and do
+<blockquote>
+usermod -u &lt;new uid&gt; username
+</blockquote></p>
+
+<p><a href="http://www.unix.com/solaris/183739-changing-uid-value.html">here&rsquo;s a link that gave me the idea on how to do this</a></p>
+
+<p>&lt;new uid&gt; should be the same uid as the user in the mac box.</p>
+
+<p>while on the root shell, do
+<blockquote>
+cd /home</p>
+
+<p>chown -R &lt;username&gt;:&lt;group&gt; &lt;username&gt;
+</blockquote></p>
+
+<p>ok now solaris is installed. one of the first things i do with any new *nix box is setup public/private key ssh
+<blockquote>
+<span>$ ssh-keygen -t rsa</span>
+<span>$ cat ~/.ssh/id_rsa.pub | ssh user@machine &ldquo;mkdir ~/.ssh; cat &gt;&gt; ~/.ssh/authorized_keys&rdquo;<br /></span>
+</blockquote></p>
+
+<p>could have use ssh-copy-id, but osx doesn&rsquo;t have it by default and i&rsquo;m too lazy to install it <a href="http://www.commandlinefu.com/commands/view/188/copy-your-ssh-public-key-to-a-server-from-a-machine-that-doesnt-have-ssh-copy-id">credits for the cat/ssh technique</a></p>
+
+<p>now you have to edit /etc/ssh/sshd_config to disable password logins</p>
+
+<p>ok so we can ssh into the solaris box &hellip; let&rsquo;s build the backup pool</p>
+
+<p>i previously created two 51Gb virtual disks in VirtualBox, it&rsquo;s time to use them
+<blockquote>
+user@zfsbox$ format
+</blockquote></p>
+
+<p>this shows the name of the disks. now let&rsquo;s create the pool
+<blockquote>
+user@zfsbox$ sudo zpool create tank mirror c3t2d0 c3t3d0
+</blockquote></p>
+
+<p>now the filesystem, which crashplan will back up
+<blockquote>
+user@zfsbox$ sudo zfs create -o atime=off -o mountpoint=/export/backup -o sharenfs=on -o compression=on -o encryption=aes-256-ccm tank/backup
+</blockquote></p>
+
+<p>by default, zfs creates the /export/backup mount point with root:root ownership. make it writable for your user
+<blockquote>
+user@zfsbox$ sudo chown -R &lt;username&gt;:&lt;groupname&gt; /export/backup
+</blockquote></p>
+
+<p>now, you can rsync from mac to zfs
+<blockquote>
+user@macbox$ rsync -avn &ndash;progress -e ssh ~/Storage user@zfsbox:/export/backup
+</blockquote></p>
+
+<p>you should be all set now, watching your /export/backup folder having grown with your backup data.</p>
+
+<p>something else &hellip; in order to watch that data through nfs</p>
+
+<p>go to disk utility, in the menu choose nfs mounts &hellip; and add the nfs mountpoint, pay special attention to the advanced mount options, should be something like this
+<blockquote>
+resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
+</blockquote></p>
+
+<p>next up, we&rsquo;ll work with the zfs snapshots, try to come up a script that automates the rsyncing and the snapshot creation and send it all up to crashplan</p>
+
+  </div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost") 
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//apertoire.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+<div class="footer">
+  <div class="container">
+    <hr>
+
+    <span>&copy; 2010 - 2014 <a href="/">apertoire.net</a></span>
+
+    <p class="powered">powered by <a href="http://hugo.spf13.com/">hugo</a>. hosted by <a href="github.com">github</a></p>
+
+    <div style="clear: both"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15527576-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

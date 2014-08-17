@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Apertoire</title>
+
+  <link rel="alternate" type="application/rss+xml" href="" title="Apertoire">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>  
+
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection">
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <ul class="menu">
+        <li><a href="/about">About</a></li>
+      </ul>
+
+      <section class="name">
+        <a href="/">Apertoire</a>
+      </section>
+    </div>
+  </div>
+
+  
+  
+<section class="container content">
+
+  <img class="frontpost" src="">
+
+
+  <div class="title">
+    <h1>blackbeard</h1>
+    <div class="when">
+    Dec 24, 2011 / Juan B. Rodriguez
+    </div>
+  </div>
+
+  <div>
+  <p>i&rsquo;m writing this from blackbeard, my hackintosh mac.</p>
+
+<p>i was able to build this machine and have it working flawlessy under OSX Lion, mainly due to <a href="tonymacx86.blogspot.com">tonymacx86&rsquo;s excellent site</a>.</p>
+
+<p>two articles showed me in detail how to build the machine</p>
+
+<ul>
+<li><a href="http://tonymacx86.blogspot.com/2011/11/building-sandy-bridge-customac-buyers.html">Building a Sandy Bridge CustoMac: Buyer&rsquo;s Guide</a></li>
+<li><a href="http://tonymacx86.blogspot.com/2011/10/unibeast-install-mac-os-x-lion-using.html">UniBeast: Install Mac OS X Lion Using an All-In-One Bootable USB Drive</a></li>
+</ul>
+
+<p>i chose the following specs for my mac:</p>
+
+<ul>
+<li>case: <a href="http://www.amazon.com/">Corsair Obsidian 650D</a></li></li>
+<li>mobo: <a href="http://www.amazon.com/gp/product/B0054OWTQU/ref=as_li_ss_tl?ie=UTF8&amp;amp;tag=tonymacx86com-20">Gigabyte GA-Z68XP-UD3</a></li>
+<li>cpu: <a href="http://www.amazon.com/gp/product/B004EBUXHQ?ie=UTF8&amp;amp;tag=tonymacx86com-20">Intel Core i5-2500K</a></li>
+<li>ram: <a href="http://www.amazon.com/gp/product/B004RFBIUU/ref=as_li_ss_tl?ie=UTF8&amp;amp;tag=tonymacx86com-20">Corsair 1600MHZ DDR3 16GB</a></li>
+<li>gpu: <a href="http://www.amazon.com/gp/product/B004F6GJAU/ref=as_li_ss_tl?ie=UTF8&amp;amp;tag=tonymacx86com-20">AMD Radeon HD 6850</a></li>
+<li>power supply: <a href="http://www.amazon.com/gp/product/B002LVUPZQ/ref=as_li_ss_tl?ie=UTF8&amp;amp;tag=tonymacx86com-20">Corsair 650 watts</a></li>
+<li>ssd: <a href="http://www.amazon.com/OCZ-Technology-Nocti-mSATA-NOC-MSATA-60G/dp/B005FYFV3W">OCZ Nocti Series 60GB</a></li>
+<li>hard disk: <a href="http://www.amazon.com/Western-Digital-Caviar-Desktop-WD10EARS/dp/B002U1N95K/ref=sr_1_5?s=electronics&amp;amp;ie=UTF8&amp;amp;qid=1324784170&amp;amp;sr=1-5">Western Digital 1TB EARS</a></li>
+</ul>
+
+<p>the keyboard, mouse and display come from my previous pc rig.</p>
+
+<p>with this hardware and following the instructions on tonymacx86&rsquo;s blog, i had no problem installing OSX Lion and everything is working properly.</p>
+
+<p>to be honest, i have installed lion about 20 times, looking for the best setup possible.</p>
+
+<p>i had two main drivers:</p>
+
+<ol>
+    <li>use the hard disk for bulk storage, that's where the data should reside</li>
+    <li>encrypt my system so that no prying eyes can get a hold of my data</li>
+</ol>
+
+<p>the first objective was kind of easy to achieve, but i really struggled with the second.</p>
+
+<p>i&rsquo;m using truecrypt in my pc, and since there&rsquo;s a version published for the mac, i thought it would be a breeze to install and setup.</p>
+
+<p>it turned out that mac support is very limited in truecrypt. there is no system encryption or full disk encryption for that matter. additionally, it&rsquo;s really cumbersome the mounting of an encrypted volume under osx.</p>
+
+<p>i went through several iterations of a setup with truecrypt. in the last one, i had an encrypted device partition on the hard disk, but every reboot was painful since (even with an automator script), i had to enter two passwords (the partition and my user&rsquo;s).</p>
+
+<p>in the meantime, i was toying around with filevault. at first it didnt work because it needs a recovery hd partition, which isnt created during install on a hackintosh.</p>
+
+<p>i managed to manually create a recovery hd and got to turn on filevault, but then it wouldn&rsquo;t boot (something to do with a real mac&rsquo;s firmware not being present).</p>
+
+<p>so i was almost contemplating a life of two-password-insert-on-reboot, until i came around <a href="https://agilebits.com/knox">AgileBits Knox</a>.</p>
+
+<p>i installed it, toyed around with it a bit &hellip; and then &hellip; i figured i could run filevault manually from the command line
+two sites were invaluable on getting this to work:</p>
+
+<ul>
+<li><a href="http://www.red-sweater.com/blog/1935/lions-whole-disk-encryption">Lion&rsquo;s Whole Disk Encryption</a></li>
+<li><a href="https://github.com/jridgewell/Unlock">Unlock</a></li>
+</ul>
+
+<p>so i can&rsquo;t encrypt my startup disk (ssd), but i can encrypt my hard disk.</p>
+
+<p>and i moved my /Users folder to the hard disk, so i don&rsquo;t occupy precious ssd space.</p>
+
+<p>thinks look good so far !</p>
+
+  </div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost") 
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//apertoire.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+<div class="footer">
+  <div class="container">
+    <hr>
+
+    <span>&copy; 2010 - 2014 <a href="/">apertoire.net</a></span>
+
+    <p class="powered">powered by <a href="http://hugo.spf13.com/">hugo</a>. hosted by <a href="github.com">github</a></p>
+
+    <div style="clear: both"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15527576-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>
