@@ -3,7 +3,7 @@
   <channel>
       <title>Encryption on Apertoire </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://localhost/tags/encryption/index.xml</link>
+    <link>http://www.apertoire.net/tags/encryption/index.xml</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>hotfix 2</title>
-      <link>http://localhost/hotfix-2</link>
+      <link>http://www.apertoire.net/hotfix-2</link>
       <pubDate>Mon, 06 Aug 2012 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost/hotfix-2</guid>
+      <guid>http://www.apertoire.net/hotfix-2</guid>
       <description>&lt;p&gt;i&amp;rsquo;ve built my esxi box (skynet) &amp;hellip; find some additional info at &lt;a href=&#34;http://lime-technology.com/forum/index.php?topic=21514.0&#34; title=&#34;skynet + hal &amp;amp; wopr (esxi head + 2 unraid das)&#34; target=&#34;_blank&#34;&gt;the unraid forums&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;something i wanted to document. the command sequence to share the encrypted zfs filesystem after boot is&lt;/p&gt;

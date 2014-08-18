@@ -3,7 +3,7 @@
   <channel>
       <title>Filevault on Apertoire </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://localhost/tags/filevault/index.xml</link>
+    <link>http://www.apertoire.net/tags/filevault/index.xml</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>blackbeard</title>
-      <link>http://localhost/blackbeard</link>
+      <link>http://www.apertoire.net/blackbeard</link>
       <pubDate>Sat, 24 Dec 2011 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost/blackbeard</guid>
+      <guid>http://www.apertoire.net/blackbeard</guid>
       <description>&lt;p&gt;i&amp;rsquo;m writing this from blackbeard, my hackintosh mac.&lt;/p&gt;
 
 &lt;p&gt;i was able to build this machine and have it working flawlessy under OSX Lion, mainly due to &lt;a href=&#34;tonymacx86.blogspot.com&#34;&gt;tonymacx86&amp;rsquo;s excellent site&lt;/a&gt;.&lt;/p&gt;

@@ -3,7 +3,7 @@
   <channel>
       <title>Audirvana on Apertoire </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://localhost/tags/audirvana/index.xml</link>
+    <link>http://www.apertoire.net/tags/audirvana/index.xml</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>baby steps</title>
-      <link>http://localhost/baby-steps</link>
+      <link>http://www.apertoire.net/baby-steps</link>
       <pubDate>Sat, 31 Dec 2011 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost/baby-steps</guid>
+      <guid>http://www.apertoire.net/baby-steps</guid>
       <description>
 
 &lt;p&gt;above is a screenshot of my current setup :)&lt;/p&gt;

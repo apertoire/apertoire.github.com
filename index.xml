@@ -3,7 +3,7 @@
   <channel>
       <title>Recent Content on Apertoire </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://localhost/index.xml</link>
+    <link>http://www.apertoire.net/index.xml</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Dockerization</title>
-      <link>http://localhost/dockeritazion</link>
+      <link>http://www.apertoire.net/dockeritazion</link>
       <pubDate>Thu, 09 Jan 2014 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost/dockeritazion</guid>
+      <guid>http://www.apertoire.net/dockeritazion</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Background&lt;/h2&gt;
@@ -154,10 +154,10 @@
     
     <item>
       <title>Running a Java Vert.x app on Heroku</title>
-      <link>http://localhost/running-a-java-vertx-app-on-heroku</link>
+      <link>http://www.apertoire.net/running-a-java-vertx-app-on-heroku</link>
       <pubDate>Wed, 24 Apr 2013 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost/running-a-java-vertx-app-on-heroku</guid>
+      <guid>http://www.apertoire.net/running-a-java-vertx-app-on-heroku</guid>
       <description>
 
 &lt;p&gt;That&amp;rsquo;s right. This is Yet Another Running Vert.x on Heroku Article !&lt;/p&gt;
@@ -346,10 +346,10 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
     
     <item>
       <title>vaultee</title>
-      <link>http://localhost/vaultee</link>
+      <link>http://www.apertoire.net/vaultee</link>
       <pubDate>Sat, 30 Mar 2013 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost/vaultee</guid>
+      <guid>http://www.apertoire.net/vaultee</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Introduction&lt;/h2&gt;
@@ -407,10 +407,10 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
     
     <item>
       <title>12D78</title>
-      <link>http://localhost/12D78</link>
+      <link>http://www.apertoire.net/12D78</link>
       <pubDate>Fri, 15 Mar 2013 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost/12D78</guid>
+      <guid>http://www.apertoire.net/12D78</guid>
       <description>&lt;p&gt;so, it&amp;rsquo;s been quite a while now since my last update with regards to my hackintosh, old trusted blackbeard.&lt;/p&gt;
 
 &lt;p&gt;i have to tell you &amp;hellip; it&amp;rsquo;s killing me the fact that sleep isnt working &amp;hellip; whenever i shutdown and come online again, i have to rearrange most of the windows in their corresponding workspace (i have 6 workspaces).&lt;/p&gt;
@@ -439,10 +439,10 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
     
     <item>
       <title>moving to github pages</title>
-      <link>http://localhost/moving-to-github-pages</link>
+      <link>http://www.apertoire.net/moving-to-github-pages</link>
       <pubDate>Sun, 03 Mar 2013 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost/moving-to-github-pages</guid>
+      <guid>http://www.apertoire.net/moving-to-github-pages</guid>
       <description>&lt;p&gt;it all started when i started considering the deployment of the &lt;a href=&#34;vertx.io&#34;&gt;vert.x&lt;/a&gt; app i&amp;rsquo;m working on.&lt;/p&gt;
 
 &lt;p&gt;i will deploy to &lt;a href=&#34;openshift.redhat.com&#34;&gt;OpenShift&lt;/a&gt;, but i will also open source the code through &lt;a href=&#34;github.com&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
@@ -488,10 +488,10 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
     
     <item>
       <title>hotfix 2</title>
-      <link>http://localhost/hotfix-2</link>
+      <link>http://www.apertoire.net/hotfix-2</link>
       <pubDate>Mon, 06 Aug 2012 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost/hotfix-2</guid>
+      <guid>http://www.apertoire.net/hotfix-2</guid>
       <description>&lt;p&gt;i&amp;rsquo;ve built my esxi box (skynet) &amp;hellip; find some additional info at &lt;a href=&#34;http://lime-technology.com/forum/index.php?topic=21514.0&#34; title=&#34;skynet + hal &amp;amp; wopr (esxi head + 2 unraid das)&#34; target=&#34;_blank&#34;&gt;the unraid forums&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;something i wanted to document. the command sequence to share the encrypted zfs filesystem after boot is&lt;/p&gt;
@@ -509,10 +509,10 @@ also, oracle recently published an article on &lt;a href=&#34;http://www.oracle.
     
     <item>
       <title>hotfix 1</title>
-      <link>http://localhost/hotfix-1</link>
+      <link>http://www.apertoire.net/hotfix-1</link>
       <pubDate>Mon, 07 May 2012 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost/hotfix-1</guid>
+      <guid>http://www.apertoire.net/hotfix-1</guid>
       <description>&lt;p&gt;well, i need to add a couple of comments after my last post&lt;/p&gt;
 
 &lt;p&gt;i deliberately chose to create the zfs dataset with a passphrase encryption method. as per solaris docs, this means it can&amp;rsquo;t mount it at boot time. the best practice would be a boot time prompt (a la TrueCrypt in windows), but until that time comes, i will live with loading after booting, using the following:&lt;/p&gt;
@@ -544,10 +544,10 @@ mount_nfs zfsbox:/export/Backup /local_mountpoint
     
     <item>
       <title>oh solaris mio !</title>
-      <link>http://localhost/oh-solaris-mio</link>
+      <link>http://www.apertoire.net/oh-solaris-mio</link>
       <pubDate>Mon, 07 May 2012 11:11:11 UTC</pubDate>
       
-      <guid>http://localhost/oh-solaris-mio</guid>
+      <guid>http://www.apertoire.net/oh-solaris-mio</guid>
       <description>&lt;p&gt;so the plan is as follows:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -643,10 +643,10 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
     
     <item>
       <title>storage wars</title>
-      <link>http://localhost/storage-wars</link>
+      <link>http://www.apertoire.net/storage-wars</link>
       <pubDate>Sun, 06 May 2012 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost/storage-wars</guid>
+      <guid>http://www.apertoire.net/storage-wars</guid>
       <description>&lt;p&gt;i&amp;rsquo;m currently running an &lt;a href=&#34;http://lime-technology.com&#34;&gt;unRaid&lt;/a&gt; server, which hosts my media collection  (movies, tv series, music, pictures and data backups)&lt;/p&gt;
 
 &lt;p&gt;but, i&amp;rsquo;m running out of space on the server (currently 31.69TB used out of 32.51TB available)&lt;/p&gt;
@@ -670,10 +670,10 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
     
     <item>
       <title>windows 8 consumer preview</title>
-      <link>http://localhost/windows-8-consumer-preview</link>
+      <link>http://www.apertoire.net/windows-8-consumer-preview</link>
       <pubDate>Thu, 08 Mar 2012 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost/windows-8-consumer-preview</guid>
+      <guid>http://www.apertoire.net/windows-8-consumer-preview</guid>
       <description>&lt;p&gt;i think it&amp;rsquo;s relevant to post some of the media sentiment about the latest iteration of windows 8.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -685,10 +685,10 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
     
     <item>
       <title>if it ain&#39;t broken, don&#39;t fix it ?</title>
-      <link>http://localhost/if-it-ain-t-broken-don-t-fix-it</link>
+      <link>http://www.apertoire.net/if-it-ain-t-broken-don-t-fix-it</link>
       <pubDate>Thu, 23 Feb 2012 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost/if-it-ain-t-broken-don-t-fix-it</guid>
+      <guid>http://www.apertoire.net/if-it-ain-t-broken-don-t-fix-it</guid>
       <description>&lt;p&gt;A nice article about upcoming Windows 8 was posted by James Kendrick at ZDNet &amp;hellip; &lt;a href=&#34;http://www.zdnet.com/blog/mobile-news/what-problem-does-windows-8-solve/6856&#34;&gt;What problem does Window 8 solve ?&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I find the new logo kind of hideous :)&lt;/p&gt;
@@ -697,10 +697,10 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
     
     <item>
       <title>baby steps</title>
-      <link>http://localhost/baby-steps</link>
+      <link>http://www.apertoire.net/baby-steps</link>
       <pubDate>Sat, 31 Dec 2011 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost/baby-steps</guid>
+      <guid>http://www.apertoire.net/baby-steps</guid>
       <description>
 
 &lt;p&gt;above is a screenshot of my current setup :)&lt;/p&gt;
@@ -759,10 +759,10 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
     
     <item>
       <title>blackbeard</title>
-      <link>http://localhost/blackbeard</link>
+      <link>http://www.apertoire.net/blackbeard</link>
       <pubDate>Sat, 24 Dec 2011 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost/blackbeard</guid>
+      <guid>http://www.apertoire.net/blackbeard</guid>
       <description>&lt;p&gt;i&amp;rsquo;m writing this from blackbeard, my hackintosh mac.&lt;/p&gt;
 
 &lt;p&gt;i was able to build this machine and have it working flawlessy under OSX Lion, mainly due to &lt;a href=&#34;tonymacx86.blogspot.com&#34;&gt;tonymacx86&amp;rsquo;s excellent site&lt;/a&gt;.&lt;/p&gt;
@@ -832,10 +832,10 @@ two sites were invaluable on getting this to work:&lt;/p&gt;
     
     <item>
       <title>why i&#39;m switching to mac osx</title>
-      <link>http://localhost/why-i-m-switching-to-mac-osx</link>
+      <link>http://www.apertoire.net/why-i-m-switching-to-mac-osx</link>
       <pubDate>Sat, 10 Dec 2011 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost/why-i-m-switching-to-mac-osx</guid>
+      <guid>http://www.apertoire.net/why-i-m-switching-to-mac-osx</guid>
       <description>&lt;p&gt;i&amp;rsquo;ve always used a microsoft windows operating system. up until now.&lt;/p&gt;
 
 &lt;p&gt;today i&amp;rsquo;m embarking on the most fundamental switch in my adult life, with regards to something i&amp;rsquo;m passionate about: computers that is.&lt;/p&gt;
@@ -865,10 +865,10 @@ two sites were invaluable on getting this to work:&lt;/p&gt;
     
     <item>
       <title>Adventures into osxland</title>
-      <link>http://localhost/adventures-into-osxland</link>
+      <link>http://www.apertoire.net/adventures-into-osxland</link>
       <pubDate>Sat, 10 Dec 2011 15:15:15 UTC</pubDate>
       
-      <guid>http://localhost/adventures-into-osxland</guid>
+      <guid>http://www.apertoire.net/adventures-into-osxland</guid>
       <description>&lt;p&gt;I’m moving to Mac OSX, after many years running different Microsoft operating systems.&lt;/p&gt;
 
 &lt;p&gt;Stay tuned !&lt;/p&gt;
