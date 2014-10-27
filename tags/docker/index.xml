@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title>Docker on Apertoire </title>
-      <generator uri="https://hugo.spf13.com">Hugo</generator>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.apertoire.net/tags/docker/index.xml</link>
     <language>en-us</language>
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Dockerization</title>
-      <link>http://www.apertoire.net/dockeritazion</link>
+      <link>http://www.apertoire.net/dockeritazion/</link>
       <pubDate>Thu, 09 Jan 2014 23:23:23 UTC</pubDate>
       
-      <guid>http://www.apertoire.net/dockeritazion</guid>
+      <guid>http://www.apertoire.net/dockeritazion/</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Background&lt;/h2&gt;

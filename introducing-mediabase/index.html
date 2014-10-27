@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Apertoire</title>
+
+  <link rel="alternate" type="application/rss+xml" href="" title="Apertoire">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>  
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection">
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <ul class="menu">
+        <li><a href="/about">About</a></li>
+      </ul>
+
+      <section class="name">
+        <a href="/">Apertoire</a>
+      </section>
+    </div>
+  </div>
+
+  
+  
+<section class="container content">
+
+  <img class="frontpost" src="/img/mediabase1.png">
+
+
+  <div class="title">
+    <h1>Introducing mediabase</h1>
+    <div class="when">
+    Oct 27, 2014 / Juan B. Rodriguez
+    </div>
+  </div>
+
+  <div>
+  
+
+<p><em>tl;dr</em> <strong>mediabase</strong> is a proof-of-concept application to catalogue a media library consisting of movies. It scans the folders you choose looking for movies, then fetch metadata from <a href="www.themoviedb.org">themoviedb.org</a> and <a href="www.omdbapi.com">The OMDB API</a> and present the information in a nice web page.</p>
+
+<p>Check the <a href="https://github.com/apertoire/mediabase">github page</a> for binaries, source code and other general instructions.</p>
+
+<h2 id="toc_0">Rationale</h2>
+
+<p>The main driver to develop this application was to increase my knowledge of the underlying technologies that power the app.</p>
+
+<p>I will follow up with two additional posts to go into the details of building the app: the first part about the server code and the second part about the client code.</p>
+
+<p>But now, let&rsquo;s take a small tour to go over the features.</p>
+
+<h2 id="toc_1">First Run</h2>
+
+<p>Upon first run, you are prompted to enter the folder where your movie collection is stored. This has to be a path relative to the machine where the server is running.</p>
+
+<p>The scanner expects the same naming convention as the one used by popular media apps such as <a href="plex.tv">Plex</a>, <a href="mediabrowser.tv">MediaBrowser</a>, <a href="www.jriver.com">JRiver Media Center</a> and others.</p>
+
+<p><img src="/img/mediabase2.png" alt="settings" title="settings" />
+</p>
+
+<h2 id="toc_2">Importing media</h2>
+
+<p>Once you have entered a folder, click on the IMPORT button to start importing media.</p>
+
+<p><img src="/img/mediabase3.png" alt="settings2" title="settings2" />
+</p>
+
+<p>The process will search for movies, look them up in <a href="www.themoviedb.org">themoviedb.org</a> and <a href="www.omdbapi.com">The OMDB</a>, collect all the metadata, store it in a database and then make them available via a web page.</p>
+
+<h2 id="toc_3">Cover screen</h2>
+
+<p>The first screen you&rsquo;ll see after import is done is the cover screen (here&rsquo;s showing just a portion of the screen).</p>
+
+<p><img src="/img/mediabase4.png" alt="cover" title="cover" />
+</p>
+
+<p>This view shows the most recently imported movies and is the default screen when you open the app.</p>
+
+<h2 id="toc_4">Movie Details screen</h2>
+
+<p>When you click the Movies menu option, a new page is shown, with a more detailed view of the movies, where you can filter or sort by different criteria.</p>
+
+<p><img src="/img/mediabase5.png" alt="movies" title="movies" />
+</p>
+
+<p>It shows the poster, a backdrop, running time, IMDB rating, director, actors, country, genres, resolution (if your naming structure contained a resolution field), location, last time watched (if watched) and the date it was added to the application.</p>
+
+<p>Additionally, it has fields where you can fix the TMDB id (if the automatic metadata fetcher picked the wrong movie) and you can set a date and rating for a movie you watched. (see the end of the article for some caveats regarding the fix TMDB id functionality).</p>
+
+<p>You can sort movies by different criteria, as seen below</p>
+
+<p><img src="/img/mediabase6.png" alt="sort" title="sort" />
+</p>
+
+<p>Also, you can filter movies, by searching as you type (with a small delay to prevent too much traffic), again by different criteria</p>
+
+<p><img src="/img/mediabase7.png" alt="filter" title="filter" />
+</p>
+
+<p>You have to see it to believe it, it&rsquo;s working pretty smooth.</p>
+
+<h2 id="toc_5">Tools</h2>
+
+<p>In addition to importing movies, you can either search for duplicates or prune movies that are no longer stored in the media folders.</p>
+
+<p><strong>Duplicates</strong> works by comparing title names, it&rsquo;s pretty basic at this moment.</p>
+
+<p><strong>Prune</strong> deletes from the database all movies that are missing from the folder where they&rsquo;re supposed to be located. Since this has the potential to wipeout precious data you&rsquo;ve collected about your movie (such as watched date, you may have fixed the TMDB id, etc), you need to use it with caution (in fact, i will disable it for the first public release).</p>
+
+<h2 id="toc_6">About</h2>
+
+<p>Finally there&rsquo;s a nice about page, mostly giving credit where it&rsquo;s due :)</p>
+
+<p><img src="/img/mediabase8.png" alt="about" title="about" />
+</p>
+
+<h2 id="toc_7">Caveats</h2>
+
+<p>There a couple of things that don&rsquo;t work as I&rsquo;d want them to:</p>
+
+<ul>
+<li>When fixing a movie via TMDB id, the information is not immediately refreshed (this will be fixed in a future release)</li>
+<li>The date field (to set a date when you watched the movie) has a picker which works fine in Chrome (Mac), but wouldn&rsquo;t in Safari (Mac). I tried a cross-browser solution, but it didn&rsquo;t initially work (this will be fixed in a future release)</li>
+<li>Chrome at some point in time crashes (just the page containing the app), due to memory usage. Safari churns happily along no matter what you throw at it. This has to do with the fact that I&rsquo;m blindly loading pics of megabytes in size, which is certainly not optimal. (this will be addressed in a future release)</li>
+<li>General error checking (can improve it to be more robust under different scenarios)</li>
+<li>General ui validations (no empty fields when saving/fixing, etc.)</li>
+</ul>
+
+  </div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost") 
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//apertoire.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+<div class="footer">
+  <div class="container">
+    <hr>
+
+    <span>&copy; 2010 - 2014 <a href="/">apertoire.net</a></span>
+
+    <p class="powered">powered by <a href="http://gohugo.io/">hugo</a>. hosted by <a href="github.com">github</a></p>
+
+    <div style="clear: both"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15527576-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

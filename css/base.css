@@ -10,7 +10,7 @@ font-family:'AvenirNextLTW01-BoldIta';
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Lato', Helvetica, sans-serif;
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
 }
 
 a {
@@ -28,9 +28,9 @@ b, strong {
 li {
   padding: 0;
   list-style-type: square;
-  font-size: 20px;
+  font-size: 18px;
   margin-left: 0;
-  line-height: 160%;
+  line-height: 120%;
 }
 
 ::selection {
@@ -97,7 +97,7 @@ li {
   }
 
 .container {
-  width: 650px;
+  width: 960px;
   margin: 0 auto;
 }
 
@@ -110,7 +110,7 @@ li {
 */
 
 .frontpost {
-  max-width: 770px;
+  max-width: 960px;
   margin-top: 25px;
 }
 
@@ -133,18 +133,17 @@ h1 {
   font-weight: bold;
   font-size: 34px;
   font-weight: 400;
-  color: black;
+  color: #2c3e50;
 }
 
   h1 em, h1 i {
     font-family: 'Lato' !important;
     font-weight: bold;
-    font-style: italic;
   }
 
   h2 {
-    margin: 50px -30px 20px -30px;
-    padding: 10px 30px 10px 25px;
+    margin: 0px -30px 20px -30px;
+    padding: 10px 30px 10px 30px;
     font-family: 'Lato';
     font-weight: bold;
     font-size: 24px;
@@ -153,7 +152,6 @@ h1 {
     h2 em, h2 i {
       font-family: 'Lato' !important;
       font-weight: bold;
-      font-style: italic;
     }
 
   h3 {
@@ -171,7 +169,13 @@ h1 {
 }
   .content i, .content em {
     font-family: 'Lato';
-    font-style: italic;
+    color: #444;
+    font-style: normal;
+    font-weight: bold;
+    background-color: #e2edf3;
+    border-radius: 3px;
+    font-size: 20px;
+    padding: 4px 6px;    
   }
   .content b, .content strong {
     font-family: 'Lato';
@@ -180,7 +184,6 @@ h1 {
   .content em b {
     font-family: 'Lato';
     font-weight: bold;
-    font-style: italic;
   }
   .content p {
     font-size: 20px;
@@ -190,8 +193,8 @@ h1 {
   }
 
   .content img:not(.frontpost), .content video {
-    margin: 10px -60px;
-    max-width: 770px;
+    margin: 10px 0px;
+    max-width: 960px;
     border-radius: 4px;
   }
 
@@ -202,19 +205,8 @@ h1 {
     margin: 15px 0 !important;
     width: 100%;
   }
-  .content pre {
-    padding: 10px 20px;
-    margin: 0 50px;
-    background-color: #fbfbfb;
-    border-radius: 5px;
-  }
-  .content p code {
-    color: #444;
-    background-color: #e2edf3;
-    border-radius: 3px;
-    font-size: 16px;
-    padding: 2px 3px;
-  }
+
+
   .content .when + p:first-of-type {
     display: inline;
   }
@@ -222,7 +214,7 @@ h1 {
   .content blockquote p {
     color: #000;
     font-style: italic;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   /* ugly hack to full-width tweets on non-mobile */
@@ -234,7 +226,7 @@ h1 {
 
   .when {
     padding-top: 5px;
-    font-size: 13px;
+    font-size: 18px;
     text-transform: uppercase;
     color: #999;
   }
@@ -251,7 +243,7 @@ h1 {
     list-style-type: none;
     margin-bottom: 0;
     padding: 7px 0 5px 0;
-    font-size: 18px;
+    font-size: 20px;
   }
   a {
     text-decoration: none;
@@ -260,7 +252,7 @@ h1 {
     padding-top: 2px;
     float: right;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 18px;
     color: #999;
   }
 

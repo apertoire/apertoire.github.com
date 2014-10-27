@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title>Rsync on Apertoire </title>
-      <generator uri="https://hugo.spf13.com">Hugo</generator>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.apertoire.net/tags/rsync/index.xml</link>
     <language>en-us</language>
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>oh solaris mio !</title>
-      <link>http://www.apertoire.net/oh-solaris-mio</link>
+      <link>http://www.apertoire.net/oh-solaris-mio/</link>
       <pubDate>Mon, 07 May 2012 11:11:11 UTC</pubDate>
       
-      <guid>http://www.apertoire.net/oh-solaris-mio</guid>
+      <guid>http://www.apertoire.net/oh-solaris-mio/</guid>
       <description>&lt;p&gt;so the plan is as follows:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -28,7 +28,7 @@
 
 &lt;p&gt;so let&amp;rsquo;s start with my test setup&lt;/p&gt;
 
-&lt;p&gt;download &lt;a href=&#34;http://www.oracle.com/technetwork/server-storage/solaris11/downloads/index.html&#34;&gt;Solaris 11 11/11&lt;/a&gt; (you have to create an oracle account .. shrugs)&lt;/p&gt;
+&lt;p&gt;download &lt;a href=&#34;http://www.oracle.com/technetwork/server-storage/solaris11/downloads/index.html&#34;&gt;Solaris 11 &lt;sup&gt;11&lt;/sup&gt;&amp;frasl;&lt;sub&gt;11&lt;/sub&gt;&lt;/a&gt; (you have to create an oracle account .. shrugs)&lt;/p&gt;
 
 &lt;p&gt;install Solaris on a VirtualBox VM (chose VMDK as format, since it will be easier to transfer to ESXi)&lt;/p&gt;
 
