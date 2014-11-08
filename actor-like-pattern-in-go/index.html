@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Apertoire</title>
+
+  <link rel="alternate" type="application/rss+xml" href="" title="Apertoire">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>  
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">  
+  
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection">
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <ul class="menu">
+        <li><a href="https://twitter.com/apertoire_"><i class="fa fa-twitter fa-2x"></i></a></li>
+      </ul>
+
+      <section class="name">
+        <a href="/">Apertoire</a>
+      </section>
+    </div>
+  </div>
+
+  
+  
+<section class="container content">
+
+  <img class="frontpost" src="/img/actor1.png">
+
+
+  <div class="title">
+    <h1>Actor-like pattern in go</h1>
+    <div class="when">
+    Nov 8, 2014 / Juan B. Rodriguez
+    </div>
+  </div>
+
+  <div>
+  
+
+<p><em>tl;dr</em> This article discusses an implementation of the actor paradigm in a go application.</p>
+
+<h2 id="toc_0">Background</h2>
+
+<p>Currently, there are two well known languages that support actors: <a href="http://www.erlang.org">Erlang</a> and <a href="http://www.scala-lang.org">Scala</a>.</p>
+
+<p>The core concept is that modules (actors) in your application communicate exchanging messages, which makes concurrency very easy to handle for developers.</p>
+
+<p>This is in contrast to thread-based concurrency (like in C++), where the developer has much more work to do to get the system working correctly.</p>
+
+<h2 id="toc_1">Mediabase</h2>
+
+<p><img src="/img/mediabase1.png" alt="front" title="front" />
+</p>
+
+<p>I will use the Mediabase application (check my <a href="http://www.apertoire.net/introducing-mediabase/">previous article</a>) to showcase the proposed architecture.</p>
+
+<p>Very shortly, Mediabase is a proof-of-concept application to catalogue a media library consisting of movies. It scans the folders you choose looking for movies, then fetches metadata from <a href="www.themoviedb.org">themoviedb.org</a> and <a href="www.omdbapi.com">The OMDB API</a> and presents the information in a nice web page.</p>
+
+<p>You can get the code <a href="https://github.com/apertoire/mediabase">here</a>.</p>
+
+<h2 id="toc_2">Architecture</h2>
+
+<p>Let&rsquo;s take a look at a high-level view of the code structure:</p>
+
+<p><img src="/img/architecture.png" alt="architecture" title="architecture" />
+</p>
+
+<p>What we have here are very loosely coupled services (actors), interacting with each other by means of a system wide bus (message exchange).</p>
+
+<p>Each service carries a single responsibility, with the exception of the <em>Core</em> service, which is kind of a manager, as it coordinates work between services.</p>
+
+<p>Let&rsquo;s see what each service does</p>
+
+<ul>
+<li><em>Server</em>: It runs the web server and communicates with the front end via a chosen protocol. In this case it&rsquo;s a rest api, but could also be websockets</li>
+<li><em>DAL</em>: It&rsquo;s in charge of the database, all db requests have to go through here</li>
+<li><em>Scanner</em>: It scans the folder chosen by the user, looking for media to be collected (via regular expressions).</li>
+<li><em>Scraper</em>: Hits the TMDB and OMDB apis to gather metadata for the movies found by the Scanner service.</li>
+<li><em>Cache</em>: Once metadata is received, it downloads movie art (cover, backdrop, etc) and stores it in a local folder</li>
+<li><em>Pruner</em>: Removes database media entries that are no longer present in the physical folders</li>
+<li><em>Core</em>: It&rsquo;s an orchestrator, directing other services to do it&rsquo;s bidding.</li>
+</ul>
+
+<h2 id="toc_3">Implementation</h2>
+
+<p>So how is all of this implemented ?</p>
+
+<h3 id="toc_4">Basic structure</h3>
+
+<p>Let&rsquo;s start with the <em>Bus</em>. (<a href="https://github.com/apertoire/mediabase/blob/master/server/bus/bus.go">source</a>)</p>
+
+<pre><code>type Bus struct {
+	...
+	ImportMovies       chan *message.Status
+	ImportMoviesStatus chan *message.Status
+
+	ScanMovies  chan *message.ScanMovies
+	ScrapeMovie chan *message.Movie
+
+	MovieFound     chan *message.Movie
+	MovieScraped   chan *message.Media
+	MovieRescraped chan *message.Media
+
+	ImportMoviesFinished chan int
+	...
+}
+</code></pre>
+
+<p>The <em>Bus</em> struct holds the channels that are used by the services to communicate. Different types of messages are defined, based on which functionality is needed.</p>
+
+<p>Let&rsquo;s check how services are built. (<a href="https://github.com/apertoire/mediabase/blob/master/server/services/scanner.go">source</a>)</p>
+
+<pre><code>type Scanner struct {
+	Bus    *bus.Bus
+	Config *model.Config
+
+	re           []*helper.Rexp
+	includedMask string
+}
+
+func (self *Scanner) Start() {
+	mlog.Info(&quot;starting scanner service ...&quot;) 
+	mlog.Info(&quot;compiling regular expressions ...&quot;)
+
+	self.re = make([]*helper.Rexp, 0)
+
+	for _, regex := range self.Config.MediaRegexs {
+		self.re = append(self.re, &amp;helper.Rexp{Exp: regexp.MustCompile(regex)})
+	}
+
+	self.includedMask = &quot;.bdmv|.iso|.img|.nrg|.mkv|.avi|.xvid|.ts|.mpg|.dvr-ms|.mdf|.wmv|.ifo&quot;
+
+	go self.react()
+
+	mlog.Info(&quot;scanner service started&quot;)
+}
+
+func (self *Scanner) Stop() {
+	mlog.Info(&quot;scanner service stopped&quot;)
+}
+
+func (self *Scanner) react() {
+	for {
+		select {
+		case msg := &lt;-self.Bus.ScanMovies:
+			go self.doScanMovies(msg.Reply)
+		}
+	}
+}
+</code></pre>
+
+<p>Each service holds a reference to the <em>Bus</em>, which is injected at creation time (we&rsquo;ll see that later).</p>
+
+<ul>
+<li>The Start function does any required initialization, but most importantly it triggers a listening loop: the react function.</li>
+<li>The Stop function does any cleanup that may be needed.</li>
+<li>The react function uses a classic Go construct: a for/select loop.</li>
+</ul>
+
+<p>The react function is the heart of the service: it sits there waiting for a message to arrive in order to dispatch some work.</p>
+
+<h3 id="toc_5">Process walkthrough</h3>
+
+<p>Let&rsquo;s track how the import process moves along, so we get a better idea on how the services interact.</p>
+
+<p>It begins with <em>Server</em> receiving an API request to import movies, which makes it run the importMovies function. (<a href="https://github.com/apertoire/mediabase/blob/master/server/services/server.go#L127">source</a>)</p>
+
+<pre><code>func (self *Server) importMovies(c *gin.Context) {
+	msg := message.Status{Reply: make(chan *message.Context)}
+	self.Bus.ImportMovies &lt;- &amp;msg
+	reply := &lt;-msg.Reply
+
+	c.JSON(200, &amp;reply)
+}
+</code></pre>
+
+<p>It creates an ImportMovies message with a reply channel on which it sits waiting. Once the response is received, it sends it back to the front end.</p>
+
+<p><em>Core</em> is listening for a message on the ImportMovies channel. (<a href="https://github.com/apertoire/mediabase/blob/master/server/services/core.go#L55">source</a>)</p>
+
+<pre><code>func (self *Core) react() {
+	for {
+		select {
+		...
+		case msg := &lt;-self.Bus.ImportMovies:
+			go self.doImportMovies(msg)
+
+		case msg := &lt;-self.Bus.ImportMoviesStatus:
+			go self.doImportMoviesStatus(msg)
+
+		case msg := &lt;-self.Bus.MovieFound:
+			go self.doMovieFound(msg)
+
+		case msg := &lt;-self.Bus.MovieScraped:
+			go self.doMovieScraped(msg)
+
+		case msg := &lt;-self.Bus.ImportMoviesFinished:
+			go self.doImportMoviesFinished(msg)
+		}
+	}
+}
+</code></pre>
+
+<p>It runs a finite state machine to control the flow of execution, but it basically does: (<a href="https://github.com/apertoire/mediabase/blob/master/server/services/core.go#L110">source</a>)</p>
+
+<pre><code>func (self *Core) importer(e *fsm.Event) {
+	if e.Src == &quot;idle&quot; {
+		msg := message.ScanMovies{Reply: make(chan string)}
+		self.Bus.ScanMovies &lt;- &amp;msg
+		reply := &lt;-msg.Reply
+
+		self.context.Message = reply
+	}
+
+	status, _ := e.Args[0].(*message.Status)
+	status.Reply &lt;- &amp;self.context
+}
+</code></pre>
+
+<p>It sends a ScanMovies message and waits for a reply. When the reply is received, it is sent back to the original requestor (<em>Server</em>).</p>
+
+<p>The <em>Scanner</em> service is listening for the ScanMovies message. (<a href="https://github.com/apertoire/mediabase/blob/master/server/services/scanner.go#L76">source</a>)</p>
+
+<pre><code>func (self *Scanner) doScanMovies(reply chan string) {
+	reply &lt;- &quot;Movie scannning process started ...&quot;
+
+	for _, folder := range self.Config.MediaFolders {
+		err := self.walker(folder)
+		if err != nil {
+			mlog.Info(&quot;Unable to scan movies: %s&quot;, err)
+		}
+
+		mlog.Info(&quot;Completed scan of folder: %s&quot;, folder)
+	}
+
+	self.Bus.ImportMoviesFinished &lt;- 1
+}
+</code></pre>
+
+<p>The first thing it does is reply indicating that the import process has started. This message will go all the way back to the front end.</p>
+
+<p>It then starts walking through the media folders looking for movies.</p>
+
+<p>Whenever new media is found, a MovieFound message is delivered on the <em>Bus</em>. (<a href="https://github.com/apertoire/mediabase/blob/master/server/services/scanner.go#L131">source</a>)</p>
+
+<pre><code>...
+	movie := &amp;message.Movie{Title: rmap[&quot;Name&quot;], 
+				File_Title: rmap[&quot;Name&quot;],
+				Year: rmap[&quot;Year&quot;],
+				Resolution: resolution,
+				FileType: rmap[&quot;FileType&quot;],
+				Location: path}
+
+	mlog.Info(&quot;FOUND [%s] (%s)&quot;, movie.Title, movie.Location)
+
+	self.Bus.MovieFound &lt;- movie
+...
+</code></pre>
+
+<p><em>Core</em> listens for the MovieFound message. (<a href="https://github.com/apertoire/mediabase/blob/master/server/services/core.go#L131">source</a>)</p>
+
+<pre><code>func (self *Core) doMovieFound(movie *message.Movie) {
+	c := make(chan bool)
+
+	self.Bus.CheckMovie &lt;- &amp;message.CheckMovie{Movie: movie, Result: c}
+	exists := &lt;-c
+
+	var text string
+	if exists {
+		text = fmt.Sprintf(&quot;SKIPPED: present in db [%s] (%s)&quot;, movie.Title, movie.Location)
+		mlog.Info(text)
+	} else {
+		text = fmt.Sprintf(&quot;FOUND: [%s] (%s)&quot;, movie.Title, movie.Location)
+		self.Bus.ScrapeMovie &lt;- movie
+	}
+
+	self.fsm.Event(&quot;found&quot;, text)
+}
+</code></pre>
+
+<p>It first checks that the movie is not present in the database (by sending a CheckMovie message which is answered by the <em>DAL</em> service). If it&rsquo;s not in the db, it then sends a ScrapeMovie request.</p>
+
+<p>The <em>Scraper</em> service is waiting for this message: (<a href="https://github.com/apertoire/mediabase/blob/master/server/services/scraper.go#L89">source</a>)</p>
+
+<pre><code>func (self *Scraper) requestWork(movie *message.Movie) {
+	mlog.Info(&quot;WORK REQUESTED [%s]&quot;, movie.Title)
+
+	c := make(chan *message.Media)
+
+	gig := &amp;Gig{
+		self.Bus,
+		self.tmdb,
+		&amp;message.Media{BaseUrl: &quot;&quot;, SecureBaseUrl: &quot;&quot;, BasePath: &quot;&quot;, Movie: movie, Forced: false},
+		c,
+	}
+
+	self.workpool.PostWork(&quot;gig&quot;, gig)
+
+	media := &lt;-c
+
+	self.Bus.MovieScraped &lt;- media
+
+	mlog.Info(&quot;WORK COMPLETED [%s]&quot;, movie.Title)
+}
+</code></pre>
+
+<p><em>Scraper</em> has a workpool of workers that parallelize the download of metadata from TMDB and OMDB. It starts a worker (self.workpool.PostWork) sending it a channel to reply to when it&rsquo;s done.</p>
+
+<p>When the worker is done, <em>Scraper</em> delivers a MovieScraped message on the bus, which is expected by <em>Core</em>. (<a href="https://github.com/apertoire/mediabase/blob/master/server/services/core.go#L157">source</a>)</p>
+
+<pre><code>func (self *Core) doMovieScraped(media *message.Media) {
+	go func() {
+		mlog.Info(&quot;STORING MOVIE [%s]&quot;, media.Movie.Title)
+		self.Bus.StoreMovie &lt;- media.Movie
+	}()
+
+	go func() {
+		mlog.Info(&quot;CACHING MEDIA [%s]&quot;, media.Movie.Title)
+		media.BasePath = self.Config.DataDir
+		self.Bus.CacheMedia &lt;- media
+
+		self.fsm.Event(&quot;scrape&quot;, media.Movie)
+	}()
+}
+</code></pre>
+
+<p><em>Core</em> starts two goroutines to trigger two parallel messages:</p>
+
+<ul>
+<li>StoreMovie: so that the movie is stored in the database (this is done by the <em>DAL</em> service)</li>
+<li>CacheMedia: so that the movie art (cover, backdrop) is downloaded and stored in a local folder (this is done by the <em>Cache</em> service)</li>
+</ul>
+
+<p>The front end has previously received an initial reply to the import movies API request and displayed it to the user.</p>
+
+<p>It then does long-polling on the server, to get a progress report. The ImportMovieStatus message is senty by <em>Server</em> and answered by <em>Core</em>: (<a href="https://github.com/apertoire/mediabase/blob/master/server/services/core.go#L127">source</a>)</p>
+
+<pre><code>func (self *Core) doImportMoviesStatus(status *message.Status) {
+	status.Reply &lt;- &amp;self.context
+}
+</code></pre>
+
+<p>It simply sends back the current status of importing, since each message activity received by <em>Core</em> is written to the context variable.
+<img src="/img/mediabase3.png" alt="settings2" title="settings2" />
+</p>
+
+<h2 id="toc_6">Conclusion</h2>
+
+<p>Let&rsquo;s wrap it up with the beginning.</p>
+
+<p>The whole system is started by some bootstrap code (<a href="https://github.com/apertoire/mediabase/blob/master/server/boot.go">source</a>)</p>
+
+<pre><code>func main() {
+	config := model.Config{}
+	config.Init(Version)
+
+	bus := bus.Bus{}
+	dal := services.Dal{Bus: &amp;bus, Config: &amp;config}
+	server := services.Server{Bus: &amp;bus, Config: &amp;config}
+	scanner := services.Scanner{Bus: &amp;bus, Config: &amp;config}
+	scraper := services.Scraper{Bus: &amp;bus, Config: &amp;config}
+	pruner := services.Pruner{Bus: &amp;bus, Config: &amp;config}
+	cache := services.Cache{Bus: &amp;bus, Config: &amp;config}
+
+	list := []services.Service{&amp;dal, &amp;scanner, &amp;scraper, &amp;pruner, &amp;cache}
+	core := services.Core{Bus: &amp;bus, Config: &amp;config, Services: list}
+
+	bus.Start()
+	dal.Start()
+	server.Start()
+	scanner.Start()
+	scraper.Start()
+	pruner.Start()
+	cache.Start()
+	core.Start()
+
+	mlog.Info(&quot;press enter to stop ...&quot;)
+	var input string
+	fmt.Scanln(&amp;input)
+
+	core.Stop()
+	cache.Stop()
+	pruner.Stop()
+	scraper.Stop()
+	scanner.Stop()
+	server.Stop()
+	dal.Stop()
+}
+</code></pre>
+
+<p>Each service is created and injected with <em>Bus</em> and <em>Config</em>. Then each one of them is started, system waits on an input and it is then stopped.</p>
+
+<h2 id="toc_7">Alternatives</h2>
+
+<p>There are a couple of alternatives I can think of:</p>
+
+<ul>
+<li>Make each channel buffered and don&rsquo;t start a goroutine when responding to messages, so that only one activity is running on a service at any given time.</li>
+<li>Rather than a central bus, use a pubsub architecture to dispatch messages. I&rsquo;m looking into this for another application I&rsquo;m building, but it has the drawback that you lose static type checking, as I defined the messaging payload to be interface{}.</li>
+</ul>
+
+<h2 id="toc_8">Epilogue</h2>
+
+<p>Hope you found the article interesting.</p>
+
+<p>If so, please leave your comments here, <a href="https://twitter.com/apertoire_">send a tweet</a> or go to the <a href="https://github.com/apertoire/">github page</a>.</p>
+
+  </div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost") 
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//apertoire.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+<div class="footer">
+  <div class="container">
+    <hr>
+
+    <span>&copy; 2010 - 2014 <a href="/">apertoire.net</a></span>
+
+    <p class="powered">powered by <a href="http://gohugo.io/">hugo</a>. hosted by <a href="github.com">github</a></p>
+
+    <div style="clear: both"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15527576-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

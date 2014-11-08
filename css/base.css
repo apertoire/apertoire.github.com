@@ -1,12 +1,3 @@
-/*
-font-family:'Avenir Next W01 Thin';
-font-family:'AvenirNextW01-ThinItali';
-font-family:'AvenirNextLTW01-Regular';
-font-family:'AvenirNextLTW01-Italic';
-font-family:'Avenir Next LT W01 Bold';
-font-family:'AvenirNextLTW01-BoldIta';
-*/
-
 body {
   margin: 0;
   padding: 0;
@@ -300,62 +291,3 @@ h1 {
     display: inline-block;
     padding-right: 10px;
   }
-.about-wrapper {
-  background-color: #000;
-  background-image: url('/images/holman-lolgreyscale.jpg');
-  background-size: cover;
-  background-position: 50%;
-  height: 100vh;
-  max-height: 100%;
-  width: 100%;
-  text-shadow: 0 0 10px rgba(0,0,0,.8);
-  color: #fff;
-}
-  .about-wrapper .title {
-    padding: 45vh 0 0 13vw;
-    margin: 0;
-    border: 0;
-  }
-  .about-wrapper .title h1 {
-    margin-bottom: 15px;
-    color: #fff;
-  }
-  .about-wrapper a {
-    color: #fff;
-  }
-  .about-wrapper a:hover {
-    color: #ccc;
-  }
-  .about-wrapper .read-more {
-    position: absolute;
-    bottom: 10px;
-    left: 35%;
-    width: 30%;
-    text-align: center;
-    background-color: rgba(0,0,0,.4);
-    padding: 10px;
-    font-size: 14px;
-  }
-  .about-wrapper .read-more:before {
-    content: '▼';
-    margin-top: 3px;
-    font-size: 10px;
-    float: left;
-  }
-.about-other {
-  margin-top: -50px;
-  padding: 5% 20%;
-}
-  .about-other p {
-    font-size: 20px;
-    line-height: 30px;
-  }
-  .about-avatar img {
-    padding: 7px 10px 10px 0;
-    width: 110px;
-  }
-.about-other .back-to-blog {
-  margin-top: 50px;
-  font-size: 14px;
-  text-align: center;
-}
