@@ -3,7 +3,7 @@
   <channel>
       <title>Vert.X on Apertoire </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://localhost:1313/tags/vert.x/index.xml</link>
+    <link>http://www.apertoire.net/tags/vert.x/index.xml</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Running a Java Vert.x app on Heroku</title>
-      <link>http://localhost:1313/running-a-java-vertx-app-on-heroku/</link>
+      <link>http://www.apertoire.net/running-a-java-vertx-app-on-heroku/</link>
       <pubDate>Wed, 24 Apr 2013 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost:1313/running-a-java-vertx-app-on-heroku/</guid>
+      <guid>http://www.apertoire.net/running-a-java-vertx-app-on-heroku/</guid>
       <description>
 
 &lt;p&gt;That&amp;rsquo;s right. This is Yet Another Running Vert.x on Heroku Article !&lt;/p&gt;
@@ -203,10 +203,10 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
     
     <item>
       <title>vaultee</title>
-      <link>http://localhost:1313/vaultee/</link>
+      <link>http://www.apertoire.net/vaultee/</link>
       <pubDate>Sat, 30 Mar 2013 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost:1313/vaultee/</guid>
+      <guid>http://www.apertoire.net/vaultee/</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Introduction&lt;/h2&gt;

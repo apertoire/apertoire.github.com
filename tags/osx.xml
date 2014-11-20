@@ -3,7 +3,7 @@
   <channel>
       <title>Osx on Apertoire </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://localhost:1313/tags/osx/index.xml</link>
+    <link>http://www.apertoire.net/tags/osx/index.xml</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>12D78</title>
-      <link>http://localhost:1313/12D78/</link>
+      <link>http://www.apertoire.net/12D78/</link>
       <pubDate>Fri, 15 Mar 2013 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost:1313/12D78/</guid>
+      <guid>http://www.apertoire.net/12D78/</guid>
       <description>&lt;p&gt;so, it&amp;rsquo;s been quite a while now since my last update with regards to my hackintosh, old trusted blackbeard.&lt;/p&gt;
 
 &lt;p&gt;i have to tell you &amp;hellip; it&amp;rsquo;s killing me the fact that sleep isnt working &amp;hellip; whenever i shutdown and come online again, i have to rearrange most of the windows in their corresponding workspace (i have 6 workspaces).&lt;/p&gt;
@@ -43,10 +43,10 @@
     
     <item>
       <title>hotfix 1</title>
-      <link>http://localhost:1313/hotfix-1/</link>
+      <link>http://www.apertoire.net/hotfix-1/</link>
       <pubDate>Mon, 07 May 2012 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost:1313/hotfix-1/</guid>
+      <guid>http://www.apertoire.net/hotfix-1/</guid>
       <description>&lt;p&gt;well, i need to add a couple of comments after my last post&lt;/p&gt;
 
 &lt;p&gt;i deliberately chose to create the zfs dataset with a passphrase encryption method. as per solaris docs, this means it can&amp;rsquo;t mount it at boot time. the best practice would be a boot time prompt (a la TrueCrypt in windows), but until that time comes, i will live with loading after booting, using the following:&lt;/p&gt;
@@ -78,10 +78,10 @@ mount_nfs zfsbox:/export/Backup /local_mountpoint
     
     <item>
       <title>oh solaris mio !</title>
-      <link>http://localhost:1313/oh-solaris-mio/</link>
+      <link>http://www.apertoire.net/oh-solaris-mio/</link>
       <pubDate>Mon, 07 May 2012 11:11:11 UTC</pubDate>
       
-      <guid>http://localhost:1313/oh-solaris-mio/</guid>
+      <guid>http://www.apertoire.net/oh-solaris-mio/</guid>
       <description>&lt;p&gt;so the plan is as follows:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -177,10 +177,10 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
     
     <item>
       <title>storage wars</title>
-      <link>http://localhost:1313/storage-wars/</link>
+      <link>http://www.apertoire.net/storage-wars/</link>
       <pubDate>Sun, 06 May 2012 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost:1313/storage-wars/</guid>
+      <guid>http://www.apertoire.net/storage-wars/</guid>
       <description>&lt;p&gt;i&amp;rsquo;m currently running an &lt;a href=&#34;http://lime-technology.com&#34;&gt;unRaid&lt;/a&gt; server, which hosts my media collection  (movies, tv series, music, pictures and data backups)&lt;/p&gt;
 
 &lt;p&gt;but, i&amp;rsquo;m running out of space on the server (currently 31.69TB used out of 32.51TB available)&lt;/p&gt;
@@ -204,10 +204,10 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
     
     <item>
       <title>baby steps</title>
-      <link>http://localhost:1313/baby-steps/</link>
+      <link>http://www.apertoire.net/baby-steps/</link>
       <pubDate>Sat, 31 Dec 2011 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost:1313/baby-steps/</guid>
+      <guid>http://www.apertoire.net/baby-steps/</guid>
       <description>
 
 &lt;p&gt;above is a screenshot of my current setup :)&lt;/p&gt;
@@ -266,10 +266,10 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
     
     <item>
       <title>blackbeard</title>
-      <link>http://localhost:1313/blackbeard/</link>
+      <link>http://www.apertoire.net/blackbeard/</link>
       <pubDate>Sat, 24 Dec 2011 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost:1313/blackbeard/</guid>
+      <guid>http://www.apertoire.net/blackbeard/</guid>
       <description>&lt;p&gt;i&amp;rsquo;m writing this from blackbeard, my hackintosh mac.&lt;/p&gt;
 
 &lt;p&gt;i was able to build this machine and have it working flawlessy under OSX Lion, mainly due to &lt;a href=&#34;tonymacx86.blogspot.com&#34;&gt;tonymacx86&amp;rsquo;s excellent site&lt;/a&gt;.&lt;/p&gt;
@@ -339,10 +339,10 @@ two sites were invaluable on getting this to work:&lt;/p&gt;
     
     <item>
       <title>why i&#39;m switching to mac osx</title>
-      <link>http://localhost:1313/why-i-m-switching-to-mac-osx/</link>
+      <link>http://www.apertoire.net/why-i-m-switching-to-mac-osx/</link>
       <pubDate>Sat, 10 Dec 2011 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost:1313/why-i-m-switching-to-mac-osx/</guid>
+      <guid>http://www.apertoire.net/why-i-m-switching-to-mac-osx/</guid>
       <description>&lt;p&gt;i&amp;rsquo;ve always used a microsoft windows operating system. up until now.&lt;/p&gt;
 
 &lt;p&gt;today i&amp;rsquo;m embarking on the most fundamental switch in my adult life, with regards to something i&amp;rsquo;m passionate about: computers that is.&lt;/p&gt;

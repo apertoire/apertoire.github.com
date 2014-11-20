@@ -3,7 +3,7 @@
   <channel>
       <title>Virtualization on Apertoire </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://localhost:1313/tags/virtualization/index.xml</link>
+    <link>http://www.apertoire.net/tags/virtualization/index.xml</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Dockerization</title>
-      <link>http://localhost:1313/dockeritazion/</link>
+      <link>http://www.apertoire.net/dockeritazion/</link>
       <pubDate>Thu, 09 Jan 2014 23:23:23 UTC</pubDate>
       
-      <guid>http://localhost:1313/dockeritazion/</guid>
+      <guid>http://www.apertoire.net/dockeritazion/</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Background&lt;/h2&gt;
