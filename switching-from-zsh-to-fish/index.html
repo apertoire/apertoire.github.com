@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Apertoire</title>
+
+  <link rel="alternate" type="application/rss+xml" href="" title="Apertoire">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>  
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">  
+  
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection">
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <ul class="menu">
+        <li><a href="https://twitter.com/apertoire_"><i class="fa fa-twitter fa-2x"></i></a></li>
+      </ul>
+
+      <section class="name">
+        <a href="/">Apertoire</a>
+      </section>
+    </div>
+  </div>
+
+  
+  
+<section class="container content">
+
+  <img class="frontpost" src="/img/fish1.png">
+
+
+  <div class="title">
+    <h1>Switching from zsh to fish</h1>
+    <div class="when">
+    Nov 17, 2014 / Juan B. Rodriguez
+    </div>
+  </div>
+
+  <div>
+  
+
+<p><em>tl;dr</em> How easy is it to switch from <a href="www.zsh.org">zsh</a> to <a href="www.fishshell.com">fish</a> ? Is it worth it ?</p>
+
+<h2 id="toc_0">Background</h2>
+
+<p>In the beginning &hellip; there was <a href="http://www.gnu.org/software/bash/">bash</a> and all was good.</p>
+
+<p>The built-in OSX terminal catered to my needs whenever I had to wander into shell land.</p>
+
+<p><img src="/img/terminal.png" alt="terminal" title="terminal" />
+</p>
+
+<h2 id="toc_1">The Road to Enlightenment</h2>
+
+<p>But when I started hearing about <a href="iterm2.com">iTerm2</a>, themes (<a href="ethanschoonover.com/solarized">Solarized</a>, <a href="https://github.com/ChrisKempson/Tomorrow-Theme">Tomorrow</a>, etc.) and dotfiles (<a href="dotfiles.github.io/">Github dotfiles</a>, <a href="https://github.com/holman/dotfiles">Holman dotfiles</a>, etc.), there was only one possible outcome: <em>zsh</em>.</p>
+
+<p>And I embraced <a href="http://ohmyz.sh/">oh-my-zsh</a>.</p>
+
+<p>The almost infinite amount of themes, functionality I never knew I needed until I used it (<a href="https://github.com/sjl/z-zsh">z</a>, history substring search, syntax highlighting, etc.) made me feel at home.</p>
+
+<p>Bash was just a kindergarten kid compared to my new and all-mighty shell.</p>
+
+<p>I heard some rumors about this shell with a funny name, took a look at the website and said, hey &hellip; zsh does all that already ! You shall not pass !</p>
+
+<h2 id="toc_2">Make things as simple as possible, but not simpler</h2>
+
+<p>The thing is &hellip; I <strong>strive</strong> to simplify my work environment as much as I can.</p>
+
+<p>As great as oh-my-zsh is, it brings a lot of baggage. If you want to customize, you need to dig deeper and dedicate a fair amount of time to make it work exactly the way you want.</p>
+
+<p>When I double checked the <em>fish</em> documentation, it promised a lot of built-in functionality with minimal fuss if you wanted to extend and customize.</p>
+
+<p>Was that really the case ?</p>
+
+<p>Only one way to find out.</p>
+
+<h2 id="toc_3">The Red pill</h2>
+
+<p>I took the easy route</p>
+
+<pre><code>brew install fish
+</code></pre>
+
+<p>(you are using <a href="http://brew.sh">Homebrew</a> to install anything on your Mac right ?)</p>
+
+<p>Right out of the box, you get syntax highlighting, command muted suggestion, history substring search
+<img src="/img/fish2.png" alt="suggestion" title="suggestion" />
+</p>
+
+<p>.zshrc is nowhere to be found, instead you have .config/fish/config.sh, which is very similar, only the syntax changes.</p>
+
+<p>This is my config.fish</p>
+
+<pre><code>set -x PATH /usr/local/opt/coreutils/libexec/gnubin $HOME/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin
+
+set -x GOROOT /usr/local/opt/go/libexec
+set -x GOPATH ~/code
+
+# fuxor git to non-interactively merge commits
+set -x GIT_MERGE_AUTOEDIT no
+
+# Set where to install casks
+set -x HOMEBREW_CASK_OPTS &quot;--appdir=/Applications&quot;
+
+# Setup terminal, and turn on colors
+set -x TERM xterm-256color
+set -xU LS_COLORS &quot;di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34:su=0:sg=0:tw=0:ow=0:&quot;
+
+# Enable color in grep
+set -x GREP_OPTIONS '--color=auto'
+set -x GREP_COLOR '3;33'
+
+set -x LESS '--ignore-case --raw-control-chars'
+set -x PAGER 'less'
+set -x EDITOR 'nano'
+
+set -x LANG en_US.UTF-8
+set -x LC_CTYPE &quot;en_US.UTF-8&quot;
+set -x LC_MESSAGES &quot;en_US.UTF-8&quot;
+set -x LC_COLLATE C
+
+source functions/z.fish
+</code></pre>
+
+<p>Two notes:</p>
+
+<ul>
+<li>I always</li>
+</ul>
+
+<pre><code>brew install coreutils
+</code></pre>
+
+<p>and put the GNU versions of the core commands first in the path.
+That&rsquo;s why I set the LS_COLORS environment variable, rather than the LSCOLORS that you would normally use in OSX.</p>
+
+<ul>
+<li>I currently hold some miscellaneous scripts in ~/bin, which I then put in my path for quick access. In the future, I will symlink those scripts to /usr/local/bin, so I won&rsquo;t need to add $HOME/bin in my PATH env var.</li>
+</ul>
+
+<p>Extension and customization is achieved via a common path: functions and more elegantly, autoloading functions.</p>
+
+<p>So, aliases are no more, instead you declare a function inside self contained file in ~/.config/fish/functions.</p>
+
+<p>Very simple and very elegant.</p>
+
+<p>These are the functions I currently have:</p>
+
+<p><img src="/img/fish3.png" alt="functions" title="functions" />
+</p>
+
+<ul>
+<li>fish_prompt.fish  |  customizes my prompt</li>
+<li>gpl.fish  |  prints a pretty git log</li>
+<li>hal.fish  |  ssh&rsquo;s to one of my servers</li>
+<li>l.fish  |  is a shortcut to ls -al &ndash;color=always</li>
+<li>mkd.fish  |  creates a dir and cd&rsquo;s to it</li>
+<li>skynet  |  ssh&rsquo;s to one of my servers</li>
+<li>wopr  |  ssh&rsquo;s to one of my servers</li>
+<li>z.fish  |  is fish&rsquo;s version of z (you can find it <a href="https://github.com/roryokane/z-fish">here</a>)</li>
+</ul>
+
+  </div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost") 
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//apertoire.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+<div class="footer">
+  <div class="container">
+    <hr>
+
+    <span>&copy; 2010 - 2014 <a href="/">apertoire.net</a></span>
+
+    <p class="powered">powered by <a href="http://gohugo.io/">hugo</a>. hosted by <a href="github.com">github</a></p>
+
+    <div style="clear: both"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15527576-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

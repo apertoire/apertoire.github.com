@@ -46,7 +46,9 @@
   </div>
 
   <div>
-  <p>it all started when i started considering the deployment of the <a href="vertx.io">vert.x</a> app i&rsquo;m working on.</p>
+  
+
+<p>it all started when i started considering the deployment of the <a href="vertx.io">vert.x</a> app i&rsquo;m working on.</p>
 
 <p>i will deploy to <a href="openshift.redhat.com">OpenShift</a>, but i will also open source the code through <a href="github.com">Github</a>.</p>
 
@@ -86,6 +88,16 @@
 <p>my mail hosting is done via google, so i used namecheap&rsquo;s option to &ldquo;Automatically set MX records necessary for <strong>Google Apps Email</strong>&ldquo;</p>
 
 <p>dns propagation already happened for me (i did this about an hour ago), so it should be a smooth transtion all things considered.</p>
+
+<h3 id="toc_0">Update (Nov 19, 2014)</h3>
+
+<p>As per noisebleeds comment below, I&rsquo;m attaching the updated DNS settings I had to use after Github made some changes to their network routing</p>
+
+<p><img src="/img/dns1.png" alt="change a and cname records" />
+</p>
+
+<p><img src="/img/dns2.png" alt="change a and cname records" />
+</p>
 
   </div>
 
@@ -135,5 +147,8 @@
 
 </script>
 
-</body>
+<script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>
