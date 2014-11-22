@@ -7,7 +7,228 @@
     <language>en-us</language>
     
     
-    <updated>Sat, 08 Nov 2014 14:19:14 EST</updated>
+    <updated>Sat, 22 Nov 2014 07:50:25 EST</updated>
+    
+    <item>
+      <title>Switching from zsh to fish</title>
+      <link>http://www.apertoire.net/switching-from-zsh-to-fish/</link>
+      <pubDate>Sat, 22 Nov 2014 07:50:25 EST</pubDate>
+      
+      <guid>http://www.apertoire.net/switching-from-zsh-to-fish/</guid>
+      <description>
+
+&lt;p&gt;&lt;em&gt;tl;dr&lt;/em&gt; How easy is it to switch from &lt;a href=&#34;www.zsh.org&#34;&gt;zsh&lt;/a&gt; to &lt;a href=&#34;www.fishshell.com&#34;&gt;fish&lt;/a&gt; ? Is it worth it ?&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Background&lt;/h2&gt;
+
+&lt;p&gt;In the beginning &amp;hellip; there was &lt;a href=&#34;http://www.gnu.org/software/bash/&#34;&gt;bash&lt;/a&gt; and all was good.&lt;/p&gt;
+
+&lt;p&gt;The built-in OSX terminal catered to my needs whenever I had to wander into shell land.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/terminal.png&#34; alt=&#34;terminal&#34; title=&#34;terminal&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;The Road to Enlightenment&lt;/h2&gt;
+
+&lt;p&gt;But when I started hearing about &lt;a href=&#34;iterm2.com&#34;&gt;iTerm2&lt;/a&gt;, themes (&lt;a href=&#34;ethanschoonover.com/solarized&#34;&gt;Solarized&lt;/a&gt;, &lt;a href=&#34;https://github.com/ChrisKempson/Tomorrow-Theme&#34;&gt;Tomorrow&lt;/a&gt;, etc.) and dotfiles (&lt;a href=&#34;dotfiles.github.io/&#34;&gt;Github dotfiles&lt;/a&gt;, &lt;a href=&#34;https://github.com/holman/dotfiles&#34;&gt;Holman dotfiles&lt;/a&gt;, etc.), there was only one possible outcome: &lt;em&gt;zsh&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;And I embraced &lt;a href=&#34;http://ohmyz.sh/&#34;&gt;oh-my-zsh&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The almost infinite amount of themes, functionality I never knew I needed until I used it (&lt;a href=&#34;https://github.com/sjl/z-zsh&#34;&gt;z&lt;/a&gt;, history substring search, syntax highlighting, etc.) made me feel at home.&lt;/p&gt;
+
+&lt;p&gt;Bash was just a kindergarten kid compared to my new and all-mighty shell.&lt;/p&gt;
+
+&lt;p&gt;I heard some rumors about this shell with a funny name, took a look at the website and said, hey &amp;hellip; zsh does all that already ! You shall not pass !&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Make things as simple as possible, but not simpler&lt;/h2&gt;
+
+&lt;p&gt;The thing is &amp;hellip; I &lt;strong&gt;strive&lt;/strong&gt; to simplify my work environment as much as I can.&lt;/p&gt;
+
+&lt;p&gt;As great as oh-my-zsh is, it brings a lot of baggage. If you want to customize, you need to dig deeper and dedicate a fair amount of time to make it work exactly the way you want.&lt;/p&gt;
+
+&lt;p&gt;When I double checked the &lt;em&gt;fish&lt;/em&gt; documentation, it promised a lot of built-in functionality with minimal fuss if you wanted to extend and customize.&lt;/p&gt;
+
+&lt;p&gt;Was that really the case ?&lt;/p&gt;
+
+&lt;p&gt;Only one way to find out.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;The Red pill&lt;/h2&gt;
+
+&lt;p&gt;I took the easy route&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install fish
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(you are using &lt;a href=&#34;http://brew.sh&#34;&gt;Homebrew&lt;/a&gt; to install anything on your Mac right ?)&lt;/p&gt;
+
+&lt;p&gt;Right out of the box, you get syntax highlighting, command muted suggestion, history substring search
+&lt;img src=&#34;/img/fish2.png&#34; alt=&#34;suggestion&#34; title=&#34;suggestion&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;.zshrc is nowhere to be found, instead you have .config/fish/config.sh, which is very similar, only the syntax changes.&lt;/p&gt;
+
+&lt;p&gt;This is my config.fish&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;set -x PATH /usr/local/opt/coreutils/libexec/gnubin $HOME/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin
+
+set -x GOROOT /usr/local/opt/go/libexec
+set -x GOPATH ~/code
+
+# fuxor git to non-interactively merge commits
+set -x GIT_MERGE_AUTOEDIT no
+
+# Set where to install casks
+set -x HOMEBREW_CASK_OPTS &amp;quot;--appdir=/Applications&amp;quot;
+
+# Setup terminal, and turn on colors
+set -x TERM xterm-256color
+set -xU LS_COLORS &amp;quot;di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34:su=0:sg=0:tw=0:ow=0:&amp;quot;
+
+# Enable color in grep
+set -x GREP_OPTIONS &#39;--color=auto&#39;
+set -x GREP_COLOR &#39;3;33&#39;
+
+set -x LESS &#39;--ignore-case --raw-control-chars&#39;
+set -x PAGER &#39;less&#39;
+set -x EDITOR &#39;nano&#39;
+
+set -x LANG en_US.UTF-8
+set -x LC_CTYPE &amp;quot;en_US.UTF-8&amp;quot;
+set -x LC_MESSAGES &amp;quot;en_US.UTF-8&amp;quot;
+set -x LC_COLLATE C
+
+source functions/z.fish
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Two notes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I always&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install coreutils
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and put the GNU versions of the core commands first in the path.
+That&amp;rsquo;s why I set the LS_COLORS environment variable, rather than the LSCOLORS that you would normally use in OSX.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I currently hold some miscellaneous scripts in ~/bin, which I then put in my path for quick access. In the future, I will symlink those scripts to /usr/local/bin, so I won&amp;rsquo;t need to add $HOME/bin in my PATH env var.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Extension and customization is achieved via a common path: functions and more elegantly, autoloading functions.&lt;/p&gt;
+
+&lt;p&gt;So, aliases are no more, instead you declare a function inside self contained file in ~/.config/fish/functions.&lt;/p&gt;
+
+&lt;p&gt;Very simple and very elegant.&lt;/p&gt;
+
+&lt;p&gt;These are the functions I currently have:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/fish3.png&#34; alt=&#34;functions&#34; title=&#34;functions&#34; /&gt;
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;fish_prompt.fish  |  customizes my prompt&lt;/li&gt;
+&lt;li&gt;gpl.fish  |  prints a pretty git log&lt;/li&gt;
+&lt;li&gt;hal.fish  |  ssh&amp;rsquo;s to one of my servers&lt;/li&gt;
+&lt;li&gt;l.fish  |  is a shortcut to ls -al &amp;ndash;color=always&lt;/li&gt;
+&lt;li&gt;mkd.fish  |  creates a dir and cd&amp;rsquo;s to it&lt;/li&gt;
+&lt;li&gt;skynet  |  ssh&amp;rsquo;s to one of my servers&lt;/li&gt;
+&lt;li&gt;wopr  |  ssh&amp;rsquo;s to one of my servers&lt;/li&gt;
+&lt;li&gt;z.fish  |  is fish&amp;rsquo;s version of z (you can find it &lt;a href=&#34;https://github.com/roryokane/z-fish&#34;&gt;here&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This is my prompt (a slightly modified clearance theme that you can find &lt;a href=&#34;https://github.com/bpinto/oh-my-fish/tree/master/themes/clearance&#34;&gt;here&lt;/a&gt;)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# name: clearance
+# ---------------
+# Based on idan. Display the following bits on the left:
+# - Virtualenv name (if applicable, see https://github.com/adambrenecki/virtualfish)
+# - Current directory name
+# - Git branch and dirty state (if inside a git repo)
+
+function _git_branch_name
+  echo (command git symbolic-ref HEAD ^/dev/null | sed -e &#39;s|^refs/heads/||&#39;)
+end
+
+function _git_is_dirty
+  echo (command git status -s --ignore-submodules=dirty ^/dev/null)
+end
+
+function _remote_hostname
+  echo (whoami)@(hostname)
+end
+
+function fish_prompt
+  set -l cyan (set_color cyan)
+  set -l yellow (set_color yellow)
+  set -l red (set_color red)
+  set -l blue (set_color blue)
+  set -l green (set_color green)
+  set -l normal (set_color normal)
+  set -l mywhite (set_color -o white)
+  set -l mygreen (set_color -o green)
+
+  set -l cwd $blue(pwd | sed &amp;quot;s:^$HOME:~:&amp;quot;)
+
+  set -l dove $mygreen (pwd | sed &amp;quot;s:^$HOME:~:&amp;quot;)
+
+  set -l whowheredate &#39;[&#39; $mywhite (_remote_hostname) $normal &#39; &#39; (date &amp;quot;+%H:%M&amp;quot;) &#39;] &#39;
+
+  # Output the prompt, left to right
+
+  # Add a newline before new prompts
+  echo -e &#39;&#39;
+
+  # User@server time
+  echo -n -s $whowheredate
+
+  # Print pwd or full path
+  echo -n -s $dove $normal
+
+  # Show git branch and status
+  if [ (_git_branch_name) ]
+    set -l git_branch (_git_branch_name)
+
+    if [ (_git_is_dirty) ]
+      set git_info &#39;(&#39; $yellow $git_branch &amp;quot; ±&amp;quot; $normal &#39;)&#39;
+    else
+      set git_info &#39;(&#39; $green $git_branch $normal &#39;)&#39;
+    end
+    echo -n -s &#39; &#39; $git_info $normal
+  end
+
+  # Terminate with a nice prompt char
+  echo -e &#39;&#39;
+  echo -e -n -s &#39;⟩ &#39; $normal
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is gpl.fish&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function gpl
+	git log --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&amp;lt;%an&amp;gt;%Creset&#39; --abbrev-commit
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;l.fish&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function l
+	ls -lah --color=always $argv
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;toc_4&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;m currently using fish as my shell and it has been working great. I definitely recommend it.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve found only one missing functionality: history sharing between sessions.&lt;/p&gt;
+
+&lt;p&gt;I generally have a couple tabs open, and fish doesn&amp;rsquo;t share commands between tabs.&lt;/p&gt;
+
+&lt;p&gt;I understand it&amp;rsquo;s been worked on.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Actor-like pattern in go</title>
@@ -1243,79 +1464,6 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
 &lt;p&gt;&lt;em&gt;FINDER&lt;/em&gt; &amp;hellip; i find it cumbersome to use &amp;hellip; to perform simple operations i need a ton of windows open and then use some keyboard shortcuts &amp;hellip; i&amp;rsquo;ve installed &lt;a href=&#34;http://www.mucommander.com&#34;&gt;muCommander&lt;/a&gt;, &lt;a href=&#34;http://www.magicansoft.com&#34;&gt;magican file&lt;/a&gt;, &lt;a href=&#34;http://www.cocoatech.com&#34;&gt;path finder&lt;/a&gt;, &lt;a href=&#34;http://totalfinder.binaryage.com/&#34;&gt;total finder&lt;/a&gt; &amp;hellip; but not decided yet what to use &amp;hellip; then there are like a ton of views in finder .. and none seems really useful to me 8)&lt;/p&gt;
 
 &lt;p&gt;but overall, i&amp;rsquo;m impressed and love my hackmac !&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>blackbeard</title>
-      <link>http://www.apertoire.net/blackbeard/</link>
-      <pubDate>Sat, 24 Dec 2011 23:23:23 UTC</pubDate>
-      
-      <guid>http://www.apertoire.net/blackbeard/</guid>
-      <description>&lt;p&gt;i&amp;rsquo;m writing this from blackbeard, my hackintosh mac.&lt;/p&gt;
-
-&lt;p&gt;i was able to build this machine and have it working flawlessy under OSX Lion, mainly due to &lt;a href=&#34;tonymacx86.blogspot.com&#34;&gt;tonymacx86&amp;rsquo;s excellent site&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;two articles showed me in detail how to build the machine&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://tonymacx86.blogspot.com/2011/11/building-sandy-bridge-customac-buyers.html&#34;&gt;Building a Sandy Bridge CustoMac: Buyer&amp;rsquo;s Guide&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://tonymacx86.blogspot.com/2011/10/unibeast-install-mac-os-x-lion-using.html&#34;&gt;UniBeast: Install Mac OS X Lion Using an All-In-One Bootable USB Drive&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;i chose the following specs for my mac:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;case: &lt;a href=&#34;http://www.amazon.com/&#34;&gt;Corsair Obsidian 650D&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
-&lt;li&gt;mobo: &lt;a href=&#34;http://www.amazon.com/gp/product/B0054OWTQU/ref=as_li_ss_tl?ie=UTF8&amp;amp;amp;tag=tonymacx86com-20&#34;&gt;Gigabyte GA-Z68XP-UD3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;cpu: &lt;a href=&#34;http://www.amazon.com/gp/product/B004EBUXHQ?ie=UTF8&amp;amp;amp;tag=tonymacx86com-20&#34;&gt;Intel Core i5-2500K&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;ram: &lt;a href=&#34;http://www.amazon.com/gp/product/B004RFBIUU/ref=as_li_ss_tl?ie=UTF8&amp;amp;amp;tag=tonymacx86com-20&#34;&gt;Corsair 1600MHZ DDR3 16GB&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;gpu: &lt;a href=&#34;http://www.amazon.com/gp/product/B004F6GJAU/ref=as_li_ss_tl?ie=UTF8&amp;amp;amp;tag=tonymacx86com-20&#34;&gt;AMD Radeon HD 6850&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;power supply: &lt;a href=&#34;http://www.amazon.com/gp/product/B002LVUPZQ/ref=as_li_ss_tl?ie=UTF8&amp;amp;amp;tag=tonymacx86com-20&#34;&gt;Corsair 650 watts&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;ssd: &lt;a href=&#34;http://www.amazon.com/OCZ-Technology-Nocti-mSATA-NOC-MSATA-60G/dp/B005FYFV3W&#34;&gt;OCZ Nocti Series 60GB&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;hard disk: &lt;a href=&#34;http://www.amazon.com/Western-Digital-Caviar-Desktop-WD10EARS/dp/B002U1N95K/ref=sr_1_5?s=electronics&amp;amp;amp;ie=UTF8&amp;amp;amp;qid=1324784170&amp;amp;amp;sr=1-5&#34;&gt;Western Digital 1TB EARS&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;the keyboard, mouse and display come from my previous pc rig.&lt;/p&gt;
-
-&lt;p&gt;with this hardware and following the instructions on tonymacx86&amp;rsquo;s blog, i had no problem installing OSX Lion and everything is working properly.&lt;/p&gt;
-
-&lt;p&gt;to be honest, i have installed lion about 20 times, looking for the best setup possible.&lt;/p&gt;
-
-&lt;p&gt;i had two main drivers:&lt;/p&gt;
-
-&lt;ol&gt;
-    &lt;li&gt;use the hard disk for bulk storage, that&#39;s where the data should reside&lt;/li&gt;
-    &lt;li&gt;encrypt my system so that no prying eyes can get a hold of my data&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;the first objective was kind of easy to achieve, but i really struggled with the second.&lt;/p&gt;
-
-&lt;p&gt;i&amp;rsquo;m using truecrypt in my pc, and since there&amp;rsquo;s a version published for the mac, i thought it would be a breeze to install and setup.&lt;/p&gt;
-
-&lt;p&gt;it turned out that mac support is very limited in truecrypt. there is no system encryption or full disk encryption for that matter. additionally, it&amp;rsquo;s really cumbersome the mounting of an encrypted volume under osx.&lt;/p&gt;
-
-&lt;p&gt;i went through several iterations of a setup with truecrypt. in the last one, i had an encrypted device partition on the hard disk, but every reboot was painful since (even with an automator script), i had to enter two passwords (the partition and my user&amp;rsquo;s).&lt;/p&gt;
-
-&lt;p&gt;in the meantime, i was toying around with filevault. at first it didnt work because it needs a recovery hd partition, which isnt created during install on a hackintosh.&lt;/p&gt;
-
-&lt;p&gt;i managed to manually create a recovery hd and got to turn on filevault, but then it wouldn&amp;rsquo;t boot (something to do with a real mac&amp;rsquo;s firmware not being present).&lt;/p&gt;
-
-&lt;p&gt;so i was almost contemplating a life of two-password-insert-on-reboot, until i came around &lt;a href=&#34;https://agilebits.com/knox&#34;&gt;AgileBits Knox&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;i installed it, toyed around with it a bit &amp;hellip; and then &amp;hellip; i figured i could run filevault manually from the command line
-two sites were invaluable on getting this to work:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.red-sweater.com/blog/1935/lions-whole-disk-encryption&#34;&gt;Lion&amp;rsquo;s Whole Disk Encryption&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/jridgewell/Unlock&#34;&gt;Unlock&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;so i can&amp;rsquo;t encrypt my startup disk (ssd), but i can encrypt my hard disk.&lt;/p&gt;
-
-&lt;p&gt;and i moved my /Users folder to the hard disk, so i don&amp;rsquo;t occupy precious ssd space.&lt;/p&gt;
-
-&lt;p&gt;thinks look good so far !&lt;/p&gt;
 </description>
     </item>
     

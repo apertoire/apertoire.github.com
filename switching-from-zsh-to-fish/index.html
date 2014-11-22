@@ -41,7 +41,7 @@
   <div class="title">
     <h1>Switching from zsh to fish</h1>
     <div class="when">
-    Nov 17, 2014 / Juan B. Rodriguez
+    Nov 22, 2014 / Juan B. Rodriguez
     </div>
   </div>
 
@@ -169,6 +169,96 @@ That&rsquo;s why I set the LS_COLORS environment variable, rather than the LSCOL
 <li>z.fish  |  is fish&rsquo;s version of z (you can find it <a href="https://github.com/roryokane/z-fish">here</a>)</li>
 </ul>
 
+<p>This is my prompt (a slightly modified clearance theme that you can find <a href="https://github.com/bpinto/oh-my-fish/tree/master/themes/clearance">here</a>)</p>
+
+<pre><code># name: clearance
+# ---------------
+# Based on idan. Display the following bits on the left:
+# - Virtualenv name (if applicable, see https://github.com/adambrenecki/virtualfish)
+# - Current directory name
+# - Git branch and dirty state (if inside a git repo)
+
+function _git_branch_name
+  echo (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
+end
+
+function _git_is_dirty
+  echo (command git status -s --ignore-submodules=dirty ^/dev/null)
+end
+
+function _remote_hostname
+  echo (whoami)@(hostname)
+end
+
+function fish_prompt
+  set -l cyan (set_color cyan)
+  set -l yellow (set_color yellow)
+  set -l red (set_color red)
+  set -l blue (set_color blue)
+  set -l green (set_color green)
+  set -l normal (set_color normal)
+  set -l mywhite (set_color -o white)
+  set -l mygreen (set_color -o green)
+
+  set -l cwd $blue(pwd | sed &quot;s:^$HOME:~:&quot;)
+
+  set -l dove $mygreen (pwd | sed &quot;s:^$HOME:~:&quot;)
+
+  set -l whowheredate '[' $mywhite (_remote_hostname) $normal ' ' (date &quot;+%H:%M&quot;) '] '
+
+  # Output the prompt, left to right
+
+  # Add a newline before new prompts
+  echo -e ''
+
+  # User@server time
+  echo -n -s $whowheredate
+
+  # Print pwd or full path
+  echo -n -s $dove $normal
+
+  # Show git branch and status
+  if [ (_git_branch_name) ]
+    set -l git_branch (_git_branch_name)
+
+    if [ (_git_is_dirty) ]
+      set git_info '(' $yellow $git_branch &quot; ±&quot; $normal ')'
+    else
+      set git_info '(' $green $git_branch $normal ')'
+    end
+    echo -n -s ' ' $git_info $normal
+  end
+
+  # Terminate with a nice prompt char
+  echo -e ''
+  echo -e -n -s '⟩ ' $normal
+end
+</code></pre>
+
+<p>This is gpl.fish</p>
+
+<pre><code>function gpl
+	git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit
+end
+</code></pre>
+
+<p>l.fish</p>
+
+<pre><code>function l
+	ls -lah --color=always $argv
+end
+</code></pre>
+
+<h2 id="toc_4">Conclusion</h2>
+
+<p>I&rsquo;m currently using fish as my shell and it has been working great. I definitely recommend it.</p>
+
+<p>I&rsquo;ve found only one missing functionality: history sharing between sessions.</p>
+
+<p>I generally have a couple tabs open, and fish doesn&rsquo;t share commands between tabs.</p>
+
+<p>I understand it&rsquo;s been worked on.</p>
+
   </div>
 
 <div id="disqus_thread"></div>
@@ -217,8 +307,5 @@ That&rsquo;s why I set the LS_COLORS environment variable, rather than the LSCOL
 
 </script>
 
-<script>document.write('<script src="http://'
-        + (location.host || 'localhost').split(':')[0]
-		+ ':1313/livereload.js?mindelay=10"></'
-        + 'script>')</script></body>
+</body>
 </html>

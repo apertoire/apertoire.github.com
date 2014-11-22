@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://www.apertoire.net/</loc>
-    <lastmod>2014-11-08T14:19:14-05:00</lastmod>
+    <lastmod>2014-11-22T07:50:25-05:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.apertoire.net/switching-from-zsh-to-fish/</loc>
+    <lastmod>2014-11-22T07:50:25-05:00</lastmod>
   </url>
   
   <url>
