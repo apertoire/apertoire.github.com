@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Vert.X on Apertoire </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://localhost:1313/tags/vert.x/index.xml</link>
+    <title>Vert.X on Apertoire</title>
+    <link>http://www.apertoire.net/tags/vert/index.x/</link>
+    <description>Recent content in Vert.X on Apertoire</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    
-    
-    <updated>Wed, 24 Apr 2013 23:23:23 UTC</updated>
+    <lastBuildDate>Wed, 24 Apr 2013 23:23:23 +0000</lastBuildDate>
+    <atom:link href="http://www.apertoire.net/tags/vert.x/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Running a Java Vert.x app on Heroku</title>
-      <link>http://localhost:1313/running-a-java-vertx-app-on-heroku/</link>
-      <pubDate>Wed, 24 Apr 2013 23:23:23 UTC</pubDate>
+      <link>http://www.apertoire.net/running-a-java-vertx-app-on-heroku/</link>
+      <pubDate>Wed, 24 Apr 2013 23:23:23 +0000</pubDate>
       
-      <guid>http://localhost:1313/running-a-java-vertx-app-on-heroku/</guid>
+      <guid>http://www.apertoire.net/running-a-java-vertx-app-on-heroku/</guid>
       <description>
 
 &lt;p&gt;That&amp;rsquo;s right. This is Yet Another Running Vert.x on Heroku Article !&lt;/p&gt;
@@ -23,13 +23,13 @@
 
 &lt;p&gt;You can check the &lt;a href=&#34;https://vaultee.herokuapp.com&#34;&gt;live app&lt;/a&gt; right now !&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Background&lt;/h2&gt;
+&lt;h2 id=&#34;background:461b8cf77832a406c331e02ddcd71060&#34;&gt;Background&lt;/h2&gt;
 
 &lt;p&gt;Since I &lt;a href=&#34;http://www.apertoire.net/vaultee/&#34;&gt;published the code&lt;/a&gt; for a proof of concept vert.x/angularjs/bootstrap  app on &lt;a href=&#34;https://github.com/apertoire/vaultee/&#34;&gt;github&lt;/a&gt;, I considered how easy/difficult it would be to make it run on one of the popular Paas.&lt;/p&gt;
 
 &lt;p&gt;I first considered &lt;a href=&#34;https://openshift.redhat.com/&#34;&gt;OpenShift&lt;/a&gt; due to affinity (Vert.x and RedHat have become closer lately), but finally settled on Heroku due to purely personal reasons.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_1&#34;&gt;Research&lt;/h2&gt;
+&lt;h2 id=&#34;research:461b8cf77832a406c331e02ddcd71060&#34;&gt;Research&lt;/h2&gt;
 
 &lt;p&gt;I can reference back to two resources, which helped me move forward:&lt;/p&gt;
 
@@ -40,7 +40,7 @@
 
 &lt;p&gt;The first resource introduced me to buildpacks and the second showed me maven for app building. It was important because maven is &lt;a href=&#34;https://devcenter.heroku.com/articles/java&#34;&gt;the suggested way to run Java apps on heroku&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_2&#34;&gt;Step by Step&lt;/h2&gt;
+&lt;h2 id=&#34;step-by-step:461b8cf77832a406c331e02ddcd71060&#34;&gt;Step by Step&lt;/h2&gt;
 
 &lt;p&gt;This is what I did&lt;/p&gt;
 
@@ -91,7 +91,7 @@ $ heroku pg:transfer --from postgres://dbuser:dbpassd@dbhost:dbport/dbname --to 
 &lt;p&gt;The &amp;ndash;from host is my local postgresql server.&lt;br /&gt;
 The &amp;ndash;to host is the heroku postgresql instance and is referenced using heroku&amp;rsquo;s database color naming convention, since it was the only syntax that worked for me.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_3&#34;&gt;A Couple of Notes&lt;/h2&gt;
+&lt;h2 id=&#34;a-couple-of-notes:461b8cf77832a406c331e02ddcd71060&#34;&gt;A Couple of Notes&lt;/h2&gt;
 
 &lt;p&gt;In order to run your app on Heroku, they export some environment variables that you need to reference in your code, for things such as port, db host, db port, etc.&lt;/p&gt;
 
@@ -192,7 +192,7 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
 
 &lt;p&gt;Then Procfile is executed and the app is live !&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_4&#34;&gt;Next Steps&lt;/h2&gt;
+&lt;h2 id=&#34;next-steps:461b8cf77832a406c331e02ddcd71060&#34;&gt;Next Steps&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Maybe we should use a &lt;a href=&#34;http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript&#34;&gt;different layout&lt;/a&gt; for the angularjs code of the app&lt;/li&gt;
@@ -203,13 +203,13 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
     
     <item>
       <title>vaultee</title>
-      <link>http://localhost:1313/vaultee/</link>
-      <pubDate>Sat, 30 Mar 2013 23:23:23 UTC</pubDate>
+      <link>http://www.apertoire.net/vaultee/</link>
+      <pubDate>Sat, 30 Mar 2013 23:23:23 +0000</pubDate>
       
-      <guid>http://localhost:1313/vaultee/</guid>
+      <guid>http://www.apertoire.net/vaultee/</guid>
       <description>
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Introduction&lt;/h2&gt;
+&lt;h2 id=&#34;introduction:a90668b4407087317d98aac5802a4c3c&#34;&gt;Introduction&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;vaultee&lt;/code&gt; is a proof of concept web app, designed to showcase mostly vert-x and angular.js capabilities.&lt;/p&gt;
 
@@ -217,7 +217,7 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
 
 &lt;p&gt;it is mostly suited to keep track of computer builds, but it can easily be extended to other kind of assets (thinking home theater setups and such).&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_1&#34;&gt;Rationale&lt;/h2&gt;
+&lt;h2 id=&#34;rationale:a90668b4407087317d98aac5802a4c3c&#34;&gt;Rationale&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://vertx.io&#34;&gt;&lt;code&gt;Vert.x&lt;/code&gt;&lt;/a&gt; is a great framework to build web applications.&lt;/p&gt;
 
@@ -240,7 +240,7 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
 
 &lt;p&gt;Finally, &lt;a href=&#34;http://twitter.github.com/bootstrap/&#34;&gt;&lt;code&gt;Bootstrap&lt;/code&gt;&lt;/a&gt; and a free theme from &lt;a href=&#34;http://bootswatch.com/&#34;&gt;&lt;code&gt;bootswatch&lt;/code&gt;&lt;/a&gt;, provide the eye candy.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_2&#34;&gt;Source Code&lt;/h2&gt;
+&lt;h2 id=&#34;source-code:a90668b4407087317d98aac5802a4c3c&#34;&gt;Source Code&lt;/h2&gt;
 
 &lt;p&gt;The code is alpha level, and I&amp;rsquo;m looking forward to get it reviewed by people more experienced than me.&lt;/p&gt;
 
@@ -248,16 +248,16 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
 
 &lt;p&gt;&lt;a href=&#34;http://github.com/apertoire/vaultee&#34;&gt;It&amp;rsquo;s available at Github&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_3&#34;&gt;Screenshots&lt;/h2&gt;
+&lt;h2 id=&#34;screenshots:a90668b4407087317d98aac5802a4c3c&#34;&gt;Screenshots&lt;/h2&gt;
 
 &lt;p&gt;Home page, after login, showing all existing assets&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/all.png&#34; alt=&#34;homepage listing all assets&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/all.png&#34; alt=&#34;homepage listing all assets&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;Displaying one of the assets (currently on revision 2)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/assetview.png&#34; alt=&#34;display one asset&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/assetview.png&#34; alt=&#34;display one asset&#34; /&gt;
 &lt;/p&gt;
 </description>
     </item>

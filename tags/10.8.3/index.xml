@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>10.8.3 on Apertoire </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://localhost:1313/tags/10.8.3/index.xml</link>
+    <title>10.8.3 on Apertoire</title>
+    <link>http://www.apertoire.net/tags/10.8/index.3/</link>
+    <description>Recent content in 10.8.3 on Apertoire</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    
-    
-    <updated>Fri, 15 Mar 2013 23:23:23 UTC</updated>
+    <lastBuildDate>Fri, 15 Mar 2013 23:23:23 +0000</lastBuildDate>
+    <atom:link href="http://www.apertoire.net/tags/10.8.3/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>12D78</title>
-      <link>http://localhost:1313/12D78/</link>
-      <pubDate>Fri, 15 Mar 2013 23:23:23 UTC</pubDate>
+      <link>http://www.apertoire.net/12D78/</link>
+      <pubDate>Fri, 15 Mar 2013 23:23:23 +0000</pubDate>
       
-      <guid>http://localhost:1313/12D78/</guid>
+      <guid>http://www.apertoire.net/12D78/</guid>
       <description>&lt;p&gt;so, it&amp;rsquo;s been quite a while now since my last update with regards to my hackintosh, old trusted blackbeard.&lt;/p&gt;
 
 &lt;p&gt;i have to tell you &amp;hellip; it&amp;rsquo;s killing me the fact that sleep isnt working &amp;hellip; whenever i shutdown and come online again, i have to rearrange most of the windows in their corresponding workspace (i have 6 workspaces).&lt;/p&gt;

@@ -3,7 +3,7 @@
   <channel>
       <title>Docker on Apertoire </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://www.apertoire.net/tags/docker/index.xml</link>
+    <link>http://localhost:1313/tags/docker/index.xml</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Dockerization</title>
-      <link>http://www.apertoire.net/dockeritazion/</link>
+      <link>http://localhost:1313/dockeritazion/</link>
       <pubDate>Thu, 09 Jan 2014 23:23:23 UTC</pubDate>
       
-      <guid>http://www.apertoire.net/dockeritazion/</guid>
+      <guid>http://localhost:1313/dockeritazion/</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Background&lt;/h2&gt;

@@ -3,7 +3,7 @@
   <channel>
       <title>Steve Jobs on Apertoire </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://www.apertoire.net/tags/steve-jobs/index.xml</link>
+    <link>http://localhost:1313/tags/steve-jobs/index.xml</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Stay Hungry. Stay Foolish</title>
-      <link>http://www.apertoire.net/stay-hungry-stay-foolish/</link>
+      <link>http://localhost:1313/stay-hungry-stay-foolish/</link>
       <pubDate>Sat, 10 Dec 2011 11:11:11 UTC</pubDate>
       
-      <guid>http://www.apertoire.net/stay-hungry-stay-foolish/</guid>
+      <guid>http://localhost:1313/stay-hungry-stay-foolish/</guid>
       <description>&lt;blockquote&gt;
     &lt;p&gt;Stay Hungry. Stay Foolish&lt;/p&gt;
     &lt;small&gt;Steve Jobs&lt;/small&gt;

@@ -35,8 +35,18 @@
   
 <section class="container content">
 
-  <img class="frontpost" src="/img/actor1.png">
 
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:728px;height:90px"
+       data-ad-client="ca-pub-5982725985453951"
+       data-ad-slot="6092848225"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+  <img class="frontpost" src="/img/actor1.png">
 
   <div class="title">
     <h1>Actor-like pattern in go</h1>
@@ -50,7 +60,7 @@
 
 <p><em>tl;dr</em> This article discusses an implementation of the actor paradigm in a go application.</p>
 
-<h2 id="toc_0">Background</h2>
+<h2 id="background:e034edceebc4ec317cbc445f31253b8a">Background</h2>
 
 <p>Currently, there are two well known languages that support actors: <a href="http://www.erlang.org">Erlang</a> and <a href="http://www.scala-lang.org">Scala</a>.</p>
 
@@ -58,7 +68,7 @@
 
 <p>This is in contrast to thread-based concurrency (like in C++), where the developer has much more work to do to get the system working correctly.</p>
 
-<h2 id="toc_1">Mediabase</h2>
+<h2 id="mediabase:e034edceebc4ec317cbc445f31253b8a">Mediabase</h2>
 
 <p><img src="/img/mediabase1.png" alt="front" title="front" />
 </p>
@@ -69,7 +79,7 @@
 
 <p>You can get the code <a href="https://github.com/apertoire/mediabase">here</a>.</p>
 
-<h2 id="toc_2">Architecture</h2>
+<h2 id="architecture:e034edceebc4ec317cbc445f31253b8a">Architecture</h2>
 
 <p>Let&rsquo;s take a look at a high-level view of the code structure:</p>
 
@@ -92,11 +102,11 @@
 <li><em>Core</em>: It&rsquo;s an orchestrator, directing other services to do it&rsquo;s bidding.</li>
 </ul>
 
-<h2 id="toc_3">Implementation</h2>
+<h2 id="implementation:e034edceebc4ec317cbc445f31253b8a">Implementation</h2>
 
 <p>So how is all of this implemented ?</p>
 
-<h3 id="toc_4">Basic structure</h3>
+<h3 id="basic-structure:e034edceebc4ec317cbc445f31253b8a">Basic structure</h3>
 
 <p>Let&rsquo;s start with the <em>Bus</em>. (<a href="https://github.com/apertoire/mediabase/blob/master/server/bus/bus.go">source</a>)</p>
 
@@ -170,7 +180,7 @@ func (self *Scanner) react() {
 
 <p>The react function is the heart of the service: it sits there waiting for a message to arrive in order to dispatch some work.</p>
 
-<h3 id="toc_5">Process walkthrough</h3>
+<h3 id="process-walkthrough:e034edceebc4ec317cbc445f31253b8a">Process walkthrough</h3>
 
 <p>Let&rsquo;s track how the import process moves along, so we get a better idea on how the services interact.</p>
 
@@ -355,7 +365,7 @@ func (self *Scanner) react() {
 <img src="/img/mediabase3.png" alt="settings2" title="settings2" />
 </p>
 
-<h2 id="toc_6">Conclusion</h2>
+<h2 id="conclusion:e034edceebc4ec317cbc445f31253b8a">Conclusion</h2>
 
 <p>Let&rsquo;s wrap it up with the beginning.</p>
 
@@ -401,7 +411,7 @@ func (self *Scanner) react() {
 
 <p>Each service is created and injected with <em>Bus</em> and <em>Config</em>. Then each one of them is started, system waits on an input and it is then stopped.</p>
 
-<h2 id="toc_7">Alternatives</h2>
+<h2 id="alternatives:e034edceebc4ec317cbc445f31253b8a">Alternatives</h2>
 
 <p>There are a couple of alternatives I can think of:</p>
 
@@ -410,7 +420,7 @@ func (self *Scanner) react() {
 <li>Rather than a central bus, use a pubsub architecture to dispatch messages. I&rsquo;m looking into this for another application I&rsquo;m building, but it has the drawback that you lose static type checking, as I defined the messaging payload to be interface{}.</li>
 </ul>
 
-<h2 id="toc_8">Epilogue</h2>
+<h2 id="epilogue:e034edceebc4ec317cbc445f31253b8a">Epilogue</h2>
 
 <p>Hope you found the article interesting.</p>
 
@@ -442,9 +452,9 @@ func (self *Scanner) react() {
   <div class="container">
     <hr>
 
-    <span>&copy; 2010 - 2014 <a href="/">apertoire.net</a></span>
+    <span>&copy; 2010 - 2015 <a href="/">apertoire.net</a></span>
 
-    <p class="powered">powered by <a href="http://gohugo.io/">hugo</a>. hosted by <a href="github.com">github</a></p>
+    <p class="powered">powered by <a href="http://gohugo.io/">hugo</a>. hosted by <a href="https://github.com">github</a></p>
 
     <div style="clear: both"></div>
   </div>

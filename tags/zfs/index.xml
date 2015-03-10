@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Zfs on Apertoire </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://localhost:1313/tags/zfs/index.xml</link>
+    <title>Zfs on Apertoire</title>
+    <link>http://www.apertoire.net/tags/zfs/</link>
+    <description>Recent content in Zfs on Apertoire</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    
-    
-    <updated>Mon, 06 Aug 2012 23:23:23 UTC</updated>
+    <lastBuildDate>Mon, 06 Aug 2012 23:23:23 +0000</lastBuildDate>
+    <atom:link href="http://www.apertoire.net/tags/zfs/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>hotfix 2</title>
-      <link>http://localhost:1313/hotfix-2/</link>
-      <pubDate>Mon, 06 Aug 2012 23:23:23 UTC</pubDate>
+      <link>http://www.apertoire.net/hotfix-2/</link>
+      <pubDate>Mon, 06 Aug 2012 23:23:23 +0000</pubDate>
       
-      <guid>http://localhost:1313/hotfix-2/</guid>
+      <guid>http://www.apertoire.net/hotfix-2/</guid>
       <description>&lt;p&gt;i&amp;rsquo;ve built my esxi box (skynet) &amp;hellip; find some additional info at &lt;a href=&#34;http://lime-technology.com/forum/index.php?topic=21514.0&#34; title=&#34;skynet + hal &amp;amp; wopr (esxi head + 2 unraid das)&#34; target=&#34;_blank&#34;&gt;the unraid forums&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;something i wanted to document. the command sequence to share the encrypted zfs filesystem after boot is&lt;/p&gt;
@@ -32,10 +32,10 @@ also, oracle recently published an article on &lt;a href=&#34;http://www.oracle.
     
     <item>
       <title>hotfix 1</title>
-      <link>http://localhost:1313/hotfix-1/</link>
-      <pubDate>Mon, 07 May 2012 23:23:23 UTC</pubDate>
+      <link>http://www.apertoire.net/hotfix-1/</link>
+      <pubDate>Mon, 07 May 2012 23:23:23 +0000</pubDate>
       
-      <guid>http://localhost:1313/hotfix-1/</guid>
+      <guid>http://www.apertoire.net/hotfix-1/</guid>
       <description>&lt;p&gt;well, i need to add a couple of comments after my last post&lt;/p&gt;
 
 &lt;p&gt;i deliberately chose to create the zfs dataset with a passphrase encryption method. as per solaris docs, this means it can&amp;rsquo;t mount it at boot time. the best practice would be a boot time prompt (a la TrueCrypt in windows), but until that time comes, i will live with loading after booting, using the following:&lt;/p&gt;
@@ -67,10 +67,10 @@ mount_nfs zfsbox:/export/Backup /local_mountpoint
     
     <item>
       <title>oh solaris mio !</title>
-      <link>http://localhost:1313/oh-solaris-mio/</link>
-      <pubDate>Mon, 07 May 2012 11:11:11 UTC</pubDate>
+      <link>http://www.apertoire.net/oh-solaris-mio/</link>
+      <pubDate>Mon, 07 May 2012 11:11:11 +0000</pubDate>
       
-      <guid>http://localhost:1313/oh-solaris-mio/</guid>
+      <guid>http://www.apertoire.net/oh-solaris-mio/</guid>
       <description>&lt;p&gt;so the plan is as follows:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -166,10 +166,10 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
     
     <item>
       <title>storage wars</title>
-      <link>http://localhost:1313/storage-wars/</link>
-      <pubDate>Sun, 06 May 2012 23:23:23 UTC</pubDate>
+      <link>http://www.apertoire.net/storage-wars/</link>
+      <pubDate>Sun, 06 May 2012 23:23:23 +0000</pubDate>
       
-      <guid>http://localhost:1313/storage-wars/</guid>
+      <guid>http://www.apertoire.net/storage-wars/</guid>
       <description>&lt;p&gt;i&amp;rsquo;m currently running an &lt;a href=&#34;http://lime-technology.com&#34;&gt;unRaid&lt;/a&gt; server, which hosts my media collection  (movies, tv series, music, pictures and data backups)&lt;/p&gt;
 
 &lt;p&gt;but, i&amp;rsquo;m running out of space on the server (currently 31.69TB used out of 32.51TB available)&lt;/p&gt;

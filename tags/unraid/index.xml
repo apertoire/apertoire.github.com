@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Unraid on Apertoire </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://localhost:1313/tags/unraid/index.xml</link>
+    <title>Unraid on Apertoire</title>
+    <link>http://www.apertoire.net/tags/unraid/</link>
+    <description>Recent content in Unraid on Apertoire</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    
-    
-    <updated>Thu, 09 Jan 2014 23:23:23 UTC</updated>
+    <lastBuildDate>Thu, 09 Jan 2014 23:23:23 +0000</lastBuildDate>
+    <atom:link href="http://www.apertoire.net/tags/unraid/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Dockerization</title>
-      <link>http://localhost:1313/dockeritazion/</link>
-      <pubDate>Thu, 09 Jan 2014 23:23:23 UTC</pubDate>
+      <link>http://www.apertoire.net/dockeritazion/</link>
+      <pubDate>Thu, 09 Jan 2014 23:23:23 +0000</pubDate>
       
-      <guid>http://localhost:1313/dockeritazion/</guid>
+      <guid>http://www.apertoire.net/dockeritazion/</guid>
       <description>
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Background&lt;/h2&gt;
+&lt;h2 id=&#34;background:7168b982f076d28b250775e790646ac1&#34;&gt;Background&lt;/h2&gt;
 
 &lt;p&gt;so, &lt;a href=&#34;http://www.apertoire.net/storage-wars/&#34;&gt;back in 2012&lt;/a&gt; i posted about virtualizing my media storage and general backup infrastructure.&lt;/p&gt;
 
@@ -33,7 +33,7 @@
 
 &lt;p&gt;the time was ripe for an overhaul of my infrastructure, get rid of esxi and move on to either xen or kvm. or so i thought.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_1&#34;&gt;Research&lt;/h2&gt;
+&lt;h2 id=&#34;research:7168b982f076d28b250775e790646ac1&#34;&gt;Research&lt;/h2&gt;
 
 &lt;p&gt;although a lot of topics were being discussed in the unraid forums, something that got to me, was the fact that actually i should be running unraid as close to the hardware as possible, which meant de-virtualizing my esxi vms.&lt;/p&gt;
 
@@ -49,9 +49,9 @@
 
 &lt;p&gt;this is the story of what i did&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_2&#34;&gt;Step by Step&lt;/h2&gt;
+&lt;h2 id=&#34;step-by-step:7168b982f076d28b250775e790646ac1&#34;&gt;Step by Step&lt;/h2&gt;
 
-&lt;h3 id=&#34;toc_3&#34;&gt;Devirtualize unraids&lt;/h3&gt;
+&lt;h3 id=&#34;devirtualize-unraids:7168b982f076d28b250775e790646ac1&#34;&gt;Devirtualize unraids&lt;/h3&gt;
 
 &lt;p&gt;i removed 2 m1015s from my head server and installed them in two Asrock motherboards in each Norco case. I purchased the following components&lt;/p&gt;
 
@@ -61,7 +61,7 @@
 &lt;li&gt;RAM: 1X &lt;a href=&#34;http://www.amazon.com/gp/product/B006WAGGUK/ref=oh_details_o07_s00_i00?ie=UTF8&amp;amp;psc=1&#34;&gt;Crucial Ballistix Sport 8GB Kit&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;toc_4&#34;&gt;Set up the new virtualization host&lt;/h3&gt;
+&lt;h3 id=&#34;set-up-the-new-virtualization-host:7168b982f076d28b250775e790646ac1&#34;&gt;Set up the new virtualization host&lt;/h3&gt;
 
 &lt;p&gt;installed Ubuntu 12.04.3 LTS, with zfs, docker and kvm support. hard disks were used as follows&lt;/p&gt;
 
@@ -114,39 +114,39 @@
 
 &lt;p&gt;sickbeard was customized based on an image from the docker index&lt;/p&gt;
 
-&lt;h3 id=&#34;toc_5&#34;&gt;Profit&lt;/h3&gt;
+&lt;h3 id=&#34;profit:7168b982f076d28b250775e790646ac1&#34;&gt;Profit&lt;/h3&gt;
 
 &lt;p&gt;great success !!!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/docker.png&#34; alt=&#34;docker&#34; title=&#34;docker&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/docker.png&#34; alt=&#34;docker&#34; title=&#34;docker&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/dockerimages.png&#34; alt=&#34;dockerimages&#34; title=&#34;dockerimages&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/dockerimages.png&#34; alt=&#34;dockerimages&#34; title=&#34;dockerimages&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/htop.png&#34; alt=&#34;htop&#34; title=&#34;htop&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/htop.png&#34; alt=&#34;htop&#34; title=&#34;htop&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/pool1.png&#34; alt=&#34;pool1&#34; title=&#34;pool1&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/pool1.png&#34; alt=&#34;pool1&#34; title=&#34;pool1&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/pool2.png&#34; alt=&#34;pool2&#34; title=&#34;pool2&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/pool2.png&#34; alt=&#34;pool2&#34; title=&#34;pool2&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/zfslist.png&#34; alt=&#34;zfslist&#34; title=&#34;zfslist&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/zfslist.png&#34; alt=&#34;zfslist&#34; title=&#34;zfslist&#34; /&gt;
 &lt;/p&gt;
 
-&lt;h2 id=&#34;toc_6&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion:7168b982f076d28b250775e790646ac1&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;i&amp;rsquo;m currently working on a postgresql and gitlab container.&lt;/p&gt;
 </description>
@@ -154,10 +154,10 @@
     
     <item>
       <title>hotfix 2</title>
-      <link>http://localhost:1313/hotfix-2/</link>
-      <pubDate>Mon, 06 Aug 2012 23:23:23 UTC</pubDate>
+      <link>http://www.apertoire.net/hotfix-2/</link>
+      <pubDate>Mon, 06 Aug 2012 23:23:23 +0000</pubDate>
       
-      <guid>http://localhost:1313/hotfix-2/</guid>
+      <guid>http://www.apertoire.net/hotfix-2/</guid>
       <description>&lt;p&gt;i&amp;rsquo;ve built my esxi box (skynet) &amp;hellip; find some additional info at &lt;a href=&#34;http://lime-technology.com/forum/index.php?topic=21514.0&#34; title=&#34;skynet + hal &amp;amp; wopr (esxi head + 2 unraid das)&#34; target=&#34;_blank&#34;&gt;the unraid forums&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;something i wanted to document. the command sequence to share the encrypted zfs filesystem after boot is&lt;/p&gt;
@@ -175,10 +175,10 @@ also, oracle recently published an article on &lt;a href=&#34;http://www.oracle.
     
     <item>
       <title>storage wars</title>
-      <link>http://localhost:1313/storage-wars/</link>
-      <pubDate>Sun, 06 May 2012 23:23:23 UTC</pubDate>
+      <link>http://www.apertoire.net/storage-wars/</link>
+      <pubDate>Sun, 06 May 2012 23:23:23 +0000</pubDate>
       
-      <guid>http://localhost:1313/storage-wars/</guid>
+      <guid>http://www.apertoire.net/storage-wars/</guid>
       <description>&lt;p&gt;i&amp;rsquo;m currently running an &lt;a href=&#34;http://lime-technology.com&#34;&gt;unRaid&lt;/a&gt; server, which hosts my media collection  (movies, tv series, music, pictures and data backups)&lt;/p&gt;
 
 &lt;p&gt;but, i&amp;rsquo;m running out of space on the server (currently 31.69TB used out of 32.51TB available)&lt;/p&gt;

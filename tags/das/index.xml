@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Das on Apertoire </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://localhost:1313/tags/das/index.xml</link>
+    <title>Das on Apertoire</title>
+    <link>http://www.apertoire.net/tags/das/</link>
+    <description>Recent content in Das on Apertoire</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    
-    
-    <updated>Sun, 06 May 2012 23:23:23 UTC</updated>
+    <lastBuildDate>Sun, 06 May 2012 23:23:23 +0000</lastBuildDate>
+    <atom:link href="http://www.apertoire.net/tags/das/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>storage wars</title>
-      <link>http://localhost:1313/storage-wars/</link>
-      <pubDate>Sun, 06 May 2012 23:23:23 UTC</pubDate>
+      <link>http://www.apertoire.net/storage-wars/</link>
+      <pubDate>Sun, 06 May 2012 23:23:23 +0000</pubDate>
       
-      <guid>http://localhost:1313/storage-wars/</guid>
+      <guid>http://www.apertoire.net/storage-wars/</guid>
       <description>&lt;p&gt;i&amp;rsquo;m currently running an &lt;a href=&#34;http://lime-technology.com&#34;&gt;unRaid&lt;/a&gt; server, which hosts my media collection  (movies, tv series, music, pictures and data backups)&lt;/p&gt;
 
 &lt;p&gt;but, i&amp;rsquo;m running out of space on the server (currently 31.69TB used out of 32.51TB available)&lt;/p&gt;

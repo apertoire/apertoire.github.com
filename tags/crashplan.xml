@@ -3,7 +3,7 @@
   <channel>
       <title>Crashplan on Apertoire </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://www.apertoire.net/tags/crashplan/index.xml</link>
+    <link>http://localhost:1313/tags/crashplan/index.xml</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>hotfix 1</title>
-      <link>http://www.apertoire.net/hotfix-1/</link>
+      <link>http://localhost:1313/hotfix-1/</link>
       <pubDate>Mon, 07 May 2012 23:23:23 UTC</pubDate>
       
-      <guid>http://www.apertoire.net/hotfix-1/</guid>
+      <guid>http://localhost:1313/hotfix-1/</guid>
       <description>&lt;p&gt;well, i need to add a couple of comments after my last post&lt;/p&gt;
 
 &lt;p&gt;i deliberately chose to create the zfs dataset with a passphrase encryption method. as per solaris docs, this means it can&amp;rsquo;t mount it at boot time. the best practice would be a boot time prompt (a la TrueCrypt in windows), but until that time comes, i will live with loading after booting, using the following:&lt;/p&gt;
@@ -46,10 +46,10 @@ mount_nfs zfsbox:/export/Backup /local_mountpoint
     
     <item>
       <title>oh solaris mio !</title>
-      <link>http://www.apertoire.net/oh-solaris-mio/</link>
+      <link>http://localhost:1313/oh-solaris-mio/</link>
       <pubDate>Mon, 07 May 2012 11:11:11 UTC</pubDate>
       
-      <guid>http://www.apertoire.net/oh-solaris-mio/</guid>
+      <guid>http://localhost:1313/oh-solaris-mio/</guid>
       <description>&lt;p&gt;so the plan is as follows:&lt;/p&gt;
 
 &lt;ul&gt;

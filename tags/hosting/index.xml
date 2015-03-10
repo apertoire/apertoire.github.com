@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Hosting on Apertoire </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://localhost:1313/tags/hosting/index.xml</link>
+    <title>Hosting on Apertoire</title>
+    <link>http://www.apertoire.net/tags/hosting/</link>
+    <description>Recent content in Hosting on Apertoire</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    
-    
-    <updated>Sun, 03 Mar 2013 23:23:23 UTC</updated>
+    <lastBuildDate>Sun, 03 Mar 2013 23:23:23 +0000</lastBuildDate>
+    <atom:link href="http://www.apertoire.net/tags/hosting/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>moving to github pages</title>
-      <link>http://localhost:1313/moving-to-github-pages/</link>
-      <pubDate>Sun, 03 Mar 2013 23:23:23 UTC</pubDate>
+      <link>http://www.apertoire.net/moving-to-github-pages/</link>
+      <pubDate>Sun, 03 Mar 2013 23:23:23 +0000</pubDate>
       
-      <guid>http://localhost:1313/moving-to-github-pages/</guid>
-      <description>&lt;p&gt;it all started when i started considering the deployment of the &lt;a href=&#34;vertx.io&#34;&gt;vert.x&lt;/a&gt; app i&amp;rsquo;m working on.&lt;/p&gt;
+      <guid>http://www.apertoire.net/moving-to-github-pages/</guid>
+      <description>
+
+&lt;p&gt;it all started when i started considering the deployment of the &lt;a href=&#34;vertx.io&#34;&gt;vert.x&lt;/a&gt; app i&amp;rsquo;m working on.&lt;/p&gt;
 
 &lt;p&gt;i will deploy to &lt;a href=&#34;openshift.redhat.com&#34;&gt;OpenShift&lt;/a&gt;, but i will also open source the code through &lt;a href=&#34;github.com&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
 
@@ -49,12 +51,22 @@
 
 &lt;p&gt;on my dns registrar (&lt;a href=&#34;namecheap.com&#34;&gt;Namecheap&lt;/a&gt;), it went down like this&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/dns.png&#34; alt=&#34;change a and cname records&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/dns.png&#34; alt=&#34;change a and cname records&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;my mail hosting is done via google, so i used namecheap&amp;rsquo;s option to &amp;ldquo;Automatically set MX records necessary for &lt;strong&gt;Google Apps Email&lt;/strong&gt;&amp;ldquo;&lt;/p&gt;
 
 &lt;p&gt;dns propagation already happened for me (i did this about an hour ago), so it should be a smooth transtion all things considered.&lt;/p&gt;
+
+&lt;h3 id=&#34;update-nov-19-2014:f7e0fd97bd7ea66b154d201dbbb1e9eb&#34;&gt;Update (Nov 19, 2014)&lt;/h3&gt;
+
+&lt;p&gt;As per noisebleeds comment below, I&amp;rsquo;m attaching the updated DNS settings I had to use after Github made some changes to their network routing&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/dns1.png&#34; alt=&#34;change a and cname records&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/dns2.png&#34; alt=&#34;change a and cname records&#34; /&gt;
+&lt;/p&gt;
 </description>
     </item>
     

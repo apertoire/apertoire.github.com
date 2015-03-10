@@ -35,8 +35,18 @@
   
 <section class="container content">
 
-  <img class="frontpost" src="">
 
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:728px;height:90px"
+       data-ad-client="ca-pub-5982725985453951"
+       data-ad-slot="6092848225"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+  <img class="frontpost" src="">
 
   <div class="title">
     <h1>Running a Java Vert.x app on Heroku</h1>
@@ -54,13 +64,13 @@
 
 <p>You can check the <a href="https://vaultee.herokuapp.com">live app</a> right now !</p>
 
-<h2 id="toc_0">Background</h2>
+<h2 id="background:461b8cf77832a406c331e02ddcd71060">Background</h2>
 
 <p>Since I <a href="http://www.apertoire.net/vaultee/">published the code</a> for a proof of concept vert.x/angularjs/bootstrap  app on <a href="https://github.com/apertoire/vaultee/">github</a>, I considered how easy/difficult it would be to make it run on one of the popular Paas.</p>
 
 <p>I first considered <a href="https://openshift.redhat.com/">OpenShift</a> due to affinity (Vert.x and RedHat have become closer lately), but finally settled on Heroku due to purely personal reasons.</p>
 
-<h2 id="toc_1">Research</h2>
+<h2 id="research:461b8cf77832a406c331e02ddcd71060">Research</h2>
 
 <p>I can reference back to two resources, which helped me move forward:</p>
 
@@ -71,7 +81,7 @@
 
 <p>The first resource introduced me to buildpacks and the second showed me maven for app building. It was important because maven is <a href="https://devcenter.heroku.com/articles/java">the suggested way to run Java apps on heroku</a></p>
 
-<h2 id="toc_2">Step by Step</h2>
+<h2 id="step-by-step:461b8cf77832a406c331e02ddcd71060">Step by Step</h2>
 
 <p>This is what I did</p>
 
@@ -122,7 +132,7 @@ $ heroku pg:transfer --from postgres://dbuser:dbpassd@dbhost:dbport/dbname --to 
 <p>The &ndash;from host is my local postgresql server.<br />
 The &ndash;to host is the heroku postgresql instance and is referenced using heroku&rsquo;s database color naming convention, since it was the only syntax that worked for me.</p>
 
-<h2 id="toc_3">A Couple of Notes</h2>
+<h2 id="a-couple-of-notes:461b8cf77832a406c331e02ddcd71060">A Couple of Notes</h2>
 
 <p>In order to run your app on Heroku, they export some environment variables that you need to reference in your code, for things such as port, db host, db port, etc.</p>
 
@@ -223,7 +233,7 @@ web: vertx run src/main/javascript/server.js -cp "target/classes:target/dependen
 
 <p>Then Procfile is executed and the app is live !</p>
 
-<h2 id="toc_4">Next Steps</h2>
+<h2 id="next-steps:461b8cf77832a406c331e02ddcd71060">Next Steps</h2>
 
 <ul>
 <li>Maybe we should use a <a href="http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript">different layout</a> for the angularjs code of the app</li>
@@ -256,9 +266,9 @@ web: vertx run src/main/javascript/server.js -cp "target/classes:target/dependen
   <div class="container">
     <hr>
 
-    <span>&copy; 2010 - 2014 <a href="/">apertoire.net</a></span>
+    <span>&copy; 2010 - 2015 <a href="/">apertoire.net</a></span>
 
-    <p class="powered">powered by <a href="http://gohugo.io/">hugo</a>. hosted by <a href="github.com">github</a></p>
+    <p class="powered">powered by <a href="http://gohugo.io/">hugo</a>. hosted by <a href="https://github.com">github</a></p>
 
     <div style="clear: both"></div>
   </div>

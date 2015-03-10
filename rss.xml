@@ -3,7 +3,7 @@
   <channel>
       <title>Recent Content on Apertoire </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://www.apertoire.net/index.xml</link>
+    <link>http://localhost:1313/index.xml</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Switching from zsh to fish</title>
-      <link>http://www.apertoire.net/switching-from-zsh-to-fish/</link>
+      <link>http://localhost:1313/switching-from-zsh-to-fish/</link>
       <pubDate>Sat, 22 Nov 2014 07:50:25 EST</pubDate>
       
-      <guid>http://www.apertoire.net/switching-from-zsh-to-fish/</guid>
+      <guid>http://localhost:1313/switching-from-zsh-to-fish/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;tl;dr&lt;/em&gt; How easy is it to switch from &lt;a href=&#34;www.zsh.org&#34;&gt;zsh&lt;/a&gt; to &lt;a href=&#34;www.fishshell.com&#34;&gt;fish&lt;/a&gt; ? Is it worth it ?&lt;/p&gt;
@@ -232,10 +232,10 @@ end
     
     <item>
       <title>Actor-like pattern in go</title>
-      <link>http://www.apertoire.net/actor-like-pattern-in-go/</link>
+      <link>http://localhost:1313/actor-like-pattern-in-go/</link>
       <pubDate>Sat, 08 Nov 2014 14:19:14 EST</pubDate>
       
-      <guid>http://www.apertoire.net/actor-like-pattern-in-go/</guid>
+      <guid>http://localhost:1313/actor-like-pattern-in-go/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;tl;dr&lt;/em&gt; This article discusses an implementation of the actor paradigm in a go application.&lt;/p&gt;
@@ -610,10 +610,10 @@ func (self *Scanner) react() {
     
     <item>
       <title>Introducing mediabase</title>
-      <link>http://www.apertoire.net/introducing-mediabase/</link>
+      <link>http://localhost:1313/introducing-mediabase/</link>
       <pubDate>Mon, 27 Oct 2014 12:16:47 EST</pubDate>
       
-      <guid>http://www.apertoire.net/introducing-mediabase/</guid>
+      <guid>http://localhost:1313/introducing-mediabase/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;tl;dr&lt;/em&gt; &lt;strong&gt;mediabase&lt;/strong&gt; is a proof-of-concept application to catalogue a media library consisting of movies. It scans the folders you choose looking for movies, then fetch metadata from &lt;a href=&#34;www.themoviedb.org&#34;&gt;themoviedb.org&lt;/a&gt; and &lt;a href=&#34;www.omdbapi.com&#34;&gt;The OMDB API&lt;/a&gt; and present the information in a nice web page.&lt;/p&gt;
@@ -709,10 +709,10 @@ func (self *Scanner) react() {
     
     <item>
       <title>Dockerization</title>
-      <link>http://www.apertoire.net/dockeritazion/</link>
+      <link>http://localhost:1313/dockeritazion/</link>
       <pubDate>Thu, 09 Jan 2014 23:23:23 UTC</pubDate>
       
-      <guid>http://www.apertoire.net/dockeritazion/</guid>
+      <guid>http://localhost:1313/dockeritazion/</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Background&lt;/h2&gt;
@@ -852,10 +852,10 @@ func (self *Scanner) react() {
     
     <item>
       <title>Running a Java Vert.x app on Heroku</title>
-      <link>http://www.apertoire.net/running-a-java-vertx-app-on-heroku/</link>
+      <link>http://localhost:1313/running-a-java-vertx-app-on-heroku/</link>
       <pubDate>Wed, 24 Apr 2013 23:23:23 UTC</pubDate>
       
-      <guid>http://www.apertoire.net/running-a-java-vertx-app-on-heroku/</guid>
+      <guid>http://localhost:1313/running-a-java-vertx-app-on-heroku/</guid>
       <description>
 
 &lt;p&gt;That&amp;rsquo;s right. This is Yet Another Running Vert.x on Heroku Article !&lt;/p&gt;
@@ -1044,10 +1044,10 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
     
     <item>
       <title>vaultee</title>
-      <link>http://www.apertoire.net/vaultee/</link>
+      <link>http://localhost:1313/vaultee/</link>
       <pubDate>Sat, 30 Mar 2013 23:23:23 UTC</pubDate>
       
-      <guid>http://www.apertoire.net/vaultee/</guid>
+      <guid>http://localhost:1313/vaultee/</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Introduction&lt;/h2&gt;
@@ -1105,10 +1105,10 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
     
     <item>
       <title>12D78</title>
-      <link>http://www.apertoire.net/12D78/</link>
+      <link>http://localhost:1313/12D78/</link>
       <pubDate>Fri, 15 Mar 2013 23:23:23 UTC</pubDate>
       
-      <guid>http://www.apertoire.net/12D78/</guid>
+      <guid>http://localhost:1313/12D78/</guid>
       <description>&lt;p&gt;so, it&amp;rsquo;s been quite a while now since my last update with regards to my hackintosh, old trusted blackbeard.&lt;/p&gt;
 
 &lt;p&gt;i have to tell you &amp;hellip; it&amp;rsquo;s killing me the fact that sleep isnt working &amp;hellip; whenever i shutdown and come online again, i have to rearrange most of the windows in their corresponding workspace (i have 6 workspaces).&lt;/p&gt;
@@ -1137,10 +1137,10 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
     
     <item>
       <title>moving to github pages</title>
-      <link>http://www.apertoire.net/moving-to-github-pages/</link>
+      <link>http://localhost:1313/moving-to-github-pages/</link>
       <pubDate>Sun, 03 Mar 2013 23:23:23 UTC</pubDate>
       
-      <guid>http://www.apertoire.net/moving-to-github-pages/</guid>
+      <guid>http://localhost:1313/moving-to-github-pages/</guid>
       <description>
 
 &lt;p&gt;it all started when i started considering the deployment of the &lt;a href=&#34;vertx.io&#34;&gt;vert.x&lt;/a&gt; app i&amp;rsquo;m working on.&lt;/p&gt;
@@ -1198,10 +1198,10 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
     
     <item>
       <title>hotfix 2</title>
-      <link>http://www.apertoire.net/hotfix-2/</link>
+      <link>http://localhost:1313/hotfix-2/</link>
       <pubDate>Mon, 06 Aug 2012 23:23:23 UTC</pubDate>
       
-      <guid>http://www.apertoire.net/hotfix-2/</guid>
+      <guid>http://localhost:1313/hotfix-2/</guid>
       <description>&lt;p&gt;i&amp;rsquo;ve built my esxi box (skynet) &amp;hellip; find some additional info at &lt;a href=&#34;http://lime-technology.com/forum/index.php?topic=21514.0&#34; title=&#34;skynet + hal &amp;amp; wopr (esxi head + 2 unraid das)&#34; target=&#34;_blank&#34;&gt;the unraid forums&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;something i wanted to document. the command sequence to share the encrypted zfs filesystem after boot is&lt;/p&gt;
@@ -1219,10 +1219,10 @@ also, oracle recently published an article on &lt;a href=&#34;http://www.oracle.
     
     <item>
       <title>hotfix 1</title>
-      <link>http://www.apertoire.net/hotfix-1/</link>
+      <link>http://localhost:1313/hotfix-1/</link>
       <pubDate>Mon, 07 May 2012 23:23:23 UTC</pubDate>
       
-      <guid>http://www.apertoire.net/hotfix-1/</guid>
+      <guid>http://localhost:1313/hotfix-1/</guid>
       <description>&lt;p&gt;well, i need to add a couple of comments after my last post&lt;/p&gt;
 
 &lt;p&gt;i deliberately chose to create the zfs dataset with a passphrase encryption method. as per solaris docs, this means it can&amp;rsquo;t mount it at boot time. the best practice would be a boot time prompt (a la TrueCrypt in windows), but until that time comes, i will live with loading after booting, using the following:&lt;/p&gt;
@@ -1254,10 +1254,10 @@ mount_nfs zfsbox:/export/Backup /local_mountpoint
     
     <item>
       <title>oh solaris mio !</title>
-      <link>http://www.apertoire.net/oh-solaris-mio/</link>
+      <link>http://localhost:1313/oh-solaris-mio/</link>
       <pubDate>Mon, 07 May 2012 11:11:11 UTC</pubDate>
       
-      <guid>http://www.apertoire.net/oh-solaris-mio/</guid>
+      <guid>http://localhost:1313/oh-solaris-mio/</guid>
       <description>&lt;p&gt;so the plan is as follows:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -1353,10 +1353,10 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
     
     <item>
       <title>storage wars</title>
-      <link>http://www.apertoire.net/storage-wars/</link>
+      <link>http://localhost:1313/storage-wars/</link>
       <pubDate>Sun, 06 May 2012 23:23:23 UTC</pubDate>
       
-      <guid>http://www.apertoire.net/storage-wars/</guid>
+      <guid>http://localhost:1313/storage-wars/</guid>
       <description>&lt;p&gt;i&amp;rsquo;m currently running an &lt;a href=&#34;http://lime-technology.com&#34;&gt;unRaid&lt;/a&gt; server, which hosts my media collection  (movies, tv series, music, pictures and data backups)&lt;/p&gt;
 
 &lt;p&gt;but, i&amp;rsquo;m running out of space on the server (currently 31.69TB used out of 32.51TB available)&lt;/p&gt;
@@ -1380,10 +1380,10 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
     
     <item>
       <title>windows 8 consumer preview</title>
-      <link>http://www.apertoire.net/windows-8-consumer-preview/</link>
+      <link>http://localhost:1313/windows-8-consumer-preview/</link>
       <pubDate>Thu, 08 Mar 2012 23:23:23 UTC</pubDate>
       
-      <guid>http://www.apertoire.net/windows-8-consumer-preview/</guid>
+      <guid>http://localhost:1313/windows-8-consumer-preview/</guid>
       <description>&lt;p&gt;i think it&amp;rsquo;s relevant to post some of the media sentiment about the latest iteration of windows 8.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -1395,10 +1395,10 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
     
     <item>
       <title>if it ain&#39;t broken, don&#39;t fix it ?</title>
-      <link>http://www.apertoire.net/if-it-ain-t-broken-don-t-fix-it/</link>
+      <link>http://localhost:1313/if-it-ain-t-broken-don-t-fix-it/</link>
       <pubDate>Thu, 23 Feb 2012 23:23:23 UTC</pubDate>
       
-      <guid>http://www.apertoire.net/if-it-ain-t-broken-don-t-fix-it/</guid>
+      <guid>http://localhost:1313/if-it-ain-t-broken-don-t-fix-it/</guid>
       <description>&lt;p&gt;A nice article about upcoming Windows 8 was posted by James Kendrick at ZDNet &amp;hellip; &lt;a href=&#34;http://www.zdnet.com/blog/mobile-news/what-problem-does-windows-8-solve/6856&#34;&gt;What problem does Window 8 solve ?&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I find the new logo kind of hideous :)&lt;/p&gt;
@@ -1407,10 +1407,10 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
     
     <item>
       <title>baby steps</title>
-      <link>http://www.apertoire.net/baby-steps/</link>
+      <link>http://localhost:1313/baby-steps/</link>
       <pubDate>Sat, 31 Dec 2011 23:23:23 UTC</pubDate>
       
-      <guid>http://www.apertoire.net/baby-steps/</guid>
+      <guid>http://localhost:1313/baby-steps/</guid>
       <description>
 
 &lt;p&gt;above is a screenshot of my current setup :)&lt;/p&gt;

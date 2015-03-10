@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Truecrypt on Apertoire </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://localhost:1313/tags/truecrypt/index.xml</link>
+    <title>Truecrypt on Apertoire</title>
+    <link>http://www.apertoire.net/tags/truecrypt/</link>
+    <description>Recent content in Truecrypt on Apertoire</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    
-    
-    <updated>Mon, 07 May 2012 23:23:23 UTC</updated>
+    <lastBuildDate>Mon, 07 May 2012 23:23:23 +0000</lastBuildDate>
+    <atom:link href="http://www.apertoire.net/tags/truecrypt/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>hotfix 1</title>
-      <link>http://localhost:1313/hotfix-1/</link>
-      <pubDate>Mon, 07 May 2012 23:23:23 UTC</pubDate>
+      <link>http://www.apertoire.net/hotfix-1/</link>
+      <pubDate>Mon, 07 May 2012 23:23:23 +0000</pubDate>
       
-      <guid>http://localhost:1313/hotfix-1/</guid>
+      <guid>http://www.apertoire.net/hotfix-1/</guid>
       <description>&lt;p&gt;well, i need to add a couple of comments after my last post&lt;/p&gt;
 
 &lt;p&gt;i deliberately chose to create the zfs dataset with a passphrase encryption method. as per solaris docs, this means it can&amp;rsquo;t mount it at boot time. the best practice would be a boot time prompt (a la TrueCrypt in windows), but until that time comes, i will live with loading after booting, using the following:&lt;/p&gt;

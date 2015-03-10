@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Audirvana on Apertoire </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://localhost:1313/tags/audirvana/index.xml</link>
+    <title>Audirvana on Apertoire</title>
+    <link>http://www.apertoire.net/tags/audirvana/</link>
+    <description>Recent content in Audirvana on Apertoire</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    
-    
-    <updated>Sat, 31 Dec 2011 23:23:23 UTC</updated>
+    <lastBuildDate>Sat, 31 Dec 2011 23:23:23 +0000</lastBuildDate>
+    <atom:link href="http://www.apertoire.net/tags/audirvana/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>baby steps</title>
-      <link>http://localhost:1313/baby-steps/</link>
-      <pubDate>Sat, 31 Dec 2011 23:23:23 UTC</pubDate>
+      <link>http://www.apertoire.net/baby-steps/</link>
+      <pubDate>Sat, 31 Dec 2011 23:23:23 +0000</pubDate>
       
-      <guid>http://localhost:1313/baby-steps/</guid>
+      <guid>http://www.apertoire.net/baby-steps/</guid>
       <description>
 
 &lt;p&gt;above is a screenshot of my current setup :)&lt;/p&gt;
@@ -25,11 +25,11 @@
 
 &lt;p&gt;these are the apps i generally use&lt;/p&gt;
 
-&lt;h3 id=&#34;toc_0&#34;&gt;BROWSER&lt;/h3&gt;
+&lt;h3 id=&#34;browser:c73f60ca98146825d097e289162d7735&#34;&gt;BROWSER&lt;/h3&gt;
 
 &lt;p&gt;chrome is very lightweight here, and i haven&amp;rsquo;t seen it crash yet. opera is pretty good as well, firefox consumes a lot of memory and safari, i didn&amp;rsquo;t quite try&lt;/p&gt;
 
-&lt;h3 id=&#34;toc_1&#34;&gt;MUSIC&lt;/h3&gt;
+&lt;h3 id=&#34;music:c73f60ca98146825d097e289162d7735&#34;&gt;MUSIC&lt;/h3&gt;
 
 &lt;p&gt;i&amp;rsquo;m evaluating different music players&lt;/p&gt;
 
@@ -40,15 +40,15 @@
 &lt;li&gt;&lt;a href=&#34;http://sbooth.org/Decibel/&#34;&gt;decibel (paid)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;toc_2&#34;&gt;MOVIES&lt;/h3&gt;
+&lt;h3 id=&#34;movies:c73f60ca98146825d097e289162d7735&#34;&gt;MOVIES&lt;/h3&gt;
 
 &lt;p&gt;i&amp;rsquo;ve pretty much settled on &lt;a href=&#34;http://www.mplayerosx.ch/&#34;&gt;MPlayer OSX Extended&lt;/a&gt; for movies&lt;/p&gt;
 
-&lt;h3 id=&#34;toc_3&#34;&gt;IMAGES&lt;/h3&gt;
+&lt;h3 id=&#34;images:c73f60ca98146825d097e289162d7735&#34;&gt;IMAGES&lt;/h3&gt;
 
 &lt;p&gt;had to install &lt;a href=&#34;http://www.xnview.com&#34;&gt;xnview&lt;/a&gt;, didn&amp;rsquo;t quite find the same functionality in other apps.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_4&#34;&gt;the good&lt;/h2&gt;
+&lt;h2 id=&#34;the-good:c73f60ca98146825d097e289162d7735&#34;&gt;the good&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;having unix underpinnings is just huge. i&amp;rsquo;m a developer so it&amp;rsquo;s so great to be able to do unix stuff at the terminal &lt;a href=&#34;http://www.iterm2.com&#34;&gt;iTerm 2&lt;/a&gt;&lt;/li&gt;
@@ -56,14 +56,14 @@
 &lt;li&gt;the general awesomeness of it all.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;toc_5&#34;&gt;the bad&lt;/h2&gt;
+&lt;h2 id=&#34;the-bad:c73f60ca98146825d097e289162d7735&#34;&gt;the bad&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;im using a pc keyboard, so i&amp;rsquo;m still getting used to the shortcuts&lt;/li&gt;
 &lt;li&gt;i haven&amp;rsquo;t found a replacement for 7zip. keka is just not there for me.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;toc_6&#34;&gt;the ugly&lt;/h2&gt;
+&lt;h2 id=&#34;the-ugly:c73f60ca98146825d097e289162d7735&#34;&gt;the ugly&lt;/h2&gt;
 
 &lt;p&gt;&lt;em&gt;FINDER&lt;/em&gt; &amp;hellip; i find it cumbersome to use &amp;hellip; to perform simple operations i need a ton of windows open and then use some keyboard shortcuts &amp;hellip; i&amp;rsquo;ve installed &lt;a href=&#34;http://www.mucommander.com&#34;&gt;muCommander&lt;/a&gt;, &lt;a href=&#34;http://www.magicansoft.com&#34;&gt;magican file&lt;/a&gt;, &lt;a href=&#34;http://www.cocoatech.com&#34;&gt;path finder&lt;/a&gt;, &lt;a href=&#34;http://totalfinder.binaryage.com/&#34;&gt;total finder&lt;/a&gt; &amp;hellip; but not decided yet what to use &amp;hellip; then there are like a ton of views in finder .. and none seems really useful to me 8)&lt;/p&gt;
 

@@ -35,8 +35,18 @@
   
 <section class="container content">
 
-  <img class="frontpost" src="/img/skynet.png">
 
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:728px;height:90px"
+       data-ad-client="ca-pub-5982725985453951"
+       data-ad-slot="6092848225"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+  <img class="frontpost" src="/img/skynet.png">
 
   <div class="title">
     <h1>Dockerization</h1>
@@ -48,7 +58,7 @@
   <div>
   
 
-<h2 id="toc_0">Background</h2>
+<h2 id="background:7168b982f076d28b250775e790646ac1">Background</h2>
 
 <p>so, <a href="http://www.apertoire.net/storage-wars/">back in 2012</a> i posted about virtualizing my media storage and general backup infrastructure.</p>
 
@@ -64,7 +74,7 @@
 
 <p>the time was ripe for an overhaul of my infrastructure, get rid of esxi and move on to either xen or kvm. or so i thought.</p>
 
-<h2 id="toc_1">Research</h2>
+<h2 id="research:7168b982f076d28b250775e790646ac1">Research</h2>
 
 <p>although a lot of topics were being discussed in the unraid forums, something that got to me, was the fact that actually i should be running unraid as close to the hardware as possible, which meant de-virtualizing my esxi vms.</p>
 
@@ -80,9 +90,9 @@
 
 <p>this is the story of what i did</p>
 
-<h2 id="toc_2">Step by Step</h2>
+<h2 id="step-by-step:7168b982f076d28b250775e790646ac1">Step by Step</h2>
 
-<h3 id="toc_3">Devirtualize unraids</h3>
+<h3 id="devirtualize-unraids:7168b982f076d28b250775e790646ac1">Devirtualize unraids</h3>
 
 <p>i removed 2 m1015s from my head server and installed them in two Asrock motherboards in each Norco case. I purchased the following components</p>
 
@@ -92,7 +102,7 @@
 <li>RAM: 1X <a href="http://www.amazon.com/gp/product/B006WAGGUK/ref=oh_details_o07_s00_i00?ie=UTF8&amp;psc=1">Crucial Ballistix Sport 8GB Kit</a></li>
 </ul>
 
-<h3 id="toc_4">Set up the new virtualization host</h3>
+<h3 id="set-up-the-new-virtualization-host:7168b982f076d28b250775e790646ac1">Set up the new virtualization host</h3>
 
 <p>installed Ubuntu 12.04.3 LTS, with zfs, docker and kvm support. hard disks were used as follows</p>
 
@@ -145,7 +155,7 @@
 
 <p>sickbeard was customized based on an image from the docker index</p>
 
-<h3 id="toc_5">Profit</h3>
+<h3 id="profit:7168b982f076d28b250775e790646ac1">Profit</h3>
 
 <p>great success !!!</p>
 
@@ -177,7 +187,7 @@
 <p><img src="/img/zfslist.png" alt="zfslist" title="zfslist" />
 </p>
 
-<h2 id="toc_6">Conclusion</h2>
+<h2 id="conclusion:7168b982f076d28b250775e790646ac1">Conclusion</h2>
 
 <p>i&rsquo;m currently working on a postgresql and gitlab container.</p>
 
@@ -207,9 +217,9 @@
   <div class="container">
     <hr>
 
-    <span>&copy; 2010 - 2014 <a href="/">apertoire.net</a></span>
+    <span>&copy; 2010 - 2015 <a href="/">apertoire.net</a></span>
 
-    <p class="powered">powered by <a href="http://gohugo.io/">hugo</a>. hosted by <a href="github.com">github</a></p>
+    <p class="powered">powered by <a href="http://gohugo.io/">hugo</a>. hosted by <a href="https://github.com">github</a></p>
 
     <div style="clear: both"></div>
   </div>
