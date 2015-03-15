@@ -1,18 +1,380 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Apertoire</title>
+      <title> on Apertoire </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.apertoire.net/</link>
-    <description>Recent content on Apertoire</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Nov 2014 07:50:25 -0500</lastBuildDate>
-    <atom:link href="http://www.apertoire.net/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <updated>Sun, 15 Mar 2015 09:20:31 EST</updated>
+    
+    <item>
+      <title>Gogs, an alternative to Gitlab</title>
+      <link>http://www.apertoire.net/gogs-an-alternative-to-gitlab/</link>
+      <pubDate>Sun, 15 Mar 2015 09:20:31 EST</pubDate>
+      
+      <guid>http://www.apertoire.net/gogs-an-alternative-to-gitlab/</guid>
+      <description>
+
+&lt;p&gt;&lt;em&gt;tl;dr&lt;/em&gt; &lt;a href=&#34;https://gitlab.com&#34;&gt;Gitlab&lt;/a&gt; is a great git hosting service, almost as powerful as &lt;a href=&#34;https://github.com&#34;&gt;Github&lt;/a&gt;. But, is there something out there that&amp;rsquo;s comparable to Gitlab/Github, yet simpler to manage ? I think &lt;a href=&#34;http://gogs.io&#34;&gt;&lt;code&gt;Gogs&lt;/code&gt;&lt;/a&gt; does the job.&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction:5880767147774326ded8eaa664656f14&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;These days, Github has become the preferred platform to host code. With it&amp;rsquo;s many great features, ease of use and access, almost all software developers are happily using it.&lt;/p&gt;
+
+&lt;p&gt;Also, since &lt;a href=&#34;http://arstechnica.com/information-technology/2015/03/google-to-close-google-code-open-source-project-hosting/&#34;&gt;Google Code hosting project is closing down&lt;/a&gt;, you can expect more projects being driven to it.&lt;/p&gt;
+
+&lt;p&gt;But what if you&amp;rsquo;re writing some Android app, maybe you&amp;rsquo;re building the next great iOS game or in general, you&amp;rsquo;re writing some code that you don&amp;rsquo;t want to be exposed to the general public ?&lt;/p&gt;
+
+&lt;p&gt;You could certainly purchase access to private Github repositories, but most certainly you&amp;rsquo;d rather want to invest your capital in more pressing matters.&lt;/p&gt;
+
+&lt;p&gt;This is where software such as Gitlab, and Gogs, come very handy.&lt;/p&gt;
+
+&lt;p&gt;They provide a service very similar to Github, with the difference that you can host them in your own servers, even in your own workstation.&lt;/p&gt;
+
+&lt;p&gt;Read on for some more insight.&lt;/p&gt;
+
+&lt;h2 id=&#34;gitlab:5880767147774326ded8eaa664656f14&#34;&gt;Gitlab&lt;/h2&gt;
+
+&lt;p&gt;Gitlab is a powerful git service, with features that rival Github itself. It&amp;rsquo;s a mature project and it&amp;rsquo;s being continuously updated.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://about.gitlab.com/images/feature_page/activity_stream_full.png&#34; alt=&#34;gitlab&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;They recently acquired &lt;a href=&#34;https://gitorious.org/&#34;&gt;Gitorius&lt;/a&gt; (another Github-like service), so you can only assume that the feature set will expand (&lt;a href=&#34;http://thenextweb.com/insider/2015/03/03/gitlab-acquires-rival-gitorious-will-shut-june-1/&#34;&gt;check the press clip about the acquisition&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Installation has been undoubtedly improved since the &amp;lsquo;manual&amp;rsquo; days, which was time-consuming and very error prone.&lt;/p&gt;
+
+&lt;p&gt;Now there&amp;rsquo;s a Linux deb/rpm package available (called the Omnibus), which handles all dependencies and simplifies the process.&lt;/p&gt;
+
+&lt;p&gt;Upgrading is a bit more convoluted, especially if you&amp;rsquo;re coming from a version that&amp;rsquo;s prior to the last, but all in all, it&amp;rsquo;s not that complicated.&lt;/p&gt;
+
+&lt;p&gt;Nevertheless, you can feel a lot of stuff is going on behind the scenes. You will be running Sidekiq, Unicorn, Nginx, Ruby (plus all it&amp;rsquo;s gems) and then Gitlab itself.&lt;/p&gt;
+
+&lt;p&gt;Customizing the install is not that simple and if something should go wrong, there are many moving parts, where you would have to go looking for problems.&lt;/p&gt;
+
+&lt;h2 id=&#34;enter-the-one-binary:5880767147774326ded8eaa664656f14&#34;&gt;Enter the One binary&lt;/h2&gt;
+
+&lt;p&gt;On the other hand, we have &lt;a href=&#34;http://gogs.io&#34;&gt;Gogs&lt;/a&gt;. A single binary is all you need to run it.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s built with &lt;a href=&#34;https://golang.org&#34;&gt;Go&lt;/a&gt;, so you automatically get cross-platform compatibility.&lt;/p&gt;
+
+&lt;p&gt;It runs on Windows, Mac, Linux, ARM, etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://gogs.io/imgs/screenshoots/1.png&#34; alt=&#34;gogs&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Installation simply requires unzipping the release archive into a chosen folder. That&amp;rsquo;s it. Upgrading works the same: just unzip the release archive.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s the beauty of binary deployment, that covers multiple platforms.&lt;/p&gt;
+
+&lt;p&gt;Gogs has a really low footprint, so it&amp;rsquo;s easy on system resources (it can run on a &lt;a href=&#34;http://www.raspberrypi.org&#34;&gt;Raspberry Pi&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;You could run it as is, with the default configuration, or do some minimal tweaking.&lt;/p&gt;
+
+&lt;p&gt;The default configuration file is located in &amp;lt;install folder&amp;gt;/conf/app.ini, but the &lt;a href=&#34;http://gogs.io/docs/installation/configuration_and_run.html&#34;&gt;documentation suggests&lt;/a&gt; to write your changes in &amp;lt;install folder&amp;gt;/custom/conf/app.ini, so that when you upgrade, your customizations are preserved (since conf/app.ini is overwritten).&lt;/p&gt;
+
+&lt;p&gt;There are three sensible changes you could consider:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Repository location&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;[repository]
+ROOT = !! this is the location where you want to keep the repositories !!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Database location&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;[database]
+PATH = !! this is the location of your database (sqlite3 by default) !!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Public key to enable commit over ssh&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/sshkey.png&#34; alt=&#34;sshkey&#34; title=&#34;ssh public key&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Note that currently, you need to run an ssh server (&lt;a href=&#34;http://www.openssh.com&#34;&gt;openssh&lt;/a&gt; will do fine), the same as Gitlab.&lt;/p&gt;
+
+&lt;h2 id=&#34;comparison:5880767147774326ded8eaa664656f14&#34;&gt;Comparison&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s compare both products to see how they match up in terms of feature set. I&amp;rsquo;ll throw in Github, as a reference.&lt;/p&gt;
+
+&lt;div class=&#34;table&#34;&gt;
+        &lt;table class=&#34;pricing&#34;&gt;
+            &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;th&gt;&lt;h3 class=&#34;tableheader&#34;&gt;Feature&lt;/h3&gt;&lt;/th&gt;
+                &lt;th&gt;&lt;h3 class=&#34;version&#34;&gt; Gogs&lt;/h3&gt;&lt;/th&gt;
+                &lt;th&gt;&lt;h3 class=&#34;version&#34;&gt; Gitlab&lt;/h3&gt;&lt;/th&gt;
+                &lt;th&gt;&lt;h3 class=&#34;version&#34;&gt; Github&lt;/h3&gt;&lt;/th&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+                &lt;td&gt;Dashboard &amp;amp; File Browser&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;tr&gt;
+                &lt;td&gt;Issue Tracking, Milestones &amp;amp; Commit keywords&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+                &lt;td&gt;Organizations support&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+             
+            &lt;tr&gt;
+                &lt;td&gt;Wiki&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;no&#34;&gt;no&lt;/span&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;tr&gt;
+                &lt;td&gt;Code Review&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;no&#34;&gt;no&lt;/span&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        
+
+                
+            &lt;tr&gt;
+                &lt;td&gt;Code Snippets&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;no&#34;&gt;no&lt;/span&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+                &lt;td&gt;Web Hooks&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+                &lt;td&gt;Git Hooks&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+                &lt;td&gt;* Enterprise&lt;/td&gt;
+                &lt;td&gt;* Enterprise&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+                &lt;td&gt;LDAP Group Sync&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;no&#34;&gt;no&lt;/span&gt;&lt;/td&gt;
+                &lt;td&gt;* Enterprise&lt;/td&gt;
+                &lt;td&gt;* Enterprise&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+                &lt;td&gt;Branded Login Page&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;no&#34;&gt;no&lt;/span&gt;&lt;/td&gt;
+                &lt;td&gt;* Enterprise&lt;/td&gt;
+                &lt;td&gt;* Enterprise&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+                &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+                &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+                &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+                &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+                &lt;td&gt;Language&lt;/td&gt;
+                &lt;td&gt;Go&lt;/td&gt;
+                &lt;td&gt;Ruby&lt;/td&gt;
+                &lt;td&gt;Ruby&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+                &lt;td&gt;Platform&lt;/td&gt;
+                &lt;td&gt;Cross-Platform&lt;/td&gt;
+                &lt;td&gt;Linux&lt;/td&gt;
+                &lt;td&gt;* Virtual Machine&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+                &lt;td&gt;License&lt;/td&gt;
+                &lt;td&gt;MIT&lt;/td&gt;
+                &lt;td&gt;MIT&lt;/td&gt;
+                &lt;td&gt;Proprietary&lt;/td&gt;
+            &lt;/tr&gt;           
+
+
+            &lt;tr&gt;
+                &lt;td&gt;Resource Usage&lt;/td&gt;
+                &lt;td&gt;Low&lt;/td&gt;
+                &lt;td&gt;Medium/High&lt;/td&gt;
+                &lt;td&gt;Medium/High&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Code Review (and pull requests) is arguably the most important missing feature. It&amp;rsquo;s at the top of the list among &lt;a href=&#34;https://github.com/gogits/gogs/issues/5&#34;&gt;Gogs Github issues&lt;/a&gt; and Gogs&amp;rsquo;s main developer (&lt;a href=&#34;https://github.com/Unknwon&#34;&gt;Unknwon&lt;/a&gt;) is working on it.&lt;/p&gt;
+
+&lt;p&gt;But all said, you have a very functional private Git host service.&lt;/p&gt;
+
+&lt;h2 id=&#34;running-a-gogs-docker:5880767147774326ded8eaa664656f14&#34;&gt;Running a Gogs docker&lt;/h2&gt;
+
+&lt;p&gt;I &lt;a href=&#34;http://www.apertoire.net/dockeritazion.md&#34;&gt;previously described&lt;/a&gt; how I &amp;lsquo;dockerized&amp;rsquo; my home server environment, so it&amp;rsquo;s only fitting that I would run gogs as a Docker container.&lt;/p&gt;
+
+&lt;p&gt;So let&amp;rsquo;s do it step by step.&lt;/p&gt;
+
+&lt;p&gt;I have an apps folder in my server home directory (/home/kayak/apps) and create subfolders per each app I deploy as a Docker container.&lt;/p&gt;
+
+&lt;p&gt;Download and unzip the latest version (use the archive that corresponds to your platform)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd /home/kayak/apps
+$ wget http://gogs.dn.qbox.me/gogs_v0.5.13_linux_amd64.zip
+$ unzip gogs_v0.5.13_linux_amd64.zip
+$ rm gogs_v0.5.13_linux_amd64.zip
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;optional-customize-the-configuration:5880767147774326ded8eaa664656f14&#34;&gt;Optional | Customize the configuration&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd gogs
+$ mkdir -p custom/conf
+$ cd custom/conf
+$ nano app.ini
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;[repository]
+ROOT = !! this is the location where you want to keep the repositories !!
+
+[database]
+PATH = !! this is the location of your database (sqlite3 by default) !!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE&lt;/em&gt;&lt;/strong&gt;: At this point, you could simply run &lt;strong&gt;gogs web&lt;/strong&gt; and you&amp;rsquo;d have it running normally, not as docker container.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s create our Dockerfile&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd /home/kayak/apps/gogs
+$ nano Dockerfile
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;FROM ubuntu:14.04
+
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN sed &#39;s/main$/main universe multiverse/&#39; -i /etc/apt/sources.list &amp;amp;&amp;amp; \
+	apt-get update &amp;amp;&amp;amp; apt-mark hold initscripts &amp;amp;&amp;amp; \
+	apt-get install -y sudo openssh-server git &amp;amp;&amp;amp; \
+	apt-get clean
+
+EXPOSE 22 3000
+
+RUN addgroup --gid 501 kayak &amp;amp;&amp;amp; adduser --uid 501 --gid 501 --disabled-password --gecos &#39;kayak&#39; kayak &amp;amp;&amp;amp; adduser kayak sudo
+
+WORKDIR /home/kayak
+ENV HOME /home/kayak
+
+ENTRYPOINT [&amp;quot;/home/kayak/boot&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The Dockerfile is based on the latest Ubuntu server LTS version (14.04).&lt;/p&gt;
+
+&lt;p&gt;We then install sudo, openssh and git, expose ports 22 (for ssh) and 3000 (for the gogs web interface).&lt;/p&gt;
+
+&lt;p&gt;Additionally, I generally create a user (&lt;em&gt;kayak&lt;/em&gt; in this case) with the same uid/gid as my user in my Mac box, to prevent issues with access permissions.&lt;/p&gt;
+
+&lt;p&gt;Finally, the boot shell script is called to get things running.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ touch boot
+$ chmod +x boot
+$ nano boot
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+
+sudo -u kayak -H touch /home/kayak/.ssh/authorized_keys
+chmod 700 /home/kayak/.ssh &amp;amp;&amp;amp; chmod 600 /home/kayak/.ssh/authorized_keys
+
+# start openssh server
+mkdir /var/run/sshd
+/usr/sbin/sshd -D &amp;amp;
+
+exec sudo -u kayak /home/kayak/gogs web
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What this does is run the ssh daemon and then run gogs, as kayak user (rather than root, which is the default).&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s build the image&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ cd /home/kayak/apps/gogs
+$ docker build --rm -t apertoire/gogs .
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once the image is built, we can run it with&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;$ docker run -d --name gogs \
+-v /etc/localtime:/etc/localtime:ro \
+-v /home/kayak/apps/gogs:/home/kayak \
+-p 62723:22 \
+-p 3000:3000 \
+apertoire/gogs
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can check the command line to see that it&amp;rsquo;s running.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/gogs-running.png&#34; alt=&#34;gogs&#34; title=&#34;gogs&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Now you can open the web interface, and it will show an install page (for first-time run)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/gogsinstall.jpg&#34; alt=&#34;gogsinstall&#34; title=&#34;Gogs first-time run install page&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Once you have completed the install, you&amp;rsquo;ll have a functional Gogs service.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/gogsweb.jpg&#34; alt=&#34;gogsweb&#34; title=&#34;Gogs Web&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion:5880767147774326ded8eaa664656f14&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Gogs is a lightweight, easy to set up, cross-platform git hosting service, with features favorably comparable to Gitlab/Github.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s not as mature as the other two, but it&amp;rsquo;s still incredibly capable.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s also open source, so you can contribute to improve it.&lt;/p&gt;
+
+&lt;p&gt;I replaced my Gitlab installation with Gogs a couple of months ago and haven&amp;rsquo;t looked back.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m hosting 42 repositories and have found performance to be extremely good.&lt;/p&gt;
+
+&lt;p&gt;I definitely recommend Gogs as your git self-hosting service.&lt;/p&gt;
+
+&lt;h2 id=&#34;final-notes:5880767147774326ded8eaa664656f14&#34;&gt;Final Notes&lt;/h2&gt;
+
+&lt;p&gt;Hope you found the article interesting.&lt;/p&gt;
+
+&lt;p&gt;Please leave your comments here or &lt;a href=&#34;https://twitter.com/intent/tweet?text=Gogs+,+an+alternative+to+Gitlab&amp;amp;amp;via=apertoire_&amp;amp;amp;url=http%3A%2F%2Fwww.apertoire.net%2Fgogs-an-alternative-to-gitlab%2F&amp;amp;amp;hashtags=gogs,gitlab,github,golang&#34;&gt;send a tweet&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Switching from zsh to fish</title>
       <link>http://www.apertoire.net/switching-from-zsh-to-fish/</link>
-      <pubDate>Sat, 22 Nov 2014 07:50:25 -0500</pubDate>
+      <pubDate>Sat, 22 Nov 2014 07:50:25 EST</pubDate>
       
       <guid>http://www.apertoire.net/switching-from-zsh-to-fish/</guid>
       <description>
@@ -233,7 +595,7 @@ end
     <item>
       <title>Actor-like pattern in go</title>
       <link>http://www.apertoire.net/actor-like-pattern-in-go/</link>
-      <pubDate>Sat, 08 Nov 2014 14:19:14 -0500</pubDate>
+      <pubDate>Sat, 08 Nov 2014 14:19:14 EST</pubDate>
       
       <guid>http://www.apertoire.net/actor-like-pattern-in-go/</guid>
       <description>
@@ -611,7 +973,7 @@ func (self *Scanner) react() {
     <item>
       <title>Introducing mediabase</title>
       <link>http://www.apertoire.net/introducing-mediabase/</link>
-      <pubDate>Mon, 27 Oct 2014 12:16:47 -0500</pubDate>
+      <pubDate>Mon, 27 Oct 2014 12:16:47 EST</pubDate>
       
       <guid>http://www.apertoire.net/introducing-mediabase/</guid>
       <description>
@@ -710,7 +1072,7 @@ func (self *Scanner) react() {
     <item>
       <title>Dockerization</title>
       <link>http://www.apertoire.net/dockeritazion/</link>
-      <pubDate>Thu, 09 Jan 2014 23:23:23 +0000</pubDate>
+      <pubDate>Thu, 09 Jan 2014 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/dockeritazion/</guid>
       <description>
@@ -853,7 +1215,7 @@ func (self *Scanner) react() {
     <item>
       <title>Running a Java Vert.x app on Heroku</title>
       <link>http://www.apertoire.net/running-a-java-vertx-app-on-heroku/</link>
-      <pubDate>Wed, 24 Apr 2013 23:23:23 +0000</pubDate>
+      <pubDate>Wed, 24 Apr 2013 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/running-a-java-vertx-app-on-heroku/</guid>
       <description>
@@ -1045,7 +1407,7 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
     <item>
       <title>vaultee</title>
       <link>http://www.apertoire.net/vaultee/</link>
-      <pubDate>Sat, 30 Mar 2013 23:23:23 +0000</pubDate>
+      <pubDate>Sat, 30 Mar 2013 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/vaultee/</guid>
       <description>
@@ -1106,7 +1468,7 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
     <item>
       <title>12D78</title>
       <link>http://www.apertoire.net/12D78/</link>
-      <pubDate>Fri, 15 Mar 2013 23:23:23 +0000</pubDate>
+      <pubDate>Fri, 15 Mar 2013 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/12D78/</guid>
       <description>&lt;p&gt;so, it&amp;rsquo;s been quite a while now since my last update with regards to my hackintosh, old trusted blackbeard.&lt;/p&gt;
@@ -1115,15 +1477,15 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
 
 &lt;p&gt;but that&amp;rsquo;s &lt;em&gt;literally&lt;/em&gt; NOTHING compared to the fact that the whole system freezes, due to some god forsaken nvidia drivers for my gtx 660ti &amp;hellip; no incantation i tried made any difference &amp;hellip; and there are plenty of reports about this even on the official apple support forums (with regards to macbook pros and such).&lt;/p&gt;
 
-&lt;p&gt;On March 14, 2013, Apple release 10.8.3 &amp;hellip; i&amp;rsquo;m expecting a lot from this update (since beta testers/developers were asked to specifically look for graphics upgrades).&lt;/p&gt;
+&lt;p&gt;On March 14, 2013, Apple released 10.8.3 &amp;hellip; i&amp;rsquo;m expecting a lot from this update (since beta testers/developers were asked to specifically look for graphics upgrades).&lt;/p&gt;
 
 &lt;p&gt;i hope my freeze problems are a thing of the past.&lt;/p&gt;
 
-&lt;p&gt;i&amp;rsquo;m also trying to help a little with regards to the sleeping issue, by upgrading my system definition to macpro 5,1 &amp;hellip; supposedly 5,1 handle sleeping better than 3,1&lt;/p&gt;
+&lt;p&gt;i&amp;rsquo;m also trying to help a little with regards to the sleeping issue, by upgrading my system definition to macpro 5,1 &amp;hellip; supposedly 5,1 handles sleeping better than 3,1.&lt;/p&gt;
 
 &lt;p&gt;on the other hand, i was reading in zite today that 10.8.3 fixed some sleeping issues in macbook pro retinas !!! wtff !!!! (what the flying f&amp;hellip; !!!)&lt;/p&gt;
 
-&lt;p&gt;so i have to assume the following scenarios will eventually take place&lt;/p&gt;
+&lt;p&gt;so i have to assume the following scenarios will eventually take place:&lt;/p&gt;
 
 &lt;p&gt;&lt;uL&gt;
     &lt;li&gt;upgrading to 10.8.3 fixes the nvidia driver issues. all is good&lt;/li&gt;
@@ -1138,7 +1500,7 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
     <item>
       <title>moving to github pages</title>
       <link>http://www.apertoire.net/moving-to-github-pages/</link>
-      <pubDate>Sun, 03 Mar 2013 23:23:23 +0000</pubDate>
+      <pubDate>Sun, 03 Mar 2013 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/moving-to-github-pages/</guid>
       <description>
@@ -1199,7 +1561,7 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
     <item>
       <title>hotfix 2</title>
       <link>http://www.apertoire.net/hotfix-2/</link>
-      <pubDate>Mon, 06 Aug 2012 23:23:23 +0000</pubDate>
+      <pubDate>Mon, 06 Aug 2012 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/hotfix-2/</guid>
       <description>&lt;p&gt;i&amp;rsquo;ve built my esxi box (skynet) &amp;hellip; find some additional info at &lt;a href=&#34;http://lime-technology.com/forum/index.php?topic=21514.0&#34; title=&#34;skynet + hal &amp;amp; wopr (esxi head + 2 unraid das)&#34; target=&#34;_blank&#34;&gt;the unraid forums&lt;/a&gt;&lt;/p&gt;
@@ -1220,7 +1582,7 @@ also, oracle recently published an article on &lt;a href=&#34;http://www.oracle.
     <item>
       <title>hotfix 1</title>
       <link>http://www.apertoire.net/hotfix-1/</link>
-      <pubDate>Mon, 07 May 2012 23:23:23 +0000</pubDate>
+      <pubDate>Mon, 07 May 2012 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/hotfix-1/</guid>
       <description>&lt;p&gt;well, i need to add a couple of comments after my last post&lt;/p&gt;
@@ -1255,7 +1617,7 @@ mount_nfs zfsbox:/export/Backup /local_mountpoint
     <item>
       <title>oh solaris mio !</title>
       <link>http://www.apertoire.net/oh-solaris-mio/</link>
-      <pubDate>Mon, 07 May 2012 11:11:11 +0000</pubDate>
+      <pubDate>Mon, 07 May 2012 11:11:11 UTC</pubDate>
       
       <guid>http://www.apertoire.net/oh-solaris-mio/</guid>
       <description>&lt;p&gt;so the plan is as follows:&lt;/p&gt;
@@ -1354,7 +1716,7 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
     <item>
       <title>storage wars</title>
       <link>http://www.apertoire.net/storage-wars/</link>
-      <pubDate>Sun, 06 May 2012 23:23:23 +0000</pubDate>
+      <pubDate>Sun, 06 May 2012 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/storage-wars/</guid>
       <description>&lt;p&gt;i&amp;rsquo;m currently running an &lt;a href=&#34;http://lime-technology.com&#34;&gt;unRaid&lt;/a&gt; server, which hosts my media collection  (movies, tv series, music, pictures and data backups)&lt;/p&gt;
@@ -1381,7 +1743,7 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
     <item>
       <title>windows 8 consumer preview</title>
       <link>http://www.apertoire.net/windows-8-consumer-preview/</link>
-      <pubDate>Thu, 08 Mar 2012 23:23:23 +0000</pubDate>
+      <pubDate>Thu, 08 Mar 2012 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/windows-8-consumer-preview/</guid>
       <description>&lt;p&gt;i think it&amp;rsquo;s relevant to post some of the media sentiment about the latest iteration of windows 8.&lt;/p&gt;
@@ -1396,74 +1758,12 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
     <item>
       <title>if it ain&#39;t broken, don&#39;t fix it ?</title>
       <link>http://www.apertoire.net/if-it-ain-t-broken-don-t-fix-it/</link>
-      <pubDate>Thu, 23 Feb 2012 23:23:23 +0000</pubDate>
+      <pubDate>Thu, 23 Feb 2012 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/if-it-ain-t-broken-don-t-fix-it/</guid>
       <description>&lt;p&gt;A nice article about upcoming Windows 8 was posted by James Kendrick at ZDNet &amp;hellip; &lt;a href=&#34;http://www.zdnet.com/blog/mobile-news/what-problem-does-windows-8-solve/6856&#34;&gt;What problem does Window 8 solve ?&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I find the new logo kind of hideous :)&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>baby steps</title>
-      <link>http://www.apertoire.net/baby-steps/</link>
-      <pubDate>Sat, 31 Dec 2011 23:23:23 +0000</pubDate>
-      
-      <guid>http://www.apertoire.net/baby-steps/</guid>
-      <description>
-
-&lt;p&gt;above is a screenshot of my current setup :)&lt;/p&gt;
-
-&lt;p&gt;it&amp;rsquo;s an awesome experience so far.&lt;/p&gt;
-
-&lt;p&gt;i have pretty much moved my daily operation to this machine. added two drives, one for music, the other as a staging area between my downloading machine and my unraid server (since i do some manipulation on the files i get).&lt;/p&gt;
-
-&lt;p&gt;these are the apps i generally use&lt;/p&gt;
-
-&lt;h3 id=&#34;browser:c73f60ca98146825d097e289162d7735&#34;&gt;BROWSER&lt;/h3&gt;
-
-&lt;p&gt;chrome is very lightweight here, and i haven&amp;rsquo;t seen it crash yet. opera is pretty good as well, firefox consumes a lot of memory and safari, i didn&amp;rsquo;t quite try&lt;/p&gt;
-
-&lt;h3 id=&#34;music:c73f60ca98146825d097e289162d7735&#34;&gt;MUSIC&lt;/h3&gt;
-
-&lt;p&gt;i&amp;rsquo;m evaluating different music players&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.instinctiv.com&#34;&gt;instinctiv (free)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.audirvana.com&#34;&gt;audirvana (free)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.voxapp.didgeroo.com/&#34;&gt;vox (free)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://sbooth.org/Decibel/&#34;&gt;decibel (paid)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;movies:c73f60ca98146825d097e289162d7735&#34;&gt;MOVIES&lt;/h3&gt;
-
-&lt;p&gt;i&amp;rsquo;ve pretty much settled on &lt;a href=&#34;http://www.mplayerosx.ch/&#34;&gt;MPlayer OSX Extended&lt;/a&gt; for movies&lt;/p&gt;
-
-&lt;h3 id=&#34;images:c73f60ca98146825d097e289162d7735&#34;&gt;IMAGES&lt;/h3&gt;
-
-&lt;p&gt;had to install &lt;a href=&#34;http://www.xnview.com&#34;&gt;xnview&lt;/a&gt;, didn&amp;rsquo;t quite find the same functionality in other apps.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-good:c73f60ca98146825d097e289162d7735&#34;&gt;the good&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;having unix underpinnings is just huge. i&amp;rsquo;m a developer so it&amp;rsquo;s so great to be able to do unix stuff at the terminal &lt;a href=&#34;http://www.iterm2.com&#34;&gt;iTerm 2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;installing applications either from the mac app store or downloaded from the internet is so cool and simple&lt;/li&gt;
-&lt;li&gt;the general awesomeness of it all.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;the-bad:c73f60ca98146825d097e289162d7735&#34;&gt;the bad&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;im using a pc keyboard, so i&amp;rsquo;m still getting used to the shortcuts&lt;/li&gt;
-&lt;li&gt;i haven&amp;rsquo;t found a replacement for 7zip. keka is just not there for me.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;the-ugly:c73f60ca98146825d097e289162d7735&#34;&gt;the ugly&lt;/h2&gt;
-
-&lt;p&gt;&lt;em&gt;FINDER&lt;/em&gt; &amp;hellip; i find it cumbersome to use &amp;hellip; to perform simple operations i need a ton of windows open and then use some keyboard shortcuts &amp;hellip; i&amp;rsquo;ve installed &lt;a href=&#34;http://www.mucommander.com&#34;&gt;muCommander&lt;/a&gt;, &lt;a href=&#34;http://www.magicansoft.com&#34;&gt;magican file&lt;/a&gt;, &lt;a href=&#34;http://www.cocoatech.com&#34;&gt;path finder&lt;/a&gt;, &lt;a href=&#34;http://totalfinder.binaryage.com/&#34;&gt;total finder&lt;/a&gt; &amp;hellip; but not decided yet what to use &amp;hellip; then there are like a ton of views in finder .. and none seems really useful to me 8)&lt;/p&gt;
-
-&lt;p&gt;but overall, i&amp;rsquo;m impressed and love my hackmac !&lt;/p&gt;
 </description>
     </item>
     

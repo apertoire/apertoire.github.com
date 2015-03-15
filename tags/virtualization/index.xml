@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Virtualization on Apertoire</title>
+      <title>Virtualization on Apertoire </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.apertoire.net/tags/virtualization/</link>
-    <description>Recent content in Virtualization on Apertoire</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Jan 2014 23:23:23 +0000</lastBuildDate>
-    <atom:link href="http://www.apertoire.net/tags/virtualization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <updated>Thu, 09 Jan 2014 23:23:23 UTC</updated>
     
     <item>
       <title>Dockerization</title>
       <link>http://www.apertoire.net/dockeritazion/</link>
-      <pubDate>Thu, 09 Jan 2014 23:23:23 +0000</pubDate>
+      <pubDate>Thu, 09 Jan 2014 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/dockeritazion/</guid>
       <description>

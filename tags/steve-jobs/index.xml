@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Steve Jobs on Apertoire</title>
+      <title>Steve Jobs on Apertoire </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.apertoire.net/tags/steve-jobs/</link>
-    <description>Recent content in Steve Jobs on Apertoire</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Dec 2011 11:11:11 +0000</lastBuildDate>
-    <atom:link href="http://www.apertoire.net/tags/steve-jobs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <updated>Sat, 10 Dec 2011 11:11:11 UTC</updated>
     
     <item>
       <title>Stay Hungry. Stay Foolish</title>
       <link>http://www.apertoire.net/stay-hungry-stay-foolish/</link>
-      <pubDate>Sat, 10 Dec 2011 11:11:11 +0000</pubDate>
+      <pubDate>Sat, 10 Dec 2011 11:11:11 UTC</pubDate>
       
       <guid>http://www.apertoire.net/stay-hungry-stay-foolish/</guid>
       <description>&lt;blockquote&gt;

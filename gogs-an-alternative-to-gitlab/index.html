@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Comparison of two of the best self-hosted git services, namely Gogs and Gitlab. Additionally, a Gogs docker is made available for public use.">
+
+  <title>Gogs, an alternative to Gitlab</title>
+
+  <link rel="alternate" type="application/rss+xml" href="" title="Apertoire">
+  
+  <link href='//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>  
+  <link href='fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">  
+  
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection">
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css">
+  
+  <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <ul class="menu">
+        <li><a href="http://feeds.feedburner.com/apertoire"><i class="fa fa-rss fa-2x"></i></a></li>
+        <li><a href="https://twitter.com/apertoire_"><i class="fa fa-twitter fa-2x"></i></a></li>
+      </ul>
+
+      <section class="name">
+        <a href="/">Apertoire</a>
+      </section>
+    </div>
+  </div>
+
+<section class="container content">
+
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:728px;height:90px"
+       data-ad-client="ca-pub-5982725985453951"
+       data-ad-slot="6092848225"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  
+
+  <img class="frontpost" src="/img/gogsweb.jpg">
+
+  <div class="title">
+    <h1>Gogs, an alternative to Gitlab</h1>
+    <div class="when">
+    Mar 15, 2015 / Juan B. Rodriguez
+    </div>
+  </div>
+
+  <div>
+  
+
+<p><em>tl;dr</em> <a href="https://gitlab.com">Gitlab</a> is a great git hosting service, almost as powerful as <a href="https://github.com">Github</a>. But, is there something out there that&rsquo;s comparable to Gitlab/Github, yet simpler to manage ? I think <a href="http://gogs.io"><code>Gogs</code></a> does the job.</p>
+
+<h2 id="introduction:5880767147774326ded8eaa664656f14">Introduction</h2>
+
+<p>These days, Github has become the preferred platform to host code. With it&rsquo;s many great features, ease of use and access, almost all software developers are happily using it.</p>
+
+<p>Also, since <a href="http://arstechnica.com/information-technology/2015/03/google-to-close-google-code-open-source-project-hosting/">Google Code hosting project is closing down</a>, you can expect more projects being driven to it.</p>
+
+<p>But what if you&rsquo;re writing some Android app, maybe you&rsquo;re building the next great iOS game or in general, you&rsquo;re writing some code that you don&rsquo;t want to be exposed to the general public ?</p>
+
+<p>You could certainly purchase access to private Github repositories, but most certainly you&rsquo;d rather want to invest your capital in more pressing matters.</p>
+
+<p>This is where software such as Gitlab, and Gogs, come very handy.</p>
+
+<p>They provide a service very similar to Github, with the difference that you can host them in your own servers, even in your own workstation.</p>
+
+<p>Read on for some more insight.</p>
+
+<h2 id="gitlab:5880767147774326ded8eaa664656f14">Gitlab</h2>
+
+<p>Gitlab is a powerful git service, with features that rival Github itself. It&rsquo;s a mature project and it&rsquo;s being continuously updated.</p>
+
+<p><img src="https://about.gitlab.com/images/feature_page/activity_stream_full.png" alt="gitlab" />
+</p>
+
+<p>They recently acquired <a href="https://gitorious.org/">Gitorius</a> (another Github-like service), so you can only assume that the feature set will expand (<a href="http://thenextweb.com/insider/2015/03/03/gitlab-acquires-rival-gitorious-will-shut-june-1/">check the press clip about the acquisition</a>).</p>
+
+<p>Installation has been undoubtedly improved since the &lsquo;manual&rsquo; days, which was time-consuming and very error prone.</p>
+
+<p>Now there&rsquo;s a Linux deb/rpm package available (called the Omnibus), which handles all dependencies and simplifies the process.</p>
+
+<p>Upgrading is a bit more convoluted, especially if you&rsquo;re coming from a version that&rsquo;s prior to the last, but all in all, it&rsquo;s not that complicated.</p>
+
+<p>Nevertheless, you can feel a lot of stuff is going on behind the scenes. You will be running Sidekiq, Unicorn, Nginx, Ruby (plus all it&rsquo;s gems) and then Gitlab itself.</p>
+
+<p>Customizing the install is not that simple and if something should go wrong, there are many moving parts, where you would have to go looking for problems.</p>
+
+<h2 id="enter-the-one-binary:5880767147774326ded8eaa664656f14">Enter the One binary</h2>
+
+<p>On the other hand, we have <a href="http://gogs.io">Gogs</a>. A single binary is all you need to run it.</p>
+
+<p>It&rsquo;s built with <a href="https://golang.org">Go</a>, so you automatically get cross-platform compatibility.</p>
+
+<p>It runs on Windows, Mac, Linux, ARM, etc.</p>
+
+<p><img src="http://gogs.io/imgs/screenshoots/1.png" alt="gogs" />
+</p>
+
+<p>Installation simply requires unzipping the release archive into a chosen folder. That&rsquo;s it. Upgrading works the same: just unzip the release archive.</p>
+
+<p>That&rsquo;s the beauty of binary deployment, that covers multiple platforms.</p>
+
+<p>Gogs has a really low footprint, so it&rsquo;s easy on system resources (it can run on a <a href="http://www.raspberrypi.org">Raspberry Pi</a>).</p>
+
+<p>You could run it as is, with the default configuration, or do some minimal tweaking.</p>
+
+<p>The default configuration file is located in &lt;install folder&gt;/conf/app.ini, but the <a href="http://gogs.io/docs/installation/configuration_and_run.html">documentation suggests</a> to write your changes in &lt;install folder&gt;/custom/conf/app.ini, so that when you upgrade, your customizations are preserved (since conf/app.ini is overwritten).</p>
+
+<p>There are three sensible changes you could consider:</p>
+
+<ul>
+<li>Repository location</li>
+</ul>
+
+<pre><code>[repository]
+ROOT = !! this is the location where you want to keep the repositories !!
+</code></pre>
+
+<ul>
+<li>Database location</li>
+</ul>
+
+<pre><code>[database]
+PATH = !! this is the location of your database (sqlite3 by default) !!
+</code></pre>
+
+<ul>
+<li>Public key to enable commit over ssh</li>
+</ul>
+
+<p><img src="/img/sshkey.png" alt="sshkey" title="ssh public key" />
+</p>
+
+<p>Note that currently, you need to run an ssh server (<a href="http://www.openssh.com">openssh</a> will do fine), the same as Gitlab.</p>
+
+<h2 id="comparison:5880767147774326ded8eaa664656f14">Comparison</h2>
+
+<p>Let&rsquo;s compare both products to see how they match up in terms of feature set. I&rsquo;ll throw in Github, as a reference.</p>
+
+<div class="table">
+        <table class="pricing">
+            <tbody>
+            <tr>
+                <th><h3 class="tableheader">Feature</h3></th>
+                <th><h3 class="version"> Gogs</h3></th>
+                <th><h3 class="version"> Gitlab</h3></th>
+                <th><h3 class="version"> Github</h3></th>
+            </tr>
+
+            <tr>
+                <td>Dashboard &amp; File Browser</td>
+                <td><span class="yes">yes</span></td>
+                <td><span class="yes">yes</span></td>
+                <td><span class="yes">yes</span></td>
+            </tr>
+            
+            <tr>
+                <td>Issue Tracking, Milestones &amp; Commit keywords</td>
+                <td><span class="yes">yes</span></td>
+                <td><span class="yes">yes</span></td>
+                <td><span class="yes">yes</span></td>
+            </tr>
+
+            <tr>
+                <td>Organizations support</td>
+                <td><span class="yes">yes</span></td>
+                <td><span class="yes">yes</span></td>
+                <td><span class="yes">yes</span></td>
+            </tr>
+             
+            <tr>
+                <td>Wiki</td>
+                <td><span class="no">no</span></td>
+                <td><span class="yes">yes</span></td>
+                <td><span class="yes">yes</span></td>
+            </tr>
+            
+            <tr>
+                <td>Code Review</td>
+                <td><span class="no">no</span></td>
+                <td><span class="yes">yes</span></td>
+                <td><span class="yes">yes</span></td>
+            </tr>
+        
+
+                
+            <tr>
+                <td>Code Snippets</td>
+                <td><span class="no">no</span></td>
+                <td><span class="yes">yes</span></td>
+                <td><span class="yes">yes</span></td>
+            </tr>
+
+            <tr>
+                <td>Web Hooks</td>
+                <td><span class="yes">yes</span></td>
+                <td><span class="yes">yes</span></td>
+                <td><span class="yes">yes</span></td>
+            </tr>
+
+            <tr>
+                <td>Git Hooks</td>
+                <td><span class="yes">yes</span></td>
+                <td>* Enterprise</td>
+                <td>* Enterprise</td>
+            </tr>
+
+            <tr>
+                <td>LDAP Group Sync</td>
+                <td><span class="no">no</span></td>
+                <td>* Enterprise</td>
+                <td>* Enterprise</td>
+            </tr>
+
+            <tr>
+                <td>Branded Login Page</td>
+                <td><span class="no">no</span></td>
+                <td>* Enterprise</td>
+                <td>* Enterprise</td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>Language</td>
+                <td>Go</td>
+                <td>Ruby</td>
+                <td>Ruby</td>
+            </tr>
+
+            <tr>
+                <td>Platform</td>
+                <td>Cross-Platform</td>
+                <td>Linux</td>
+                <td>* Virtual Machine</td>
+            </tr>
+
+            <tr>
+                <td>License</td>
+                <td>MIT</td>
+                <td>MIT</td>
+                <td>Proprietary</td>
+            </tr>           
+
+
+            <tr>
+                <td>Resource Usage</td>
+                <td>Low</td>
+                <td>Medium/High</td>
+                <td>Medium/High</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+
+<p>&nbsp;</p>
+
+<p>Code Review (and pull requests) is arguably the most important missing feature. It&rsquo;s at the top of the list among <a href="https://github.com/gogits/gogs/issues/5">Gogs Github issues</a> and Gogs&rsquo;s main developer (<a href="https://github.com/Unknwon">Unknwon</a>) is working on it.</p>
+
+<p>But all said, you have a very functional private Git host service.</p>
+
+<h2 id="running-a-gogs-docker:5880767147774326ded8eaa664656f14">Running a Gogs docker</h2>
+
+<p>I <a href="/dockeritazion.md">previously described</a> how I &lsquo;dockerized&rsquo; my home server environment, so it&rsquo;s only fitting that I would run gogs as a Docker container.</p>
+
+<p>So let&rsquo;s do it step by step.</p>
+
+<p>I have an apps folder in my server home directory (/home/kayak/apps) and create subfolders per each app I deploy as a Docker container.</p>
+
+<p>Download and unzip the latest version (use the archive that corresponds to your platform)</p>
+
+<pre><code>$ cd /home/kayak/apps
+$ wget http://gogs.dn.qbox.me/gogs_v0.5.13_linux_amd64.zip
+$ unzip gogs_v0.5.13_linux_amd64.zip
+$ rm gogs_v0.5.13_linux_amd64.zip
+</code></pre>
+
+<h3 id="optional-customize-the-configuration:5880767147774326ded8eaa664656f14">Optional | Customize the configuration</h3>
+
+<pre><code>$ cd gogs
+$ mkdir -p custom/conf
+$ cd custom/conf
+$ nano app.ini
+</code></pre>
+
+<pre><code>[repository]
+ROOT = !! this is the location where you want to keep the repositories !!
+
+[database]
+PATH = !! this is the location of your database (sqlite3 by default) !!
+</code></pre>
+
+<p><strong><em>NOTE</em></strong>: At this point, you could simply run <strong>gogs web</strong> and you&rsquo;d have it running normally, not as docker container.</p>
+
+<p>Let&rsquo;s create our Dockerfile</p>
+
+<pre><code>$ cd /home/kayak/apps/gogs
+$ nano Dockerfile
+</code></pre>
+
+<pre><code class="language-javascript">FROM ubuntu:14.04
+
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN sed 's/main$/main universe multiverse/' -i /etc/apt/sources.list &amp;&amp; \
+	apt-get update &amp;&amp; apt-mark hold initscripts &amp;&amp; \
+	apt-get install -y sudo openssh-server git &amp;&amp; \
+	apt-get clean
+
+EXPOSE 22 3000
+
+RUN addgroup --gid 501 kayak &amp;&amp; adduser --uid 501 --gid 501 --disabled-password --gecos 'kayak' kayak &amp;&amp; adduser kayak sudo
+
+WORKDIR /home/kayak
+ENV HOME /home/kayak
+
+ENTRYPOINT [&quot;/home/kayak/boot&quot;]
+</code></pre>
+
+<p>The Dockerfile is based on the latest Ubuntu server LTS version (14.04).</p>
+
+<p>We then install sudo, openssh and git, expose ports 22 (for ssh) and 3000 (for the gogs web interface).</p>
+
+<p>Additionally, I generally create a user (<em>kayak</em> in this case) with the same uid/gid as my user in my Mac box, to prevent issues with access permissions.</p>
+
+<p>Finally, the boot shell script is called to get things running.</p>
+
+<pre><code>$ touch boot
+$ chmod +x boot
+$ nano boot
+</code></pre>
+
+<pre><code>#!/bin/bash
+
+sudo -u kayak -H touch /home/kayak/.ssh/authorized_keys
+chmod 700 /home/kayak/.ssh &amp;&amp; chmod 600 /home/kayak/.ssh/authorized_keys
+
+# start openssh server
+mkdir /var/run/sshd
+/usr/sbin/sshd -D &amp;
+
+exec sudo -u kayak /home/kayak/gogs web
+</code></pre>
+
+<p>What this does is run the ssh daemon and then run gogs, as kayak user (rather than root, which is the default).</p>
+
+<p>Let&rsquo;s build the image</p>
+
+<pre><code class="language-shell">$ cd /home/kayak/apps/gogs
+$ docker build --rm -t apertoire/gogs .
+</code></pre>
+
+<p>Once the image is built, we can run it with</p>
+
+<pre><code class="language-javascript">$ docker run -d --name gogs \
+-v /etc/localtime:/etc/localtime:ro \
+-v /home/kayak/apps/gogs:/home/kayak \
+-p 62723:22 \
+-p 3000:3000 \
+apertoire/gogs
+</code></pre>
+
+<p>You can check the command line to see that it&rsquo;s running.</p>
+
+<p><img src="/img/gogs-running.png" alt="gogs" title="gogs" />
+</p>
+
+<p>Now you can open the web interface, and it will show an install page (for first-time run)</p>
+
+<p><img src="/img/gogsinstall.jpg" alt="gogsinstall" title="Gogs first-time run install page" />
+</p>
+
+<p>Once you have completed the install, you&rsquo;ll have a functional Gogs service.</p>
+
+<p><img src="/img/gogsweb.jpg" alt="gogsweb" title="Gogs Web" />
+</p>
+
+<h2 id="conclusion:5880767147774326ded8eaa664656f14">Conclusion</h2>
+
+<p>Gogs is a lightweight, easy to set up, cross-platform git hosting service, with features favorably comparable to Gitlab/Github.</p>
+
+<p>It&rsquo;s not as mature as the other two, but it&rsquo;s still incredibly capable.</p>
+
+<p>It&rsquo;s also open source, so you can contribute to improve it.</p>
+
+<p>I replaced my Gitlab installation with Gogs a couple of months ago and haven&rsquo;t looked back.</p>
+
+<p>I&rsquo;m hosting 42 repositories and have found performance to be extremely good.</p>
+
+<p>I definitely recommend Gogs as your git self-hosting service.</p>
+
+<h2 id="final-notes:5880767147774326ded8eaa664656f14">Final Notes</h2>
+
+<p>Hope you found the article interesting.</p>
+
+<p>Please leave your comments here or <a href="https://twitter.com/intent/tweet?text=Gogs+,+an+alternative+to+Gitlab&amp;amp;via=apertoire_&amp;amp;url=http%3A%2F%2Fwww.apertoire.net%2Fgogs-an-alternative-to-gitlab%2F&amp;amp;hashtags=gogs,gitlab,github,golang">send a tweet</a>.</p>
+
+  </div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost") 
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//apertoire.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+<div class="footer">
+  <div class="container">
+    <hr>
+
+    <span>&copy; 2010 - 2015 <a href="/">apertoire.net</a></span>
+
+    <p class="powered">powered by <a href="http://gohugo.io/">hugo</a>. hosted by <a href="https://github.com">github</a>.</p>
+
+    <div style="clear: both"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15527576-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

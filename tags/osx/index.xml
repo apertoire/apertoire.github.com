@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Osx on Apertoire</title>
+      <title>Osx on Apertoire </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.apertoire.net/tags/osx/</link>
-    <description>Recent content in Osx on Apertoire</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Mar 2013 23:23:23 +0000</lastBuildDate>
-    <atom:link href="http://www.apertoire.net/tags/osx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <updated>Fri, 15 Mar 2013 23:23:23 UTC</updated>
     
     <item>
       <title>12D78</title>
       <link>http://www.apertoire.net/12D78/</link>
-      <pubDate>Fri, 15 Mar 2013 23:23:23 +0000</pubDate>
+      <pubDate>Fri, 15 Mar 2013 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/12D78/</guid>
       <description>&lt;p&gt;so, it&amp;rsquo;s been quite a while now since my last update with regards to my hackintosh, old trusted blackbeard.&lt;/p&gt;
@@ -21,15 +21,15 @@
 
 &lt;p&gt;but that&amp;rsquo;s &lt;em&gt;literally&lt;/em&gt; NOTHING compared to the fact that the whole system freezes, due to some god forsaken nvidia drivers for my gtx 660ti &amp;hellip; no incantation i tried made any difference &amp;hellip; and there are plenty of reports about this even on the official apple support forums (with regards to macbook pros and such).&lt;/p&gt;
 
-&lt;p&gt;On March 14, 2013, Apple release 10.8.3 &amp;hellip; i&amp;rsquo;m expecting a lot from this update (since beta testers/developers were asked to specifically look for graphics upgrades).&lt;/p&gt;
+&lt;p&gt;On March 14, 2013, Apple released 10.8.3 &amp;hellip; i&amp;rsquo;m expecting a lot from this update (since beta testers/developers were asked to specifically look for graphics upgrades).&lt;/p&gt;
 
 &lt;p&gt;i hope my freeze problems are a thing of the past.&lt;/p&gt;
 
-&lt;p&gt;i&amp;rsquo;m also trying to help a little with regards to the sleeping issue, by upgrading my system definition to macpro 5,1 &amp;hellip; supposedly 5,1 handle sleeping better than 3,1&lt;/p&gt;
+&lt;p&gt;i&amp;rsquo;m also trying to help a little with regards to the sleeping issue, by upgrading my system definition to macpro 5,1 &amp;hellip; supposedly 5,1 handles sleeping better than 3,1.&lt;/p&gt;
 
 &lt;p&gt;on the other hand, i was reading in zite today that 10.8.3 fixed some sleeping issues in macbook pro retinas !!! wtff !!!! (what the flying f&amp;hellip; !!!)&lt;/p&gt;
 
-&lt;p&gt;so i have to assume the following scenarios will eventually take place&lt;/p&gt;
+&lt;p&gt;so i have to assume the following scenarios will eventually take place:&lt;/p&gt;
 
 &lt;p&gt;&lt;uL&gt;
     &lt;li&gt;upgrading to 10.8.3 fixes the nvidia driver issues. all is good&lt;/li&gt;
@@ -44,7 +44,7 @@
     <item>
       <title>hotfix 1</title>
       <link>http://www.apertoire.net/hotfix-1/</link>
-      <pubDate>Mon, 07 May 2012 23:23:23 +0000</pubDate>
+      <pubDate>Mon, 07 May 2012 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/hotfix-1/</guid>
       <description>&lt;p&gt;well, i need to add a couple of comments after my last post&lt;/p&gt;
@@ -79,7 +79,7 @@ mount_nfs zfsbox:/export/Backup /local_mountpoint
     <item>
       <title>oh solaris mio !</title>
       <link>http://www.apertoire.net/oh-solaris-mio/</link>
-      <pubDate>Mon, 07 May 2012 11:11:11 +0000</pubDate>
+      <pubDate>Mon, 07 May 2012 11:11:11 UTC</pubDate>
       
       <guid>http://www.apertoire.net/oh-solaris-mio/</guid>
       <description>&lt;p&gt;so the plan is as follows:&lt;/p&gt;
@@ -178,7 +178,7 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
     <item>
       <title>storage wars</title>
       <link>http://www.apertoire.net/storage-wars/</link>
-      <pubDate>Sun, 06 May 2012 23:23:23 +0000</pubDate>
+      <pubDate>Sun, 06 May 2012 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/storage-wars/</guid>
       <description>&lt;p&gt;i&amp;rsquo;m currently running an &lt;a href=&#34;http://lime-technology.com&#34;&gt;unRaid&lt;/a&gt; server, which hosts my media collection  (movies, tv series, music, pictures and data backups)&lt;/p&gt;
@@ -205,7 +205,7 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
     <item>
       <title>baby steps</title>
       <link>http://www.apertoire.net/baby-steps/</link>
-      <pubDate>Sat, 31 Dec 2011 23:23:23 +0000</pubDate>
+      <pubDate>Sat, 31 Dec 2011 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/baby-steps/</guid>
       <description>
@@ -267,7 +267,7 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
     <item>
       <title>blackbeard</title>
       <link>http://www.apertoire.net/blackbeard/</link>
-      <pubDate>Sat, 24 Dec 2011 23:23:23 +0000</pubDate>
+      <pubDate>Sat, 24 Dec 2011 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/blackbeard/</guid>
       <description>&lt;p&gt;i&amp;rsquo;m writing this from blackbeard, my hackintosh mac.&lt;/p&gt;
@@ -340,7 +340,7 @@ two sites were invaluable on getting this to work:&lt;/p&gt;
     <item>
       <title>why i&#39;m switching to mac osx</title>
       <link>http://www.apertoire.net/why-i-m-switching-to-mac-osx/</link>
-      <pubDate>Sat, 10 Dec 2011 23:23:23 +0000</pubDate>
+      <pubDate>Sat, 10 Dec 2011 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/why-i-m-switching-to-mac-osx/</guid>
       <description>&lt;p&gt;i&amp;rsquo;ve always used a microsoft windows operating system. up until now.&lt;/p&gt;

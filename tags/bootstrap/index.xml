@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bootstrap on Apertoire</title>
+      <title>Bootstrap on Apertoire </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.apertoire.net/tags/bootstrap/</link>
-    <description>Recent content in Bootstrap on Apertoire</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Apr 2013 23:23:23 +0000</lastBuildDate>
-    <atom:link href="http://www.apertoire.net/tags/bootstrap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <updated>Wed, 24 Apr 2013 23:23:23 UTC</updated>
     
     <item>
       <title>Running a Java Vert.x app on Heroku</title>
       <link>http://www.apertoire.net/running-a-java-vertx-app-on-heroku/</link>
-      <pubDate>Wed, 24 Apr 2013 23:23:23 +0000</pubDate>
+      <pubDate>Wed, 24 Apr 2013 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/running-a-java-vertx-app-on-heroku/</guid>
       <description>
@@ -204,7 +204,7 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
     <item>
       <title>vaultee</title>
       <link>http://www.apertoire.net/vaultee/</link>
-      <pubDate>Sat, 30 Mar 2013 23:23:23 +0000</pubDate>
+      <pubDate>Sat, 30 Mar 2013 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/vaultee/</guid>
       <description>

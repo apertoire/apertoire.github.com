@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hosting on Apertoire</title>
+      <title>Hosting on Apertoire </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.apertoire.net/tags/hosting/</link>
-    <description>Recent content in Hosting on Apertoire</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Mar 2013 23:23:23 +0000</lastBuildDate>
-    <atom:link href="http://www.apertoire.net/tags/hosting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <updated>Sun, 03 Mar 2013 23:23:23 UTC</updated>
     
     <item>
       <title>moving to github pages</title>
       <link>http://www.apertoire.net/moving-to-github-pages/</link>
-      <pubDate>Sun, 03 Mar 2013 23:23:23 +0000</pubDate>
+      <pubDate>Sun, 03 Mar 2013 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/moving-to-github-pages/</guid>
       <description>

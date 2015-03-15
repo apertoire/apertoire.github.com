@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://www.apertoire.net/</loc>
-    <lastmod>2014-11-22T07:50:25-05:00</lastmod>
+    <lastmod>2015-03-15T09:20:31-05:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.apertoire.net/gogs-an-alternative-to-gitlab/</loc>
+    <lastmod>2015-03-15T09:20:31-05:00</lastmod>
   </url>
   
   <url>

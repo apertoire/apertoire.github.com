@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unraid on Apertoire</title>
+      <title>Unraid on Apertoire </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.apertoire.net/tags/unraid/</link>
-    <description>Recent content in Unraid on Apertoire</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Jan 2014 23:23:23 +0000</lastBuildDate>
-    <atom:link href="http://www.apertoire.net/tags/unraid/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <updated>Thu, 09 Jan 2014 23:23:23 UTC</updated>
     
     <item>
       <title>Dockerization</title>
       <link>http://www.apertoire.net/dockeritazion/</link>
-      <pubDate>Thu, 09 Jan 2014 23:23:23 +0000</pubDate>
+      <pubDate>Thu, 09 Jan 2014 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/dockeritazion/</guid>
       <description>
@@ -155,7 +155,7 @@
     <item>
       <title>hotfix 2</title>
       <link>http://www.apertoire.net/hotfix-2/</link>
-      <pubDate>Mon, 06 Aug 2012 23:23:23 +0000</pubDate>
+      <pubDate>Mon, 06 Aug 2012 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/hotfix-2/</guid>
       <description>&lt;p&gt;i&amp;rsquo;ve built my esxi box (skynet) &amp;hellip; find some additional info at &lt;a href=&#34;http://lime-technology.com/forum/index.php?topic=21514.0&#34; title=&#34;skynet + hal &amp;amp; wopr (esxi head + 2 unraid das)&#34; target=&#34;_blank&#34;&gt;the unraid forums&lt;/a&gt;&lt;/p&gt;
@@ -176,7 +176,7 @@ also, oracle recently published an article on &lt;a href=&#34;http://www.oracle.
     <item>
       <title>storage wars</title>
       <link>http://www.apertoire.net/storage-wars/</link>
-      <pubDate>Sun, 06 May 2012 23:23:23 +0000</pubDate>
+      <pubDate>Sun, 06 May 2012 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/storage-wars/</guid>
       <description>&lt;p&gt;i&amp;rsquo;m currently running an &lt;a href=&#34;http://lime-technology.com&#34;&gt;unRaid&lt;/a&gt; server, which hosts my media collection  (movies, tv series, music, pictures and data backups)&lt;/p&gt;

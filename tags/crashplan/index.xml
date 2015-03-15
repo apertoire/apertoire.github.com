@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Crashplan on Apertoire</title>
+      <title>Crashplan on Apertoire </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://www.apertoire.net/tags/crashplan/</link>
-    <description>Recent content in Crashplan on Apertoire</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 May 2012 23:23:23 +0000</lastBuildDate>
-    <atom:link href="http://www.apertoire.net/tags/crashplan/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <updated>Mon, 07 May 2012 23:23:23 UTC</updated>
     
     <item>
       <title>hotfix 1</title>
       <link>http://www.apertoire.net/hotfix-1/</link>
-      <pubDate>Mon, 07 May 2012 23:23:23 +0000</pubDate>
+      <pubDate>Mon, 07 May 2012 23:23:23 UTC</pubDate>
       
       <guid>http://www.apertoire.net/hotfix-1/</guid>
       <description>&lt;p&gt;well, i need to add a couple of comments after my last post&lt;/p&gt;
@@ -47,7 +47,7 @@ mount_nfs zfsbox:/export/Backup /local_mountpoint
     <item>
       <title>oh solaris mio !</title>
       <link>http://www.apertoire.net/oh-solaris-mio/</link>
-      <pubDate>Mon, 07 May 2012 11:11:11 +0000</pubDate>
+      <pubDate>Mon, 07 May 2012 11:11:11 UTC</pubDate>
       
       <guid>http://www.apertoire.net/oh-solaris-mio/</guid>
       <description>&lt;p&gt;so the plan is as follows:&lt;/p&gt;
