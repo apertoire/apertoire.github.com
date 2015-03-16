@@ -3,7 +3,7 @@
   <channel>
       <title>Rackspace on Apertoire </title>
       <generator>Hugo</generator>
-      <link>http://localhost:1313/tags/rackspace/</link>
+      <link>http://www.apertoire.net/tags/rackspace/</link>
       <description>Articles about Technology in general</description>
     <language>en-us</language>
     
@@ -12,10 +12,10 @@
     
     <item>
       <title>moving to github pages</title>
-      <link>http://localhost:1313/moving-to-github-pages/</link>
+      <link>http://www.apertoire.net/moving-to-github-pages/</link>
       <pubDate>Sun, 03 Mar 2013 23:23:23 GMT</pubDate>
       
-      <guid>http://localhost:1313/moving-to-github-pages/</guid>
+      <guid>http://www.apertoire.net/moving-to-github-pages/</guid>
       <description>
 
 &lt;p&gt;it all started when i started considering the deployment of the &lt;a href=&#34;http://vertx.io&#34;&gt;vert.x&lt;/a&gt; app i&amp;rsquo;m working on.&lt;/p&gt;
@@ -33,7 +33,7 @@
 
 &lt;p&gt;the rackspace site held a wordpress blog and some software products i&amp;rsquo;ve developed over the years.&lt;/p&gt;
 
-&lt;p&gt;i started the tumblr site when &lt;a href=&#34;http://localhost:1313/why-i-m-switching-to-mac-osx/&#34;&gt;i dove into mac osx&lt;/a&gt; and there i chronicled some other infrastructure endeavours.&lt;/p&gt;
+&lt;p&gt;i started the tumblr site when &lt;a href=&#34;http://www.apertoire.net/why-i-m-switching-to-mac-osx/&#34;&gt;i dove into mac osx&lt;/a&gt; and there i chronicled some other infrastructure endeavours.&lt;/p&gt;
 
 &lt;p&gt;when i started digging into the whole github pages, i found out about custom domains and read a lot of articles about people switching from any blog framework to github pages.&lt;/p&gt;
 
@@ -52,7 +52,7 @@
 
 &lt;p&gt;on my dns registrar (&lt;a href=&#34;https://namecheap.com&#34;&gt;Namecheap&lt;/a&gt;), it went down like this&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/dns.png&#34; alt=&#34;change a and cname records&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/dns.png&#34; alt=&#34;change a and cname records&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;my mail hosting is done via google, so i used namecheap&amp;rsquo;s option to &amp;ldquo;Automatically set MX records necessary for &lt;strong&gt;Google Apps Email&lt;/strong&gt;&amp;ldquo;&lt;/p&gt;
@@ -63,10 +63,10 @@
 
 &lt;p&gt;As per noisebleeds comment below, I&amp;rsquo;m attaching the updated DNS settings I had to use after Github made some changes to their network routing&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/dns1.png&#34; alt=&#34;change a and cname records&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/dns1.png&#34; alt=&#34;change a and cname records&#34; /&gt;
 &lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/dns2.png&#34; alt=&#34;change a and cname records&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/dns2.png&#34; alt=&#34;change a and cname records&#34; /&gt;
 &lt;/p&gt;
 </description>
     </item>

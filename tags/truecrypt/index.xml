@@ -3,7 +3,7 @@
   <channel>
       <title>Truecrypt on Apertoire </title>
       <generator>Hugo</generator>
-      <link>http://localhost:1313/tags/truecrypt/</link>
+      <link>http://www.apertoire.net/tags/truecrypt/</link>
       <description>Articles about Technology in general</description>
     <language>en-us</language>
     
@@ -12,10 +12,10 @@
     
     <item>
       <title>hotfix 1</title>
-      <link>http://localhost:1313/hotfix-1/</link>
+      <link>http://www.apertoire.net/hotfix-1/</link>
       <pubDate>Mon, 07 May 2012 23:23:23 GMT</pubDate>
       
-      <guid>http://localhost:1313/hotfix-1/</guid>
+      <guid>http://www.apertoire.net/hotfix-1/</guid>
       <description>&lt;p&gt;well, i need to add a couple of comments after my last post&lt;/p&gt;
 
 &lt;p&gt;i deliberately chose to create the zfs dataset with a passphrase encryption method. as per solaris docs, this means it can&amp;rsquo;t mount it at boot time. the best practice would be a boot time prompt (a la TrueCrypt in windows), but until that time comes, i will live with loading after booting, using the following:&lt;/p&gt;

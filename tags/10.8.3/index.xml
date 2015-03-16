@@ -3,7 +3,7 @@
   <channel>
       <title>10.8.3 on Apertoire </title>
       <generator>Hugo</generator>
-      <link>http://localhost:1313/tags/10.8/index.3/</link>
+      <link>http://www.apertoire.net/tags/10.8/index.3/</link>
       <description>Articles about Technology in general</description>
     <language>en-us</language>
     
@@ -12,10 +12,10 @@
     
     <item>
       <title>12D78</title>
-      <link>http://localhost:1313/12D78/</link>
+      <link>http://www.apertoire.net/12D78/</link>
       <pubDate>Fri, 15 Mar 2013 23:23:23 GMT</pubDate>
       
-      <guid>http://localhost:1313/12D78/</guid>
+      <guid>http://www.apertoire.net/12D78/</guid>
       <description>&lt;p&gt;so, it&amp;rsquo;s been quite a while now since my last update with regards to my hackintosh, old trusted blackbeard.&lt;/p&gt;
 
 &lt;p&gt;i have to tell you &amp;hellip; it&amp;rsquo;s killing me the fact that sleep isnt working &amp;hellip; whenever i shutdown and come online again, i have to rearrange most of the windows in their corresponding workspace (i have 6 workspaces).&lt;/p&gt;

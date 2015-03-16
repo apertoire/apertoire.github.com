@@ -3,7 +3,7 @@
   <channel>
       <title>Lion on Apertoire </title>
       <generator>Hugo</generator>
-      <link>http://localhost:1313/tags/lion/</link>
+      <link>http://www.apertoire.net/tags/lion/</link>
       <description>Articles about Technology in general</description>
     <language>en-us</language>
     
@@ -12,10 +12,10 @@
     
     <item>
       <title>baby steps</title>
-      <link>http://localhost:1313/baby-steps/</link>
+      <link>http://www.apertoire.net/baby-steps/</link>
       <pubDate>Sat, 31 Dec 2011 23:23:23 GMT</pubDate>
       
-      <guid>http://localhost:1313/baby-steps/</guid>
+      <guid>http://www.apertoire.net/baby-steps/</guid>
       <description>
 
 &lt;p&gt;above is a screenshot of my current setup :)&lt;/p&gt;
@@ -75,10 +75,10 @@
     
     <item>
       <title>blackbeard</title>
-      <link>http://localhost:1313/blackbeard/</link>
+      <link>http://www.apertoire.net/blackbeard/</link>
       <pubDate>Sat, 24 Dec 2011 23:23:23 GMT</pubDate>
       
-      <guid>http://localhost:1313/blackbeard/</guid>
+      <guid>http://www.apertoire.net/blackbeard/</guid>
       <description>&lt;p&gt;i&amp;rsquo;m writing this from blackbeard, my hackintosh mac.&lt;/p&gt;
 
 &lt;p&gt;i was able to build this machine and have it working flawlessy under OSX Lion, mainly due to &lt;a href=&#34;http://tonymacx86.blogspot.com&#34;&gt;tonymacx86&amp;rsquo;s excellent site&lt;/a&gt;.&lt;/p&gt;

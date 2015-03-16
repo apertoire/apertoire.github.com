@@ -3,7 +3,7 @@
   <channel>
       <title>Heroku on Apertoire </title>
       <generator>Hugo</generator>
-      <link>http://localhost:1313/tags/heroku/</link>
+      <link>http://www.apertoire.net/tags/heroku/</link>
       <description>Articles about Technology in general</description>
     <language>en-us</language>
     
@@ -12,10 +12,10 @@
     
     <item>
       <title>Running a Java Vert.x app on Heroku</title>
-      <link>http://localhost:1313/running-a-java-vertx-app-on-heroku/</link>
+      <link>http://www.apertoire.net/running-a-java-vertx-app-on-heroku/</link>
       <pubDate>Wed, 24 Apr 2013 23:23:23 GMT</pubDate>
       
-      <guid>http://localhost:1313/running-a-java-vertx-app-on-heroku/</guid>
+      <guid>http://www.apertoire.net/running-a-java-vertx-app-on-heroku/</guid>
       <description>
 
 &lt;p&gt;That&amp;rsquo;s right. This is Yet Another Running Vert.x on Heroku Article !&lt;/p&gt;
@@ -26,7 +26,7 @@
 
 &lt;h2 id=&#34;background:461b8cf77832a406c331e02ddcd71060&#34;&gt;Background&lt;/h2&gt;
 
-&lt;p&gt;Since I &lt;a href=&#34;http://localhost:1313/vaultee/&#34;&gt;published the code&lt;/a&gt; for a proof of concept vert.x/angularjs/bootstrap  app on &lt;a href=&#34;https://github.com/apertoire/vaultee/&#34;&gt;github&lt;/a&gt;, I considered how easy/difficult it would be to make it run on one of the popular Paas.&lt;/p&gt;
+&lt;p&gt;Since I &lt;a href=&#34;http://www.apertoire.net/vaultee/&#34;&gt;published the code&lt;/a&gt; for a proof of concept vert.x/angularjs/bootstrap  app on &lt;a href=&#34;https://github.com/apertoire/vaultee/&#34;&gt;github&lt;/a&gt;, I considered how easy/difficult it would be to make it run on one of the popular Paas.&lt;/p&gt;
 
 &lt;p&gt;I first considered &lt;a href=&#34;https://openshift.redhat.com/&#34;&gt;OpenShift&lt;/a&gt; due to affinity (Vert.x and RedHat have become closer lately), but finally settled on Heroku due to purely personal reasons.&lt;/p&gt;
 
