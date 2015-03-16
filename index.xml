@@ -22,7 +22,7 @@
 
 &lt;h2 id=&#34;introduction:5880767147774326ded8eaa664656f14&#34;&gt;Introduction&lt;/h2&gt;
 
-&lt;p&gt;These days, Github has become the preferred platform to host code. With it&amp;rsquo;s many great features, ease of use and access, almost all software developers are happily using it.&lt;/p&gt;
+&lt;p&gt;These days, Github has become the preferred platform to host code. With its many great features, ease of use and access, almost all software developers are happily using it.&lt;/p&gt;
 
 &lt;p&gt;Also, since &lt;a href=&#34;http://arstechnica.com/information-technology/2015/03/google-to-close-google-code-open-source-project-hosting/&#34;&gt;Google Code hosting project is closing down&lt;/a&gt;, you can expect more projects being driven to it.&lt;/p&gt;
 
@@ -51,7 +51,7 @@
 
 &lt;p&gt;Upgrading is a bit more convoluted, especially if you&amp;rsquo;re coming from a version that&amp;rsquo;s prior to the last, but all in all, it&amp;rsquo;s not that complicated.&lt;/p&gt;
 
-&lt;p&gt;Nevertheless, you can feel a lot of stuff is going on behind the scenes. You will be running Sidekiq, Unicorn, Nginx, Ruby (plus all it&amp;rsquo;s gems) and then Gitlab itself.&lt;/p&gt;
+&lt;p&gt;Nevertheless, you can feel a lot of stuff is going on behind the scenes. You will be running Sidekiq, Unicorn, Nginx, Ruby (plus all its gems) and then Gitlab itself.&lt;/p&gt;
 
 &lt;p&gt;Customizing the install is not that simple and if something should go wrong, there are many moving parts, where you would have to go looking for problems.&lt;/p&gt;
 
@@ -68,7 +68,7 @@
 
 &lt;p&gt;Installation simply requires unzipping the release archive into a chosen folder. That&amp;rsquo;s it. Upgrading works the same: just unzip the release archive.&lt;/p&gt;
 
-&lt;p&gt;That&amp;rsquo;s the beauty of binary deployment, that covers multiple platforms.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s the beauty of &lt;a href=&#34;https://golang.org&#34;&gt;Go&amp;rsquo;s&lt;/a&gt; binary deployments, you can target multiple platforms at once.&lt;/p&gt;
 
 &lt;p&gt;Gogs has a really low footprint, so it&amp;rsquo;s easy on system resources (it can run on a &lt;a href=&#34;http://www.raspberrypi.org&#34;&gt;Raspberry Pi&lt;/a&gt;).&lt;/p&gt;
 
@@ -236,7 +236,7 @@ PATH = !! this is the location of your database (sqlite3 by default) !!
 
 &lt;h2 id=&#34;running-a-gogs-docker:5880767147774326ded8eaa664656f14&#34;&gt;Running a Gogs docker&lt;/h2&gt;
 
-&lt;p&gt;I &lt;a href=&#34;http://www.apertoire.net/dockeritazion.md&#34;&gt;previously described&lt;/a&gt; how I &amp;lsquo;dockerized&amp;rsquo; my home server environment, so it&amp;rsquo;s only fitting that I would run gogs as a Docker container.&lt;/p&gt;
+&lt;p&gt;I &lt;a href=&#34;http://www.apertoire.net/dockeritazion&#34;&gt;previously described&lt;/a&gt; how I &amp;lsquo;dockerized&amp;rsquo; my home server environment, so it&amp;rsquo;s only fitting that I would run gogs as a Docker container.&lt;/p&gt;
 
 &lt;p&gt;So let&amp;rsquo;s do it step by step.&lt;/p&gt;
 
