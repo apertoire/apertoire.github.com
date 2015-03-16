@@ -982,7 +982,7 @@ func (self *Scanner) react() {
       <guid>http://www.apertoire.net/introducing-mediabase/</guid>
       <description>
 
-&lt;p&gt;&lt;em&gt;tl;dr&lt;/em&gt; &lt;strong&gt;mediabase&lt;/strong&gt; is a proof-of-concept application to catalogue a media library consisting of movies. It scans the folders you choose looking for movies, then fetch metadata from &lt;a href=&#34;www.themoviedb.org&#34;&gt;TheMovieDB&lt;/a&gt; and &lt;a href=&#34;www.omdbapi.com&#34;&gt;The OMDB API&lt;/a&gt; and present the information in a nice web page.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;tl;dr&lt;/em&gt; &lt;strong&gt;mediabase&lt;/strong&gt; is a proof-of-concept application to catalogue a media library consisting of movies. It scans the folders you choose looking for movies, then fetch metadata from &lt;a href=&#34;http://www.themoviedb.org&#34;&gt;TheMovieDB&lt;/a&gt; and &lt;a href=&#34;http://www.omdbapi.com&#34;&gt;The OMDB API&lt;/a&gt; and present the information in a nice web page.&lt;/p&gt;
 
 &lt;p&gt;Check the &lt;a href=&#34;https://github.com/apertoire/mediabase&#34;&gt;github page&lt;/a&gt; for binaries, source code and other general instructions.&lt;/p&gt;
 
