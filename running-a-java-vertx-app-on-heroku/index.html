@@ -38,16 +38,8 @@
 
 <section class="container content">
 
-  
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  
-  <ins class="adsbygoogle"
-       style="display:inline-block;width:728px;height:90px"
-       data-ad-client="ca-pub-5982725985453951"
-       data-ad-slot="6092848225"></ins>
-  <script>
-  (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+   
+  <div class="adsbygoogle" style="width: 728px; height: 90px; background: blue;">TOP AD GOES HERE</div>
   
 
   <img class="frontpost" src="">
@@ -70,7 +62,7 @@
 
 <h2 id="background:461b8cf77832a406c331e02ddcd71060">Background</h2>
 
-<p>Since I <a href="http://www.apertoire.net/vaultee/">published the code</a> for a proof of concept vert.x/angularjs/bootstrap  app on <a href="https://github.com/apertoire/vaultee/">github</a>, I considered how easy/difficult it would be to make it run on one of the popular Paas.</p>
+<p>Since I <a href="/vaultee/">published the code</a> for a proof of concept vert.x/angularjs/bootstrap  app on <a href="https://github.com/apertoire/vaultee/">github</a>, I considered how easy/difficult it would be to make it run on one of the popular Paas.</p>
 
 <p>I first considered <a href="https://openshift.redhat.com/">OpenShift</a> due to affinity (Vert.x and RedHat have become closer lately), but finally settled on Heroku due to purely personal reasons.</p>
 
@@ -292,5 +284,8 @@ web: vertx run src/main/javascript/server.js -cp "target/classes:target/dependen
 
 </script>
 
-</body>
+<script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>

@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title>Virtualization on Apertoire </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://www.apertoire.net/tags/virtualization/</link>
+      <generator>Hugo</generator>
+      <link>http://localhost:1313/tags/virtualization/</link>
+      <description>Articles about Technology in general</description>
     <language>en-us</language>
     
     
-    <updated>Thu, 09 Jan 2014 23:23:23 UTC</updated>
+    
     
     <item>
       <title>Dockerization</title>
-      <link>http://www.apertoire.net/dockeritazion/</link>
-      <pubDate>Thu, 09 Jan 2014 23:23:23 UTC</pubDate>
+      <link>http://localhost:1313/dockeritazion/</link>
+      <pubDate>Thu, 09 Jan 2014 23:23:23 GMT</pubDate>
       
-      <guid>http://www.apertoire.net/dockeritazion/</guid>
+      <guid>http://localhost:1313/dockeritazion/</guid>
       <description>
 
 &lt;h2 id=&#34;background:7168b982f076d28b250775e790646ac1&#34;&gt;Background&lt;/h2&gt;
@@ -118,32 +119,32 @@
 
 &lt;p&gt;great success !!!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/docker.png&#34; alt=&#34;docker&#34; title=&#34;docker&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/docker.png&#34; alt=&#34;docker&#34; title=&#34;docker&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/dockerimages.png&#34; alt=&#34;dockerimages&#34; title=&#34;dockerimages&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/dockerimages.png&#34; alt=&#34;dockerimages&#34; title=&#34;dockerimages&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/htop.png&#34; alt=&#34;htop&#34; title=&#34;htop&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/htop.png&#34; alt=&#34;htop&#34; title=&#34;htop&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/pool1.png&#34; alt=&#34;pool1&#34; title=&#34;pool1&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/pool1.png&#34; alt=&#34;pool1&#34; title=&#34;pool1&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/pool2.png&#34; alt=&#34;pool2&#34; title=&#34;pool2&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/pool2.png&#34; alt=&#34;pool2&#34; title=&#34;pool2&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/zfslist.png&#34; alt=&#34;zfslist&#34; title=&#34;zfslist&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/zfslist.png&#34; alt=&#34;zfslist&#34; title=&#34;zfslist&#34; /&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&#34;conclusion:7168b982f076d28b250775e790646ac1&#34;&gt;Conclusion&lt;/h2&gt;

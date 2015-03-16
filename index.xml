@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title> on Apertoire </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://www.apertoire.net/</link>
+      <generator>Hugo</generator>
+      <link>http://localhost:1313/</link>
+      <description>Articles about Technology in general</description>
     <language>en-us</language>
     
     
-    <updated>Sun, 15 Mar 2015 09:20:31 EST</updated>
+    
     
     <item>
       <title>Gogs, an alternative to Gitlab</title>
-      <link>http://www.apertoire.net/gogs-an-alternative-to-gitlab/</link>
-      <pubDate>Sun, 15 Mar 2015 09:20:31 EST</pubDate>
+      <link>http://localhost:1313/gogs-an-alternative-to-gitlab/</link>
+      <pubDate>Sun, 15 Mar 2015 09:20:31 GMT</pubDate>
       
-      <guid>http://www.apertoire.net/gogs-an-alternative-to-gitlab/</guid>
+      <guid>http://localhost:1313/gogs-an-alternative-to-gitlab/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;tl;dr&lt;/em&gt; &lt;a href=&#34;https://gitlab.com&#34;&gt;Gitlab&lt;/a&gt; is a great git hosting service, almost as powerful as &lt;a href=&#34;https://github.com&#34;&gt;Github&lt;/a&gt;. But, is there something out there that&amp;rsquo;s comparable to Gitlab/Github, yet simpler to manage ? I think &lt;a href=&#34;http://gogs.io&#34;&gt;&lt;code&gt;Gogs&lt;/code&gt;&lt;/a&gt; does the job.&lt;/p&gt;
@@ -97,7 +98,7 @@ PATH = !! this is the location of your database (sqlite3 by default) !!
 &lt;li&gt;Public key to enable commit over ssh&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/sshkey.png&#34; alt=&#34;sshkey&#34; title=&#34;ssh public key&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/sshkey.png&#34; alt=&#34;sshkey&#34; title=&#34;ssh public key&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;Note that currently, you need to run an ssh server (&lt;a href=&#34;http://www.openssh.com&#34;&gt;openssh&lt;/a&gt; will do fine), the same as Gitlab.&lt;/p&gt;
@@ -235,7 +236,7 @@ PATH = !! this is the location of your database (sqlite3 by default) !!
 
 &lt;h2 id=&#34;running-a-gogs-docker:5880767147774326ded8eaa664656f14&#34;&gt;Running a Gogs docker&lt;/h2&gt;
 
-&lt;p&gt;I &lt;a href=&#34;http://www.apertoire.net/dockeritazion.md&#34;&gt;previously described&lt;/a&gt; how I &amp;lsquo;dockerized&amp;rsquo; my home server environment, so it&amp;rsquo;s only fitting that I would run gogs as a Docker container.&lt;/p&gt;
+&lt;p&gt;I &lt;a href=&#34;http://localhost:1313/dockeritazion.md&#34;&gt;previously described&lt;/a&gt; how I &amp;lsquo;dockerized&amp;rsquo; my home server environment, so it&amp;rsquo;s only fitting that I would run gogs as a Docker container.&lt;/p&gt;
 
 &lt;p&gt;So let&amp;rsquo;s do it step by step.&lt;/p&gt;
 
@@ -336,17 +337,17 @@ apertoire/gogs
 
 &lt;p&gt;You can check the command line to see that it&amp;rsquo;s running.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/gogs-running.png&#34; alt=&#34;gogs&#34; title=&#34;gogs&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/gogs-running.png&#34; alt=&#34;gogs&#34; title=&#34;gogs&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;Now you can open the web interface, and it will show an install page (for first-time run)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/gogsinstall.jpg&#34; alt=&#34;gogsinstall&#34; title=&#34;Gogs first-time run install page&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/gogsinstall.jpg&#34; alt=&#34;gogsinstall&#34; title=&#34;Gogs first-time run install page&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;Once you have completed the install, you&amp;rsquo;ll have a functional Gogs service.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/gogsweb.jpg&#34; alt=&#34;gogsweb&#34; title=&#34;Gogs Web&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/gogsweb.jpg&#34; alt=&#34;gogsweb&#34; title=&#34;Gogs Web&#34; /&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&#34;conclusion:5880767147774326ded8eaa664656f14&#34;&gt;Conclusion&lt;/h2&gt;
@@ -371,12 +372,13 @@ apertoire/gogs
 </description>
     </item>
     
+    
     <item>
       <title>Switching from zsh to fish</title>
-      <link>http://www.apertoire.net/switching-from-zsh-to-fish/</link>
-      <pubDate>Sat, 22 Nov 2014 07:50:25 EST</pubDate>
+      <link>http://localhost:1313/switching-from-zsh-to-fish/</link>
+      <pubDate>Sat, 22 Nov 2014 07:50:25 GMT</pubDate>
       
-      <guid>http://www.apertoire.net/switching-from-zsh-to-fish/</guid>
+      <guid>http://localhost:1313/switching-from-zsh-to-fish/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;tl;dr&lt;/em&gt; How easy is it to switch from &lt;a href=&#34;http://www.zsh.org&#34;&gt;zsh&lt;/a&gt; to &lt;a href=&#34;http://www.fishshell.com&#34;&gt;fish&lt;/a&gt; ? Is it worth it ?&lt;/p&gt;
@@ -387,7 +389,7 @@ apertoire/gogs
 
 &lt;p&gt;The built-in OSX terminal catered to my needs whenever I had to wander into shell land.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/terminal.png&#34; alt=&#34;terminal&#34; title=&#34;terminal&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/terminal.png&#34; alt=&#34;terminal&#34; title=&#34;terminal&#34; /&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&#34;the-road-to-enlightenment:7bc69ddf17cb9e92a57da6ecb95eb783&#34;&gt;The Road to Enlightenment&lt;/h2&gt;
@@ -424,7 +426,7 @@ apertoire/gogs
 &lt;p&gt;(you are using &lt;a href=&#34;http://brew.sh&#34;&gt;Homebrew&lt;/a&gt; to install anything on your Mac right ?)&lt;/p&gt;
 
 &lt;p&gt;Right out of the box, you get syntax highlighting, command muted suggestion, history substring search
-&lt;img src=&#34;http://www.apertoire.net/img/fish2.png&#34; alt=&#34;suggestion&#34; title=&#34;suggestion&#34; /&gt;
+&lt;img src=&#34;http://localhost:1313/img/fish2.png&#34; alt=&#34;suggestion&#34; title=&#34;suggestion&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;.zshrc is nowhere to be found, instead you have .config/fish/config.sh, which is very similar, only the syntax changes.&lt;/p&gt;
@@ -486,7 +488,7 @@ That&amp;rsquo;s why I set the LS_COLORS environment variable, rather than the L
 
 &lt;p&gt;These are the functions I currently have:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/fish3.png&#34; alt=&#34;functions&#34; title=&#34;functions&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/fish3.png&#34; alt=&#34;functions&#34; title=&#34;functions&#34; /&gt;
 &lt;/p&gt;
 
 &lt;ul&gt;
@@ -592,12 +594,13 @@ end
 </description>
     </item>
     
+    
     <item>
       <title>Actor-like pattern in go</title>
-      <link>http://www.apertoire.net/actor-like-pattern-in-go/</link>
-      <pubDate>Sat, 08 Nov 2014 14:19:14 EST</pubDate>
+      <link>http://localhost:1313/actor-like-pattern-in-go/</link>
+      <pubDate>Sat, 08 Nov 2014 14:19:14 GMT</pubDate>
       
-      <guid>http://www.apertoire.net/actor-like-pattern-in-go/</guid>
+      <guid>http://localhost:1313/actor-like-pattern-in-go/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;tl;dr&lt;/em&gt; This article discusses an implementation of the actor paradigm in a go application.&lt;/p&gt;
@@ -612,12 +615,12 @@ end
 
 &lt;h2 id=&#34;mediabase:e034edceebc4ec317cbc445f31253b8a&#34;&gt;Mediabase&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/mediabase1.png&#34; alt=&#34;front&#34; title=&#34;front&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/mediabase1.png&#34; alt=&#34;front&#34; title=&#34;front&#34; /&gt;
 &lt;/p&gt;
 
-&lt;p&gt;I will use the Mediabase application (check my &lt;a href=&#34;http://www.apertoire.net/introducing-mediabase/&#34;&gt;previous article&lt;/a&gt;) to showcase the proposed architecture.&lt;/p&gt;
+&lt;p&gt;I will use the Mediabase application (check my &lt;a href=&#34;http://localhost:1313/introducing-mediabase/&#34;&gt;previous article&lt;/a&gt;) to showcase the proposed architecture.&lt;/p&gt;
 
-&lt;p&gt;Very shortly, Mediabase is a proof-of-concept application to catalogue a media library consisting of movies. It scans the folders you choose looking for movies, then fetches metadata from &lt;a href=&#34;www.themoviedb.org&#34;&gt;themoviedb.org&lt;/a&gt; and &lt;a href=&#34;www.omdbapi.com&#34;&gt;The OMDB API&lt;/a&gt; and presents the information in a nice web page.&lt;/p&gt;
+&lt;p&gt;Very shortly, Mediabase is a proof-of-concept application to catalogue a media library consisting of movies. It scans the folders you choose looking for movies, then fetches metadata from &lt;a href=&#34;http://www.themoviedb.org&#34;&gt;themoviedb.org&lt;/a&gt; and &lt;a href=&#34;http://www.omdbapi.com&#34;&gt;The OMDB API&lt;/a&gt; and presents the information in a nice web page.&lt;/p&gt;
 
 &lt;p&gt;You can get the code &lt;a href=&#34;https://github.com/apertoire/mediabase&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
@@ -625,7 +628,7 @@ end
 
 &lt;p&gt;Let&amp;rsquo;s take a look at a high-level view of the code structure:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/architecture.png&#34; alt=&#34;architecture&#34; title=&#34;architecture&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/architecture.png&#34; alt=&#34;architecture&#34; title=&#34;architecture&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;What we have here are very loosely coupled services (actors), interacting with each other by means of a system wide bus (message exchange).&lt;/p&gt;
@@ -904,7 +907,7 @@ func (self *Scanner) react() {
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;It simply sends back the current status of importing, since each message activity received by &lt;em&gt;Core&lt;/em&gt; is written to the context variable.
-&lt;img src=&#34;http://www.apertoire.net/img/mediabase3.png&#34; alt=&#34;settings2&#34; title=&#34;settings2&#34; /&gt;
+&lt;img src=&#34;http://localhost:1313/img/mediabase3.png&#34; alt=&#34;settings2&#34; title=&#34;settings2&#34; /&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&#34;conclusion:e034edceebc4ec317cbc445f31253b8a&#34;&gt;Conclusion&lt;/h2&gt;
@@ -970,12 +973,13 @@ func (self *Scanner) react() {
 </description>
     </item>
     
+    
     <item>
       <title>Introducing mediabase</title>
-      <link>http://www.apertoire.net/introducing-mediabase/</link>
-      <pubDate>Mon, 27 Oct 2014 12:16:47 EST</pubDate>
+      <link>http://localhost:1313/introducing-mediabase/</link>
+      <pubDate>Mon, 27 Oct 2014 12:16:47 GMT</pubDate>
       
-      <guid>http://www.apertoire.net/introducing-mediabase/</guid>
+      <guid>http://localhost:1313/introducing-mediabase/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;tl;dr&lt;/em&gt; &lt;strong&gt;mediabase&lt;/strong&gt; is a proof-of-concept application to catalogue a media library consisting of movies. It scans the folders you choose looking for movies, then fetch metadata from &lt;a href=&#34;www.themoviedb.org&#34;&gt;themoviedb.org&lt;/a&gt; and &lt;a href=&#34;www.omdbapi.com&#34;&gt;The OMDB API&lt;/a&gt; and present the information in a nice web page.&lt;/p&gt;
@@ -994,25 +998,25 @@ func (self *Scanner) react() {
 
 &lt;p&gt;Upon first run, you are prompted to enter the folder where your movie collection is stored. This has to be a path relative to the machine where the server is running.&lt;/p&gt;
 
-&lt;p&gt;The scanner expects the same naming convention as the one used by popular media apps such as &lt;a href=&#34;plex.tv&#34;&gt;Plex&lt;/a&gt;, &lt;a href=&#34;mediabrowser.tv&#34;&gt;MediaBrowser&lt;/a&gt;, &lt;a href=&#34;www.jriver.com&#34;&gt;JRiver Media Center&lt;/a&gt; and others.&lt;/p&gt;
+&lt;p&gt;The scanner expects the same naming convention as the one used by popular media apps such as &lt;a href=&#34;http://plex.tv&#34;&gt;Plex&lt;/a&gt;, &lt;a href=&#34;http://mediabrowser.tv&#34;&gt;MediaBrowser&lt;/a&gt;, &lt;a href=&#34;http://www.jriver.com&#34;&gt;JRiver Media Center&lt;/a&gt; and others.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/mediabase2.png&#34; alt=&#34;settings&#34; title=&#34;settings&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/mediabase2.png&#34; alt=&#34;settings&#34; title=&#34;settings&#34; /&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&#34;importing-media:0ef5819b3d0866a814affe7bdac79c25&#34;&gt;Importing media&lt;/h2&gt;
 
 &lt;p&gt;Once you have entered a folder, click on the IMPORT button to start importing media.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/mediabase3.png&#34; alt=&#34;settings2&#34; title=&#34;settings2&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/mediabase3.png&#34; alt=&#34;settings2&#34; title=&#34;settings2&#34; /&gt;
 &lt;/p&gt;
 
-&lt;p&gt;The process will search for movies, look them up in &lt;a href=&#34;www.themoviedb.org&#34;&gt;themoviedb.org&lt;/a&gt; and &lt;a href=&#34;www.omdbapi.com&#34;&gt;The OMDB&lt;/a&gt;, collect all the metadata, store it in a database and then make them available via a web page.&lt;/p&gt;
+&lt;p&gt;The process will search for movies, look them up in &lt;a href=&#34;http://www.themoviedb.org&#34;&gt;themoviedb.org&lt;/a&gt; and &lt;a href=&#34;http://www.omdbapi.com&#34;&gt;The OMDB&lt;/a&gt;, collect all the metadata, store it in a database and then make them available via a web page.&lt;/p&gt;
 
 &lt;h2 id=&#34;cover-screen:0ef5819b3d0866a814affe7bdac79c25&#34;&gt;Cover screen&lt;/h2&gt;
 
 &lt;p&gt;The first screen you&amp;rsquo;ll see after import is done is the cover screen (here&amp;rsquo;s showing just a portion of the screen).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/mediabase4.png&#34; alt=&#34;cover&#34; title=&#34;cover&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/mediabase4.png&#34; alt=&#34;cover&#34; title=&#34;cover&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;This view shows the most recently imported movies and is the default screen when you open the app.&lt;/p&gt;
@@ -1021,7 +1025,7 @@ func (self *Scanner) react() {
 
 &lt;p&gt;When you click the Movies menu option, a new page is shown, with a more detailed view of the movies, where you can filter or sort by different criteria.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/mediabase5.png&#34; alt=&#34;movies&#34; title=&#34;movies&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/mediabase5.png&#34; alt=&#34;movies&#34; title=&#34;movies&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;It shows the poster, a backdrop, running time, IMDB rating, director, actors, country, genres, resolution (if your naming structure contained a resolution field), location, last time watched (if watched) and the date it was added to the application.&lt;/p&gt;
@@ -1030,12 +1034,12 @@ func (self *Scanner) react() {
 
 &lt;p&gt;You can sort movies by different criteria, as seen below&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/mediabase6.png&#34; alt=&#34;sort&#34; title=&#34;sort&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/mediabase6.png&#34; alt=&#34;sort&#34; title=&#34;sort&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;Also, you can filter movies, by searching as you type (with a small delay to prevent too much traffic), again by different criteria&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/mediabase7.png&#34; alt=&#34;filter&#34; title=&#34;filter&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/mediabase7.png&#34; alt=&#34;filter&#34; title=&#34;filter&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;You have to see it to believe it, it&amp;rsquo;s working pretty smooth.&lt;/p&gt;
@@ -1052,7 +1056,7 @@ func (self *Scanner) react() {
 
 &lt;p&gt;Finally there&amp;rsquo;s a nice about page, mostly giving credit where it&amp;rsquo;s due :)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/mediabase8.png&#34; alt=&#34;about&#34; title=&#34;about&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/mediabase8.png&#34; alt=&#34;about&#34; title=&#34;about&#34; /&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&#34;caveats:0ef5819b3d0866a814affe7bdac79c25&#34;&gt;Caveats&lt;/h2&gt;
@@ -1069,12 +1073,13 @@ func (self *Scanner) react() {
 </description>
     </item>
     
+    
     <item>
       <title>Dockerization</title>
-      <link>http://www.apertoire.net/dockeritazion/</link>
-      <pubDate>Thu, 09 Jan 2014 23:23:23 UTC</pubDate>
+      <link>http://localhost:1313/dockeritazion/</link>
+      <pubDate>Thu, 09 Jan 2014 23:23:23 GMT</pubDate>
       
-      <guid>http://www.apertoire.net/dockeritazion/</guid>
+      <guid>http://localhost:1313/dockeritazion/</guid>
       <description>
 
 &lt;h2 id=&#34;background:7168b982f076d28b250775e790646ac1&#34;&gt;Background&lt;/h2&gt;
@@ -1178,32 +1183,32 @@ func (self *Scanner) react() {
 
 &lt;p&gt;great success !!!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/docker.png&#34; alt=&#34;docker&#34; title=&#34;docker&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/docker.png&#34; alt=&#34;docker&#34; title=&#34;docker&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/dockerimages.png&#34; alt=&#34;dockerimages&#34; title=&#34;dockerimages&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/dockerimages.png&#34; alt=&#34;dockerimages&#34; title=&#34;dockerimages&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/htop.png&#34; alt=&#34;htop&#34; title=&#34;htop&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/htop.png&#34; alt=&#34;htop&#34; title=&#34;htop&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/pool1.png&#34; alt=&#34;pool1&#34; title=&#34;pool1&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/pool1.png&#34; alt=&#34;pool1&#34; title=&#34;pool1&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/pool2.png&#34; alt=&#34;pool2&#34; title=&#34;pool2&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/pool2.png&#34; alt=&#34;pool2&#34; title=&#34;pool2&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/zfslist.png&#34; alt=&#34;zfslist&#34; title=&#34;zfslist&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/zfslist.png&#34; alt=&#34;zfslist&#34; title=&#34;zfslist&#34; /&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&#34;conclusion:7168b982f076d28b250775e790646ac1&#34;&gt;Conclusion&lt;/h2&gt;
@@ -1212,12 +1217,13 @@ func (self *Scanner) react() {
 </description>
     </item>
     
+    
     <item>
       <title>Running a Java Vert.x app on Heroku</title>
-      <link>http://www.apertoire.net/running-a-java-vertx-app-on-heroku/</link>
-      <pubDate>Wed, 24 Apr 2013 23:23:23 UTC</pubDate>
+      <link>http://localhost:1313/running-a-java-vertx-app-on-heroku/</link>
+      <pubDate>Wed, 24 Apr 2013 23:23:23 GMT</pubDate>
       
-      <guid>http://www.apertoire.net/running-a-java-vertx-app-on-heroku/</guid>
+      <guid>http://localhost:1313/running-a-java-vertx-app-on-heroku/</guid>
       <description>
 
 &lt;p&gt;That&amp;rsquo;s right. This is Yet Another Running Vert.x on Heroku Article !&lt;/p&gt;
@@ -1228,7 +1234,7 @@ func (self *Scanner) react() {
 
 &lt;h2 id=&#34;background:461b8cf77832a406c331e02ddcd71060&#34;&gt;Background&lt;/h2&gt;
 
-&lt;p&gt;Since I &lt;a href=&#34;http://www.apertoire.net/vaultee/&#34;&gt;published the code&lt;/a&gt; for a proof of concept vert.x/angularjs/bootstrap  app on &lt;a href=&#34;https://github.com/apertoire/vaultee/&#34;&gt;github&lt;/a&gt;, I considered how easy/difficult it would be to make it run on one of the popular Paas.&lt;/p&gt;
+&lt;p&gt;Since I &lt;a href=&#34;http://localhost:1313/vaultee/&#34;&gt;published the code&lt;/a&gt; for a proof of concept vert.x/angularjs/bootstrap  app on &lt;a href=&#34;https://github.com/apertoire/vaultee/&#34;&gt;github&lt;/a&gt;, I considered how easy/difficult it would be to make it run on one of the popular Paas.&lt;/p&gt;
 
 &lt;p&gt;I first considered &lt;a href=&#34;https://openshift.redhat.com/&#34;&gt;OpenShift&lt;/a&gt; due to affinity (Vert.x and RedHat have become closer lately), but finally settled on Heroku due to purely personal reasons.&lt;/p&gt;
 
@@ -1404,12 +1410,13 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
 </description>
     </item>
     
+    
     <item>
       <title>vaultee</title>
-      <link>http://www.apertoire.net/vaultee/</link>
-      <pubDate>Sat, 30 Mar 2013 23:23:23 UTC</pubDate>
+      <link>http://localhost:1313/vaultee/</link>
+      <pubDate>Sat, 30 Mar 2013 23:23:23 GMT</pubDate>
       
-      <guid>http://www.apertoire.net/vaultee/</guid>
+      <guid>http://localhost:1313/vaultee/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction:a90668b4407087317d98aac5802a4c3c&#34;&gt;Introduction&lt;/h2&gt;
@@ -1455,22 +1462,23 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
 
 &lt;p&gt;Home page, after login, showing all existing assets&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/all.png&#34; alt=&#34;homepage listing all assets&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/all.png&#34; alt=&#34;homepage listing all assets&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;Displaying one of the assets (currently on revision 2)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/assetview.png&#34; alt=&#34;display one asset&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/assetview.png&#34; alt=&#34;display one asset&#34; /&gt;
 &lt;/p&gt;
 </description>
     </item>
     
+    
     <item>
       <title>12D78</title>
-      <link>http://www.apertoire.net/12D78/</link>
-      <pubDate>Fri, 15 Mar 2013 23:23:23 UTC</pubDate>
+      <link>http://localhost:1313/12D78/</link>
+      <pubDate>Fri, 15 Mar 2013 23:23:23 GMT</pubDate>
       
-      <guid>http://www.apertoire.net/12D78/</guid>
+      <guid>http://localhost:1313/12D78/</guid>
       <description>&lt;p&gt;so, it&amp;rsquo;s been quite a while now since my last update with regards to my hackintosh, old trusted blackbeard.&lt;/p&gt;
 
 &lt;p&gt;i have to tell you &amp;hellip; it&amp;rsquo;s killing me the fact that sleep isnt working &amp;hellip; whenever i shutdown and come online again, i have to rearrange most of the windows in their corresponding workspace (i have 6 workspaces).&lt;/p&gt;
@@ -1497,30 +1505,31 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
 </description>
     </item>
     
+    
     <item>
       <title>moving to github pages</title>
-      <link>http://www.apertoire.net/moving-to-github-pages/</link>
-      <pubDate>Sun, 03 Mar 2013 23:23:23 UTC</pubDate>
+      <link>http://localhost:1313/moving-to-github-pages/</link>
+      <pubDate>Sun, 03 Mar 2013 23:23:23 GMT</pubDate>
       
-      <guid>http://www.apertoire.net/moving-to-github-pages/</guid>
+      <guid>http://localhost:1313/moving-to-github-pages/</guid>
       <description>
 
-&lt;p&gt;it all started when i started considering the deployment of the &lt;a href=&#34;vertx.io&#34;&gt;vert.x&lt;/a&gt; app i&amp;rsquo;m working on.&lt;/p&gt;
+&lt;p&gt;it all started when i started considering the deployment of the &lt;a href=&#34;http://vertx.io&#34;&gt;vert.x&lt;/a&gt; app i&amp;rsquo;m working on.&lt;/p&gt;
 
-&lt;p&gt;i will deploy to &lt;a href=&#34;openshift.redhat.com&#34;&gt;OpenShift&lt;/a&gt;, but i will also open source the code through &lt;a href=&#34;github.com&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;i will deploy to &lt;a href=&#34;http://openshift.redhat.com&#34;&gt;OpenShift&lt;/a&gt;, but i will also open source the code through &lt;a href=&#34;https://github.com&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;so, when i was analyzing how to transfer the code over, i came across &lt;a href=&#34;pages.github.com&#34;&gt;Github Pages&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;so, when i was analyzing how to transfer the code over, i came across &lt;a href=&#34;https://pages.github.com&#34;&gt;Github Pages&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;i already had two sites:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;apertoire.net (hosted on &lt;a href=&#34;rackspace.com&#34;&gt;Rackspace&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;apertoire.tumblr.com (hosted on &lt;a href=&#34;tumblr.com&#34;&gt;Tumblr&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;apertoire.net (hosted on &lt;a href=&#34;http://rackspace.com&#34;&gt;Rackspace&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;apertoire.tumblr.com (hosted on &lt;a href=&#34;http://tumblr.com&#34;&gt;Tumblr&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;the rackspace site held a wordpress blog and some software products i&amp;rsquo;ve developed over the years.&lt;/p&gt;
 
-&lt;p&gt;i started the tumblr site when &lt;a href=&#34;apertoire.net/why-i-m-switching-to-mac-osx/&#34;&gt;i dove into mac osx&lt;/a&gt; and there i chronicled some other infrastructure endeavours.&lt;/p&gt;
+&lt;p&gt;i started the tumblr site when &lt;a href=&#34;http://localhost:1313/why-i-m-switching-to-mac-osx/&#34;&gt;i dove into mac osx&lt;/a&gt; and there i chronicled some other infrastructure endeavours.&lt;/p&gt;
 
 &lt;p&gt;when i started digging into the whole github pages, i found out about custom domains and read a lot of articles about people switching from any blog framework to github pages.&lt;/p&gt;
 
@@ -1537,9 +1546,9 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
 
 &lt;p&gt;for the record, my custom domain transitions was done following instructions on &lt;a href=&#34;https://help.github.com/articles/setting-up-a-custom-domain-with-pages&#34;&gt;setting up a custom domain with pages&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;on my dns registrar (&lt;a href=&#34;namecheap.com&#34;&gt;Namecheap&lt;/a&gt;), it went down like this&lt;/p&gt;
+&lt;p&gt;on my dns registrar (&lt;a href=&#34;https://namecheap.com&#34;&gt;Namecheap&lt;/a&gt;), it went down like this&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/dns.png&#34; alt=&#34;change a and cname records&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/dns.png&#34; alt=&#34;change a and cname records&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;my mail hosting is done via google, so i used namecheap&amp;rsquo;s option to &amp;ldquo;Automatically set MX records necessary for &lt;strong&gt;Google Apps Email&lt;/strong&gt;&amp;ldquo;&lt;/p&gt;
@@ -1550,20 +1559,21 @@ web: vertx run src/main/javascript/server.js -cp &#34;target/classes:target/depe
 
 &lt;p&gt;As per noisebleeds comment below, I&amp;rsquo;m attaching the updated DNS settings I had to use after Github made some changes to their network routing&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/dns1.png&#34; alt=&#34;change a and cname records&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/dns1.png&#34; alt=&#34;change a and cname records&#34; /&gt;
 &lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/dns2.png&#34; alt=&#34;change a and cname records&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/dns2.png&#34; alt=&#34;change a and cname records&#34; /&gt;
 &lt;/p&gt;
 </description>
     </item>
     
+    
     <item>
       <title>hotfix 2</title>
-      <link>http://www.apertoire.net/hotfix-2/</link>
-      <pubDate>Mon, 06 Aug 2012 23:23:23 UTC</pubDate>
+      <link>http://localhost:1313/hotfix-2/</link>
+      <pubDate>Mon, 06 Aug 2012 23:23:23 GMT</pubDate>
       
-      <guid>http://www.apertoire.net/hotfix-2/</guid>
+      <guid>http://localhost:1313/hotfix-2/</guid>
       <description>&lt;p&gt;i&amp;rsquo;ve built my esxi box (skynet) &amp;hellip; find some additional info at &lt;a href=&#34;http://lime-technology.com/forum/index.php?topic=21514.0&#34; title=&#34;skynet + hal &amp;amp; wopr (esxi head + 2 unraid das)&#34; target=&#34;_blank&#34;&gt;the unraid forums&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;something i wanted to document. the command sequence to share the encrypted zfs filesystem after boot is&lt;/p&gt;
@@ -1579,12 +1589,13 @@ also, oracle recently published an article on &lt;a href=&#34;http://www.oracle.
 </description>
     </item>
     
+    
     <item>
       <title>hotfix 1</title>
-      <link>http://www.apertoire.net/hotfix-1/</link>
-      <pubDate>Mon, 07 May 2012 23:23:23 UTC</pubDate>
+      <link>http://localhost:1313/hotfix-1/</link>
+      <pubDate>Mon, 07 May 2012 23:23:23 GMT</pubDate>
       
-      <guid>http://www.apertoire.net/hotfix-1/</guid>
+      <guid>http://localhost:1313/hotfix-1/</guid>
       <description>&lt;p&gt;well, i need to add a couple of comments after my last post&lt;/p&gt;
 
 &lt;p&gt;i deliberately chose to create the zfs dataset with a passphrase encryption method. as per solaris docs, this means it can&amp;rsquo;t mount it at boot time. the best practice would be a boot time prompt (a la TrueCrypt in windows), but until that time comes, i will live with loading after booting, using the following:&lt;/p&gt;
@@ -1614,12 +1625,13 @@ mount_nfs zfsbox:/export/Backup /local_mountpoint
 </description>
     </item>
     
+    
     <item>
       <title>oh solaris mio !</title>
-      <link>http://www.apertoire.net/oh-solaris-mio/</link>
-      <pubDate>Mon, 07 May 2012 11:11:11 UTC</pubDate>
+      <link>http://localhost:1313/oh-solaris-mio/</link>
+      <pubDate>Mon, 07 May 2012 11:11:11 GMT</pubDate>
       
-      <guid>http://www.apertoire.net/oh-solaris-mio/</guid>
+      <guid>http://localhost:1313/oh-solaris-mio/</guid>
       <description>&lt;p&gt;so the plan is as follows:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -1713,12 +1725,13 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
 </description>
     </item>
     
+    
     <item>
       <title>storage wars</title>
-      <link>http://www.apertoire.net/storage-wars/</link>
-      <pubDate>Sun, 06 May 2012 23:23:23 UTC</pubDate>
+      <link>http://localhost:1313/storage-wars/</link>
+      <pubDate>Sun, 06 May 2012 23:23:23 GMT</pubDate>
       
-      <guid>http://www.apertoire.net/storage-wars/</guid>
+      <guid>http://localhost:1313/storage-wars/</guid>
       <description>&lt;p&gt;i&amp;rsquo;m currently running an &lt;a href=&#34;http://lime-technology.com&#34;&gt;unRaid&lt;/a&gt; server, which hosts my media collection  (movies, tv series, music, pictures and data backups)&lt;/p&gt;
 
 &lt;p&gt;but, i&amp;rsquo;m running out of space on the server (currently 31.69TB used out of 32.51TB available)&lt;/p&gt;
@@ -1740,12 +1753,13 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
 </description>
     </item>
     
+    
     <item>
       <title>windows 8 consumer preview</title>
-      <link>http://www.apertoire.net/windows-8-consumer-preview/</link>
-      <pubDate>Thu, 08 Mar 2012 23:23:23 UTC</pubDate>
+      <link>http://localhost:1313/windows-8-consumer-preview/</link>
+      <pubDate>Thu, 08 Mar 2012 23:23:23 GMT</pubDate>
       
-      <guid>http://www.apertoire.net/windows-8-consumer-preview/</guid>
+      <guid>http://localhost:1313/windows-8-consumer-preview/</guid>
       <description>&lt;p&gt;i think it&amp;rsquo;s relevant to post some of the media sentiment about the latest iteration of windows 8.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -1755,12 +1769,13 @@ resvport,vers=4,nolocks,locallocks,intr,soft,wsize=32768,rsize=32768
 </description>
     </item>
     
+    
     <item>
       <title>if it ain&#39;t broken, don&#39;t fix it ?</title>
-      <link>http://www.apertoire.net/if-it-ain-t-broken-don-t-fix-it/</link>
-      <pubDate>Thu, 23 Feb 2012 23:23:23 UTC</pubDate>
+      <link>http://localhost:1313/if-it-ain-t-broken-don-t-fix-it/</link>
+      <pubDate>Thu, 23 Feb 2012 23:23:23 GMT</pubDate>
       
-      <guid>http://www.apertoire.net/if-it-ain-t-broken-don-t-fix-it/</guid>
+      <guid>http://localhost:1313/if-it-ain-t-broken-don-t-fix-it/</guid>
       <description>&lt;p&gt;A nice article about upcoming Windows 8 was posted by James Kendrick at ZDNet &amp;hellip; &lt;a href=&#34;http://www.zdnet.com/blog/mobile-news/what-problem-does-windows-8-solve/6856&#34;&gt;What problem does Window 8 solve ?&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I find the new logo kind of hideous :)&lt;/p&gt;

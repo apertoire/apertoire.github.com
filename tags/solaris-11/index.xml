@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title>Solaris 11 on Apertoire </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://www.apertoire.net/tags/solaris-11/</link>
+      <generator>Hugo</generator>
+      <link>http://localhost:1313/tags/solaris-11/</link>
+      <description>Articles about Technology in general</description>
     <language>en-us</language>
     
     
-    <updated>Mon, 07 May 2012 11:11:11 UTC</updated>
+    
     
     <item>
       <title>oh solaris mio !</title>
-      <link>http://www.apertoire.net/oh-solaris-mio/</link>
-      <pubDate>Mon, 07 May 2012 11:11:11 UTC</pubDate>
+      <link>http://localhost:1313/oh-solaris-mio/</link>
+      <pubDate>Mon, 07 May 2012 11:11:11 GMT</pubDate>
       
-      <guid>http://www.apertoire.net/oh-solaris-mio/</guid>
+      <guid>http://localhost:1313/oh-solaris-mio/</guid>
       <description>&lt;p&gt;so the plan is as follows:&lt;/p&gt;
 
 &lt;ul&gt;

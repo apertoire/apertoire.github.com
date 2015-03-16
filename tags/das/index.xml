@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title>Das on Apertoire </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://www.apertoire.net/tags/das/</link>
+      <generator>Hugo</generator>
+      <link>http://localhost:1313/tags/das/</link>
+      <description>Articles about Technology in general</description>
     <language>en-us</language>
     
     
-    <updated>Sun, 06 May 2012 23:23:23 UTC</updated>
+    
     
     <item>
       <title>storage wars</title>
-      <link>http://www.apertoire.net/storage-wars/</link>
-      <pubDate>Sun, 06 May 2012 23:23:23 UTC</pubDate>
+      <link>http://localhost:1313/storage-wars/</link>
+      <pubDate>Sun, 06 May 2012 23:23:23 GMT</pubDate>
       
-      <guid>http://www.apertoire.net/storage-wars/</guid>
+      <guid>http://localhost:1313/storage-wars/</guid>
       <description>&lt;p&gt;i&amp;rsquo;m currently running an &lt;a href=&#34;http://lime-technology.com&#34;&gt;unRaid&lt;/a&gt; server, which hosts my media collection  (movies, tv series, music, pictures and data backups)&lt;/p&gt;
 
 &lt;p&gt;but, i&amp;rsquo;m running out of space on the server (currently 31.69TB used out of 32.51TB available)&lt;/p&gt;

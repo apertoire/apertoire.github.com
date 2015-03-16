@@ -38,16 +38,8 @@
 
 <section class="container content">
 
-  
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  
-  <ins class="adsbygoogle"
-       style="display:inline-block;width:728px;height:90px"
-       data-ad-client="ca-pub-5982725985453951"
-       data-ad-slot="6092848225"></ins>
-  <script>
-  (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+   
+  <div class="adsbygoogle" style="width: 728px; height: 90px; background: blue;">TOP AD GOES HERE</div>
   
 
   <img class="frontpost" src="/img/actor1.png">
@@ -77,9 +69,9 @@
 <p><img src="/img/mediabase1.png" alt="front" title="front" />
 </p>
 
-<p>I will use the Mediabase application (check my <a href="http://www.apertoire.net/introducing-mediabase/">previous article</a>) to showcase the proposed architecture.</p>
+<p>I will use the Mediabase application (check my <a href="/introducing-mediabase/">previous article</a>) to showcase the proposed architecture.</p>
 
-<p>Very shortly, Mediabase is a proof-of-concept application to catalogue a media library consisting of movies. It scans the folders you choose looking for movies, then fetches metadata from <a href="www.themoviedb.org">themoviedb.org</a> and <a href="www.omdbapi.com">The OMDB API</a> and presents the information in a nice web page.</p>
+<p>Very shortly, Mediabase is a proof-of-concept application to catalogue a media library consisting of movies. It scans the folders you choose looking for movies, then fetches metadata from <a href="http://www.themoviedb.org">themoviedb.org</a> and <a href="http://www.omdbapi.com">The OMDB API</a> and presents the information in a nice web page.</p>
 
 <p>You can get the code <a href="https://github.com/apertoire/mediabase">here</a>.</p>
 
@@ -478,5 +470,8 @@ func (self *Scanner) react() {
 
 </script>
 
-</body>
+<script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>
