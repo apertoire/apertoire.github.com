@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0">
   <channel>
       <title> on Apertoire </title>
       <generator>Hugo</generator>
@@ -982,7 +982,7 @@ func (self *Scanner) react() {
       <guid>http://www.apertoire.net/introducing-mediabase/</guid>
       <description>
 
-&lt;p&gt;&lt;em&gt;tl;dr&lt;/em&gt; &lt;strong&gt;mediabase&lt;/strong&gt; is a proof-of-concept application to catalogue a media library consisting of movies. It scans the folders you choose looking for movies, then fetch metadata from &lt;a href=&#34;www.themoviedb.org&#34;&gt;themoviedb.org&lt;/a&gt; and &lt;a href=&#34;www.omdbapi.com&#34;&gt;The OMDB API&lt;/a&gt; and present the information in a nice web page.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;tl;dr&lt;/em&gt; &lt;strong&gt;mediabase&lt;/strong&gt; is a proof-of-concept application to catalogue a media library consisting of movies. It scans the folders you choose looking for movies, then fetch metadata from &lt;a href=&#34;www.themoviedb.org&#34;&gt;TheMovieDB&lt;/a&gt; and &lt;a href=&#34;www.omdbapi.com&#34;&gt;The OMDB API&lt;/a&gt; and present the information in a nice web page.&lt;/p&gt;
 
 &lt;p&gt;Check the &lt;a href=&#34;https://github.com/apertoire/mediabase&#34;&gt;github page&lt;/a&gt; for binaries, source code and other general instructions.&lt;/p&gt;
 
@@ -1010,7 +1010,7 @@ func (self *Scanner) react() {
 &lt;p&gt;&lt;img src=&#34;http://www.apertoire.net/img/mediabase3.png&#34; alt=&#34;settings2&#34; title=&#34;settings2&#34; /&gt;
 &lt;/p&gt;
 
-&lt;p&gt;The process will search for movies, look them up in &lt;a href=&#34;http://www.themoviedb.org&#34;&gt;themoviedb.org&lt;/a&gt; and &lt;a href=&#34;http://www.omdbapi.com&#34;&gt;The OMDB&lt;/a&gt;, collect all the metadata, store it in a database and then make them available via a web page.&lt;/p&gt;
+&lt;p&gt;The process will search for movies, look them up in &lt;a href=&#34;http://www.themoviedb.org&#34;&gt;TheMovieDB&lt;/a&gt; and &lt;a href=&#34;http://www.omdbapi.com&#34;&gt;The OMDB&lt;/a&gt;, collect all the metadata, store it in a database and then make them available via a web page.&lt;/p&gt;
 
 &lt;h2 id=&#34;cover-screen:0ef5819b3d0866a814affe7bdac79c25&#34;&gt;Cover screen&lt;/h2&gt;
 
