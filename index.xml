@@ -176,6 +176,13 @@ PATH = !! this is the location of your database (sqlite3 by default) !!
             &lt;/tr&gt;
 
             &lt;tr&gt;
+                &lt;td&gt;LDAP Login&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;span class=&#34;yes&#34;&gt;yes&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
                 &lt;td&gt;LDAP Group Sync&lt;/td&gt;
                 &lt;td&gt;&lt;span class=&#34;no&#34;&gt;no&lt;/span&gt;&lt;/td&gt;
                 &lt;td&gt;* Enterprise&lt;/td&gt;
